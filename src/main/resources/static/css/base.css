@@ -796,6 +796,7 @@
 
 .product-container {
   padding: 0 10vw;
+  height: 300px;
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
