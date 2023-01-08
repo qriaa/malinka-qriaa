@@ -19,4 +19,8 @@ public class ProductsService {
     public Product getByName(String productName) {
         return productsRepository.getByName(productName);
     }
+
+    public Product getRandomProduct() {
+        return productsRepository.getRandomProduct();
+    }
 }

@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Repository
 public class ProductsRepository {
@@ -76,5 +77,11 @@ public class ProductsRepository {
             }
         }
         return null;
+    }
+
+    public Product getRandomProduct() {
+        Random random = new Random();
+        int randomIndex = random.nextInt(productList.size());
+        return productList.get(randomIndex);
     }
 }

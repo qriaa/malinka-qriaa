@@ -2,13 +2,12 @@ package io.github.reconsolidated.malinka.mainPage;
 
 import io.github.reconsolidated.malinka.basket.BasketProduct;
 import io.github.reconsolidated.malinka.basket.BasketService;
+import io.github.reconsolidated.malinka.orders.Order;
 import io.github.reconsolidated.malinka.orders.OrderService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -34,6 +33,13 @@ public class MainPageController {
         model.addAttribute("basket", basketService.getProductsInBasket());
         model.addAttribute("basketTotal", String.format("%.2f", basketService.getTotal()) + " zł");
         return "index";
+    }
+
+    @GetMapping("/reclamation")
+    public String reclamationsPage(@RequestParam("orderId") long orderId, Model model) {
+        Order order = orderService.getOrders().stream().filter((o) -> o.getId() == orderId).findFirst().orElseThrow();
+        model.addAttribute("order", order);
+        return "reclamation";
     }
 
     @PostMapping("/add_to_basket")
@@ -86,6 +92,12 @@ public class MainPageController {
         return "shipment_select";
     }
 
+    @GetMapping("/history")
+    public String transactionHistory(Model model) {
+        model.addAttribute("orders", orderService.getOrders());
+        return "transaction_history";
+    }
+
     @PostMapping("/select_shipment")
     public String selectShipment(
                                  @RequestParam(name="address", required = false) String address,
@@ -95,12 +107,12 @@ public class MainPageController {
                                  @RequestParam(name="select-parcel-locker", required = false) String selectParcelLocker,
                                  @RequestParam(name="pickup-time", required = false) String pickupTime,
                                  RedirectAttributes redirectAttributes) {
-        orderService.getOrder().setAddress(address);
-        orderService.getOrder().setCity(city);
-        orderService.getOrder().setStreet(street);
-        orderService.getOrder().setLocalNumber(localNum);
-        orderService.getOrder().setSelectParcelLocker(selectParcelLocker);
-        orderService.getOrder().setPickupTime(pickupTime);
+        orderService.getCurrentOrder().setAddress(address);
+        orderService.getCurrentOrder().setCity(city);
+        orderService.getCurrentOrder().setStreet(street);
+        orderService.getCurrentOrder().setLocalNumber(localNum);
+        orderService.getCurrentOrder().setSelectParcelLocker(selectParcelLocker);
+        orderService.getCurrentOrder().setPickupTime(pickupTime);
 
         return "redirect:/payment";
     }
@@ -116,12 +128,19 @@ public class MainPageController {
     @PostMapping("/payment_info")
     public String paymentInfo(@RequestParam(name="payment") String paymentMethod,
                               RedirectAttributes redirectAttributes) {
-        orderService.getOrder().setPaymentMethod(paymentMethod);
+        orderService.getCurrentOrder().setPaymentMethod(paymentMethod);
+        orderService.getCurrentOrder().setCost(String.format("%.2f",basketService.getTotal()) + " zł");
+        orderService.getCurrentOrder().setAmount(basketService.getProductsInBasket().size());
+        orderService.getCurrentOrder().getProducts().addAll(basketService.getProductsInBasket());
         if (paymentMethod.equals("BLIK")) {
-            orderService.getOrder().setPaymentSuccessful(false);
+            orderService.getCurrentOrder().setPaymentSuccessful(false);
+            orderService.saveOrder();
+            basketService.clearBasket();
             return "redirect:/fail";
         } else {
-            orderService.getOrder().setPaymentSuccessful(true);
+            orderService.getCurrentOrder().setPaymentSuccessful(true);
+            orderService.saveOrder();
+            basketService.clearBasket();
             return "redirect:/success";
         }
     }
@@ -131,7 +150,7 @@ public class MainPageController {
         List<BasketProduct> basketProducts = basketService.getProductsInBasket();
         model.addAttribute("basketProducts", basketProducts);
         model.addAttribute("basketTotal", String.format("%.2f", basketService.getTotal()) + " zł");
-        model.addAttribute("order", orderService.getOrder());
+        model.addAttribute("order", orderService.getCurrentOrder());
         return "payment_success";
     }
 
