@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -44,7 +44,7 @@
                         <li class="nav-item">
                             <div class="nav-item-item">
 
-                                <a class="nav-link active navbar-text" aria-current="page" href="#!">
+                                <a class="nav-link active navbar-text" aria-current="page" href="/">
                                     <img th:src="@{/images/home.svg}" class="active" alt="">
                                     Strona główna
                                 </a>
@@ -54,7 +54,7 @@
                         <li class="nav-item">
                             <div class="nav-item-item">
 
-                                <a class="nav-link navbar-text" href="#!">
+                                <a class="nav-link navbar-text" href="/">
                                     <img th:src="@{/images/percent.svg}" alt="">
                                     Promocje
                                 </a>
@@ -64,7 +64,7 @@
 
                         <li class="nav-item">
                             <div class="nav-item-item">
-                                <a class="nav-link navbar-text" href="#!">
+                                <a class="nav-link navbar-text" href="/">
                                     <img th:src="@{/images/megaphone.svg}" alt="">
                                     Punkty lojalnościowe
                                 </a>
@@ -114,10 +114,10 @@
                             </a>
                             
                             <ul class="dropdown-menu" aria-labelledby="basketDropdown">
-                                <li><a class="dropdown-item navbar-text" href="#!">Historia Transakcji</a></li>
+                                <li><a class="dropdown-item navbar-text" href="/">Historia Transakcji</a></li>
                                 <li><hr class="dropdown-divider navbar-text" /></li>
-                                <li><a class="dropdown-item navbar-text" href="#!">Popular Items</a></li>
-                                <li><a class="dropdown-item navbar-text" href="#!">Wyloguj</a></li>
+                                <li><a class="dropdown-item navbar-text" href="/">Popular Items</a></li>
+                                <li><a class="dropdown-item navbar-text" href="/">Wyloguj</a></li>
                             </ul>
                         </div>
 
@@ -126,7 +126,7 @@
 
                         <li class="nav-item">
                             <div class="nav-item-item">
-                                <a class="nav-link active navbar-text" href="#!">
+                                <a class="nav-link active navbar-text" href="/">
                                     <img th:src="@{/images/leaf.svg}" alt="">
                                     120 punktów
                                 </a>
@@ -136,10 +136,10 @@
                         <li class="nav-item dropdown user">
                             <a class="nav-link dropdown-toggle navbar-text" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Jan Kowalski</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item navbar-text" href="#!">Historia Transakcji</a></li>
+                                <li><a class="dropdown-item navbar-text" href="/">Historia Transakcji</a></li>
                                 <li><hr class="dropdown-divider navbar-text" /></li>
-                                <li><a class="dropdown-item navbar-text" href="#!">Popular Items</a></li>
-                                <li><a class="dropdown-item navbar-text" href="#!">Wyloguj</a></li>
+                                <li><a class="dropdown-item navbar-text" href="/">Popular Items</a></li>
+                                <li><a class="dropdown-item navbar-text" href="/">Wyloguj</a></li>
                             </ul>
                         </li>
 
@@ -152,58 +152,13 @@
         </nav>
 
         <!-- Section-->
-        <section class="py-0">
-
-            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                  <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner ps-0 pe-0">
-                  <div class="carousel-item active">
-                    <img th:src="@{/images/warzywa_owoce_1.png}" class="block w-100" alt="...">
-                    <div class="carousel-caption d-md-block">
-                      <h5>Codziennie najlepsze produkty</h5>
-                      <p>To co nasi klienci lubią najbardziej.</p>
-                    </div>
-                  </div>
-                  <div class="carousel-item">
-                    <div class="carousel-caption d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Some representative placeholder content for the second slide.</p>
-                      </div>
-                    <img th:src="@{/images/warzywa_owoce_1.png}" class="block w-100" alt="...">
-                    
-                  </div>
-                  <div class="carousel-item">
-                    <img th:src="@{/images/warzywa_owoce_1.png}" class="block w-100" alt="...">
-                    <div class="carousel-caption d-md-block">
-                      <h5>Third slide label</h5>
-                      <p>Some representative placeholder content for the third slide.</p>
-                    </div>
-                  </div>
-                </div>
-                <button class="carousel-control carousel-control-prev  color-white ms-5 ms-xs-2 ms-sm-3 ms-md-5 ms-xl-5" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                  <img class="carousel-control-icon color-white" th:src="@{/assets/prev.svg}" alt="">
-                  <span class="visually-hidden">Poprzednie</span>
-                </button>
-                <button class="carousel-control carousel-control-next  color-white me-5 me-xs-2 me-sm-3 me-md-5 me-xl-5" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                  <img class="carousel-control-icon color-white" th:src="@{/assets/next.svg}" alt="">
-                  <span class="visually-hidden">Następne</span>
-                </button>
-            </div>
-
-        </header>
-
         <section class="p-1">
 
-            <form action="">
-
+            <form th:action="@{/payment_info}" method="post">
 
                 <div class="container align-items-center my-3 mt-5 basket-products-container products-titles">
                     <div class="basket-title-center mb-3">
-                        <p>Wybierz sposób dostawy</p>
+                        <p>Wybierz sposób płatności</p>
                     </div>
 
 
@@ -225,7 +180,7 @@
 
                                     <label for="cash-on-delivery" class="form-text mt-4">Płatność za pobraniem</label>
 
-                                    <input type="radio" id="cash-on-delivery" name="cash-on-delivery" class="mt-2" value="cash-on-delivery"><br>
+                                    <input checked="checked" type="radio" id="cash-on-delivery" name="payment" class="mt-2" value="Za pobraniem"><br>
                                     
 
                                 </div>
@@ -249,7 +204,7 @@
 
                                     <label for="cash-on-delivery" class="form-text mt-4">Blik</label>
 
-                                    <input type="radio" id="cash-on-delivery" name="cash-on-delivery" class="mt-2" value="cash-on-delivery"><br>
+                                    <input type="radio" id="blik" name="payment" class="mt-2" value="BLIK"><br>
                                     
 
                                 </div>
@@ -273,7 +228,7 @@
 
                                     <label for="cash-on-delivery" class="form-text mt-4">Płatność kartą</label>
 
-                                    <input type="radio" id="cash-on-delivery" name="cash-on-delivery" class="mt-2" value="cash-on-delivery"><br>
+                                    <input type="radio" id="card" name="payment" class="mt-2" value="Płatność kartą"><br>
                                     
 
                                 </div>
@@ -297,7 +252,7 @@
 
                                     <label for="cash-on-delivery" class="form-text mt-4">Płatność przelewem internetowym</label>
 
-                                    <input type="radio" id="cash-on-delivery" name="cash-on-delivery" class="mt-2" value="cash-on-delivery"><br>
+                                    <input type="radio" id="wire" name="payment" class="mt-2" value="Płatność przelewem"><br>
                                     
 
                                 </div>
@@ -310,15 +265,17 @@
 
                     <div class="d-flex ms-1 me-1 buttons">
 
-                        <div class="d-flex col align-items-center justify-content-center p-1 m-xxl-2 mt-0 p-3" id="order-basket">
+                        <div class="d-flex col align-items-center justify-content-center p-1 m-xxl-2 mt-0 p-3" id="order-basket2">
                             <img th:src="@{/assets/arrow-left.svg}" class="me-2 p-1" alt="" style="color:white; fill: white;">
-                            <a class="nav-link active text-center me-1" aria-current="page" href="#!">Cofnij do wyboru<br> sposobu płatności</a>
+                            <a class="nav-link active text-center me-1" aria-current="page" href="/">Cofnij do wyboru<br> sposobu płatności</a>
                         </div>
 
-                        <div class="d-flex col align-items-center justify-content-center p-1 add-to-cart-green m-2 mt-0 p-3" id="order-basket">
-                            <a class="nav-link active text-center me-1" aria-current="page" href="#!">Zapłać i zakończ<br> zakupy</a>
-                            <img th:src="@{/assets/arrow-right-white.svg}" class="me-2 p-1" alt="" style="color:white; fill: white;">
-                        </div>
+                        <button type="submit" class="nav-link active text-center me-1" aria-current="page">
+                            <div class="d-flex col align-items-center justify-content-center p-1 add-to-cart-green m-2 mt-0 p-3" id="order-basket">
+                                Zapłać i zakończ<br> zakupy
+                                <img th:src="@{/assets/arrow-right-white.svg}" class="me-2 p-1" alt="" style="color:white; fill: white;">
+                            </div>
+                        </button>
 
                     </div>
 
@@ -328,643 +285,6 @@
 
 
         </section>
-
-
-        <section class="py-5">
-            <div class="d-flex justify-content-sm-between m-3  products-titles">
-                <h3>Produkty, które mogą Cię zainteresować</h3>
-            </div>
-
-            <div class="container px-4 px-lg-5 mt-5">
-                
-                <div class="row justify-content-center">
-                    
-                    <div class="col mb-5">
-                        <div class="interesting-products">
-                            
-                            <div class="h-100">
-
-                                <div class="card-body p-0"> 
-                                    <div class="d-flex justify-content-center">
-                                        <div class="d-flex flex-row">
-
-
-                                            <div class="col embed-responsive embed-responsive-4by3 me-1  border border-5 interesting-products-border justify-content-center align-items-center">
-                                                <img class="card-img-left" th:src="@{/images/radish.png}" alt="..." />
-                                            </div>
-
-                                            <div class="">
-                                                <div class="text-center row">
-                                                    <h5 class="fw-bolder product-overview-name">Rzodkiewka 500g</h5>
-                                                </div>
-
-                                                <div class="d-flex flex-row align-items-center mb-1">
-                                                    <span class="item-price">10zł</span>
-            
-                                                    <div class="pt-0 pb-0 bg-transparent ms-2">
-                                                        <div class="btn container add-to-basket-btn">
-                                                            <div class="row align-items-center">
-                                                                <div class="col-2 p-0 ms-1 mb-1">
-                                                                    <img th:src="@{/images/shopping-cart-pink.svg}" alt="" class="shopping-cart-item-interesting">
-                                                                </div>
-                                                                
-                                                                <div class="col p-0 pe-1">
-                                                                    <h2 class="interesting-add-to-basket-txt mb-0">Dodaj do koszyka</h2>
-                                                                </div>
-                                                                
-                                                            </div>
-            
-                                                        </div>
-
-                                                    </div>
-            
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col mb-5">
-                        <div class="interesting-products">
-                            
-                            <div class="h-100">
-
-                                <div class="card-body p-0"> 
-                                    <div class="d-flex justify-content-center">
-                                        <div class="d-flex flex-row">
-
-
-                                            <div class="col embed-responsive embed-responsive-4by3 me-1  border border-5 interesting-products-border justify-content-center align-items-center">
-                                                <img class="card-img-left" th:src="@{/images/radish.png}" alt="..." />
-                                            </div>
-
-                                            <div class="">
-                                                <div class="text-center row">
-                                                    <h5 class="fw-bolder product-overview-name">Rzodkiewka 500g</h5>
-                                                </div>
-
-                                                <div class="d-flex flex-row align-items-center mb-1">
-                                                    <span class="item-price">10zł</span>
-            
-                                                    <div class="pt-0 pb-0 bg-transparent ms-2">
-                                                        <div class="btn container add-to-basket-btn">
-                                                            <div class="row align-items-center">
-                                                                <div class="col-2 p-0 ms-1 mb-1">
-                                                                    <img th:src="@{/images/shopping-cart-pink.svg}" alt="" class="shopping-cart-item-interesting">
-                                                                </div>
-                                                                
-                                                                <div class="col p-0 pe-1">
-                                                                    <h2 class="interesting-add-to-basket-txt mb-0">Dodaj do koszyka</h2>
-                                                                </div>
-                                                                
-                                                            </div>
-            
-                                                        </div>
-
-                                                    </div>
-            
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col mb-5">
-                        <div class="interesting-products">
-                            
-                            <div class="h-100">
-
-                                <div class="card-body p-0"> 
-                                    <div class="d-flex justify-content-center">
-                                        <div class="d-flex flex-row">
-
-
-                                            <div class="col embed-responsive embed-responsive-4by3 me-1  border border-5 interesting-products-border justify-content-center align-items-center">
-                                                <img class="card-img-left" th:src="@{/images/radish.png}" alt="..." />
-                                            </div>
-
-                                            <div class="">
-                                                <div class="text-center row">
-                                                    <h5 class="fw-bolder product-overview-name">Rzodkiewka 500g</h5>
-                                                </div>
-
-                                                <div class="d-flex flex-row align-items-center mb-1">
-                                                    <span class="item-price">10zł</span>
-            
-                                                    <div class="pt-0 pb-0 bg-transparent ms-2">
-                                                        <div class="btn container add-to-basket-btn">
-                                                            <div class="row align-items-center">
-                                                                <div class="col-2 p-0 ms-1 mb-1">
-                                                                    <img th:src="@{/images/shopping-cart-pink.svg}" alt="" class="shopping-cart-item-interesting">
-                                                                </div>
-                                                                
-                                                                <div class="col p-0 pe-1">
-                                                                    <h2 class="interesting-add-to-basket-txt mb-0">Dodaj do koszyka</h2>
-                                                                </div>
-                                                                
-                                                            </div>
-            
-                                                        </div>
-
-                                                    </div>
-            
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col mb-5">
-                        <div class="interesting-products">
-                            
-                            <div class="h-100">
-
-                                <div class="card-body p-0"> 
-                                    <div class="d-flex justify-content-center">
-                                        <div class="d-flex flex-row">
-
-
-                                            <div class="col embed-responsive embed-responsive-4by3 me-1  border border-5 interesting-products-border justify-content-center align-items-center">
-                                                <img class="card-img-left" th:src="@{/images/radish.png}" alt="..." />
-                                            </div>
-
-                                            <div class="">
-                                                <div class="text-center row">
-                                                    <h5 class="fw-bolder product-overview-name">Rzodkiewka 500g</h5>
-                                                </div>
-
-                                                <div class="d-flex flex-row align-items-center mb-1">
-                                                    <span class="item-price">10zł</span>
-            
-                                                    <div class="pt-0 pb-0 bg-transparent ms-2">
-                                                        <div class="btn container add-to-basket-btn">
-                                                            <div class="row align-items-center">
-                                                                <div class="col-2 p-0 ms-1 mb-1">
-                                                                    <img th:src="@{/images/shopping-cart-pink.svg}" alt="" class="shopping-cart-item-interesting">
-                                                                </div>
-                                                                
-                                                                <div class="col p-0 pe-1">
-                                                                    <h2 class="interesting-add-to-basket-txt mb-0">Dodaj do koszyka</h2>
-                                                                </div>
-                                                                
-                                                            </div>
-            
-                                                        </div>
-
-                                                    </div>
-            
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col mb-5">
-                        <div class="interesting-products">
-                            <div class="h-100">
-
-                                <div class="card-body p-0"> 
-                                    <div class="d-flex justify-content-center">
-                                        <div class="d-flex flex-row">
-
-
-                                            <div class="col embed-responsive embed-responsive-4by3 me-1  border border-5 interesting-products-border justify-content-center align-items-center">
-                                                <img class="card-img-left" th:src="@{/images/radish.png}" alt="..." />
-                                            </div>
-
-                                            <div class="">
-                                                <div class="text-center row">
-                                                    <h5 class="fw-bolder product-overview-name">Rzodkiewka 500g</h5>
-                                                </div>
-
-                                                <div class="d-flex flex-row align-items-center mb-1">
-                                                    <span class="item-price">10zł</span>
-            
-                                                    <div class="pt-0 pb-0 bg-transparent ms-2">
-                                                        <div class="btn container add-to-basket-btn">
-                                                            <div class="row align-items-center">
-                                                                <div class="col-2 p-0 ms-1 mb-1">
-                                                                    <img th:src="@{/images/shopping-cart-pink.svg}" alt="" class="shopping-cart-item-interesting">
-                                                                </div>
-                                                                
-                                                                <div class="col p-0 pe-1">
-                                                                    <h2 class="interesting-add-to-basket-txt mb-0">Dodaj do koszyka</h2>
-                                                                </div>
-                                                                
-                                                            </div>
-            
-                                                        </div>
-
-                                                    </div>
-            
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col mb-5">
-                        <div class="interesting-products">
-                            <div class="h-100">
-
-                                <div class="card-body p-0"> 
-                                    <div class="d-flex justify-content-center">
-                                        <div class="d-flex flex-row">
-
-
-                                            <div class="col embed-responsive embed-responsive-4by3 me-1  border border-5 interesting-products-border justify-content-center align-items-center">
-                                                <img class="card-img-left" th:src="@{/images/radish.png}" alt="..." />
-                                            </div>
-
-                                            <div class="">
-                                                <div class="text-center row">
-                                                    <h5 class="fw-bolder product-overview-name">Rzodkiewka 500g</h5>
-                                                </div>
-
-                                                <div class="d-flex flex-row align-items-center mb-1">
-                                                    <span class="item-price">10zł</span>
-            
-                                                    <div class="pt-0 pb-0 bg-transparent ms-2">
-                                                        <div class="btn container add-to-basket-btn">
-                                                            <div class="row align-items-center">
-                                                                <div class="col-2 p-0 ms-1 mb-1">
-                                                                    <img th:src="@{/images/shopping-cart-pink.svg}" alt="" class="shopping-cart-item-interesting">
-                                                                </div>
-                                                                
-                                                                <div class="col p-0 pe-1">
-                                                                    <h2 class="interesting-add-to-basket-txt mb-0">Dodaj do koszyka</h2>
-                                                                </div>
-                                                                
-                                                            </div>
-            
-                                                        </div>
-
-                                                    </div>
-            
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col mb-5">
-                        <div class="interesting-products">
-                            
-                            <div class="h-100">
-
-                                <div class="card-body p-0"> 
-                                    <div class="d-flex justify-content-center">
-                                        <div class="d-flex flex-row">
-
-
-                                            <div class="col embed-responsive embed-responsive-4by3 me-1  border border-5 interesting-products-border justify-content-center align-items-center">
-                                                <img class="card-img-left" th:src="@{/images/radish.png}" alt="..." />
-                                            </div>
-
-                                            <div class="">
-                                                <div class="text-center row">
-                                                    <h5 class="fw-bolder product-overview-name">Rzodkiewka 500g</h5>
-                                                </div>
-
-                                                <div class="d-flex flex-row align-items-center mb-1">
-                                                    <span class="item-price">10zł</span>
-            
-                                                    <div class="pt-0 pb-0 bg-transparent ms-2">
-                                                        <div class="btn container add-to-basket-btn">
-                                                            <div class="row align-items-center">
-                                                                <div class="col-2 p-0 ms-1 mb-1">
-                                                                    <img th:src="@{/images/shopping-cart-pink.svg}" alt="" class="shopping-cart-item-interesting">
-                                                                </div>
-                                                                
-                                                                <div class="col p-0 pe-1">
-                                                                    <h2 class="interesting-add-to-basket-txt mb-0">Dodaj do koszyka</h2>
-                                                                </div>
-                                                                
-                                                            </div>
-            
-                                                        </div>
-
-                                                    </div>
-            
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col mb-5">
-                        <div class="interesting-products">
-                            
-                            <div class="h-100">
-
-                                <div class="card-body p-0"> 
-                                    <div class="d-flex justify-content-center">
-                                        <div class="d-flex flex-row">
-
-
-                                            <div class="col embed-responsive embed-responsive-4by3 me-1  border border-5 interesting-products-border justify-content-center align-items-center">
-                                                <img class="card-img-left" th:src="@{/images/radish.png}" alt="..." />
-                                            </div>
-
-                                            <div class="">
-                                                <div class="text-center row">
-                                                    <h5 class="fw-bolder product-overview-name">Rzodkiewka 500g</h5>
-                                                </div>
-
-                                                <div class="d-flex flex-row align-items-center mb-1">
-                                                    <span class="item-price">10zł</span>
-            
-                                                    <div class="pt-0 pb-0 bg-transparent ms-2">
-                                                        <div class="btn container add-to-basket-btn">
-                                                            <div class="row align-items-center">
-                                                                <div class="col-2 p-0 ms-1 mb-1">
-                                                                    <img th:src="@{/images/shopping-cart-pink.svg}" alt="" class="shopping-cart-item-interesting">
-                                                                </div>
-                                                                
-                                                                <div class="col p-0 pe-1">
-                                                                    <h2 class="interesting-add-to-basket-txt mb-0">Dodaj do koszyka</h2>
-                                                                </div>
-                                                                
-                                                            </div>
-            
-                                                        </div>
-
-                                                    </div>
-            
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col mb-5">
-                        <div class="interesting-products">
-                            
-                            <div class="h-100">
-
-                                <div class="card-body p-0"> 
-                                    <div class="d-flex justify-content-center">
-                                        <div class="d-flex flex-row">
-
-                                            <div class="col embed-responsive embed-responsive-4by3 me-1  border border-5 interesting-products-border justify-content-center align-items-center">
-                                                <img class="card-img-left" th:src="@{/images/radish.png}" alt="..." />
-                                            </div>
-
-                                            <div class="">
-                                                <div class="text-center row">
-                                                    <h5 class="fw-bolder product-overview-name">Rzodkiewka 500g</h5>
-                                                </div>
-
-                                                <div class="d-flex flex-row align-items-center mb-1">
-                                                    <span class="item-price">10zł</span>
-            
-                                                    <div class="pt-0 pb-0 bg-transparent ms-2">
-                                                        <div class="btn container add-to-basket-btn">
-                                                            <div class="row align-items-center">
-                                                                <div class="col-2 p-0 ms-1 mb-1">
-                                                                    <img th:src="@{/images/shopping-cart-pink.svg}" alt="" class="shopping-cart-item-interesting">
-                                                                </div>
-                                                                
-                                                                <div class="col p-0 pe-1">
-                                                                    <h2 class="interesting-add-to-basket-txt mb-0">Dodaj do koszyka</h2>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-
-        <section class="py-5">
-            <div class="d-flex justify-content-between m-3 products-titles">
-                <h3>Promocje za punkty lojalnościowe</h3>
-            </div>
-
-            <div class="container px-4 px-lg-5 mt-5">
-                
-                <div class="row justify-content-center">
-
-                    <div class="col mb-5">
-                        <div class="card loyal-card">
-
-                            <img class="card-img-top products-for-points-img" th:src="@{/images/radish.png}" alt="..." />
-
-                            <div class="card-body p-4">
-                                <div class="text-start">
-
-                                    <span class="products-for-points-type">Warzywa</span>
-                                    <h5 class="fw-bolder products-for-points-name">Pomarańcze</h5>
-                                    <span class="products-for-points">50 punktów</span>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-
-                                <div class="d-flex align-items-center m-auto  justify-content-center p-1 add-to-cart-green">
-                                    <img th:src="@{/images/shopping-cart-white.svg}" class="active me-1 p-1" alt="" style="color:white; fill: white;">
-                                    <a class="nav-link active text-center me-1" aria-current="page" href="#!">Dodaj do koszyka</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col mb-5">
-                        <div class="card loyal-card">
-                            <!-- Product image-->
-                            <img class="card-img-top products-for-points-img" th:src="@{/images/radish.png}" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-start">
-                                    <!-- Product name-->
-                                    <span class="products-for-points-type">Warzywa</span>
-                                    <h5 class="fw-bolder products-for-points-name">Pomarańcze</h5>
-                                    <span class="products-for-points">50 punktów</span>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                                <div class="d-flex align-items-center m-auto  justify-content-center p-1 add-to-cart-green">
-                                    <img th:src="@{/images/shopping-cart-white.svg}" class="active me-1 p-1" alt="" style="color:white; fill: white;">
-                                    <a class="nav-link active text-center me-1" aria-current="page" href="#!">Dodaj do koszyka</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col mb-5">
-                        <div class="card loyal-card">
-                            <!-- Product image-->
-                            <img class="card-img-top products-for-points-img" th:src="@{/images/radish.png}" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-start">
-                                    <!-- Product name-->
-                                    <span class="products-for-points-type">Warzywa</span>
-                                    <h5 class="fw-bolder products-for-points-name">Pomarańcze</h5>
-                                    <span class="products-for-points">50 punktów</span>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                                <!-- <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Dodaj do koszyka</a></div> -->
-                                <div class="d-flex align-items-center m-auto  justify-content-center p-1 add-to-cart-green">
-                                    <img th:src="@{/images/shopping-cart-white.svg}" class="active me-1 p-1" alt="" style="color:white; fill: white;">
-                                    <a class="nav-link active text-center me-1" aria-current="page" href="#!">Dodaj do koszyka</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col mb-5">
-                        <div class="card loyal-card">
-                            <!-- Product image-->
-                            <img class="card-img-top products-for-points-img" th:src="@{/images/radish.png}" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-start">
-                                    <!-- Product name-->
-                                    <span class="products-for-points-type">Warzywa</span>
-                                    <h5 class="fw-bolder products-for-points-name">Pomarańcze</h5>
-                                    <span class="products-for-points">50 punktów</span>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                                <div class="d-flex align-items-center m-auto  justify-content-center p-1 add-to-cart-green">
-                                    <img th:src="@{/images/shopping-cart-white.svg}" class="active me-1 p-1" alt="" style="color:white; fill: white;">
-                                    <a class="nav-link active text-center me-1" aria-current="page" href="#!">Dodaj do koszyka</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col mb-5">
-                        <div class="card loyal-card">
-                            <!-- Product image-->
-                            <img class="card-img-top products-for-points-img" th:src="@{/images/radish.png}" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-start">
-                                    <!-- Product name-->
-                                    <span class="products-for-points-type">Warzywa</span>
-                                    <h5 class="fw-bolder products-for-points-name">Pomarańcze</h5>
-                                    <span class="products-for-points">50 punktów</span>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-
-                                <div class="d-flex align-items-center m-auto  justify-content-center p-1 add-to-cart-green">
-                                    <img th:src="@{/images/shopping-cart-white.svg}" class="active me-1 p-1" alt="" style="color:white; fill: white;">
-                                    <a class="nav-link active text-center me-1" aria-current="page" href="#!">Dodaj do koszyka</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col mb-5">
-                        <div class="card loyal-card">
-                            <!-- Product image-->
-                            <img class="card-img-top products-for-points-img" th:src="@{/images/radish.png}" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-start">
-                                    <!-- Product name-->
-                                    <span class="products-for-points-type">Warzywa</span>
-                                    <h5 class="fw-bolder products-for-points-name">Pomarańcze</h5>
-                                    <span class="products-for-points">50 punktów</span>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                                <div class="d-flex align-items-center m-auto  justify-content-center p-1 add-to-cart-green">
-                                    <img th:src="@{/images/shopping-cart-white.svg}" class="active me-1 p-1" alt="" style="color:white; fill: white;">
-                                    <a class="nav-link active text-center me-1" aria-current="page" href="#!">Dodaj do koszyka</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col mb-5">
-                        <div class="card loyal-card">
-                            <!-- Product image-->
-                            <img class="card-img-top products-for-points-img" th:src="@{/images/radish.png}" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-start">
-                                    <!-- Product name-->
-                                    <span class="products-for-points-type">Warzywa</span>
-                                    <h5 class="fw-bolder products-for-points-name">Pomarańcze</h5>
-                                    <span class="products-for-points">50 punktów</span>
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-3 pt-0 border-top-0 bg-transparent">
-                                <div class="d-flex align-items-center m-auto  justify-content-center p-1 add-to-cart-green">
-                                    <img th:src="@{/images/shopping-cart-white.svg}" class="active me-1 p-1" alt="" style="color:white; fill: white;">
-                                    <a class="nav-link active text-center me-1" aria-current="page" href="#!">Dodaj do koszyka</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
         <!-- Footer-->
         <footer class="py-5 px-5 bg-footer">
             <div class="container-fluid mx-2">
@@ -980,7 +300,7 @@
                             eiusmod tempor incididunt ut labore
                             et dolore magna aliqua.</p>
 
-                        <p class="text-white footer-main-text footer-small-text">Odzwiedź nas na:</p>
+                        <p class="text-white footer-main-text footer-small-text">Odwiedź nas na:</p>
 
                         <div class="container-fluid align-items-start">
                             

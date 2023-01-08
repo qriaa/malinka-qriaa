@@ -11,4 +11,7 @@ public class BasketProduct {
     private Product product = new Product();
     private int quantity;
 
+    public String getTotal() {
+        return String.format("%.2f", product.getPrice() * quantity);
+    }
 }

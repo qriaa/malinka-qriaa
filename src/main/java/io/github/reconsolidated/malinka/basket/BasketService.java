@@ -20,13 +20,10 @@ public class BasketService {
         productsInBasket.add(new BasketProduct(product, quantity));
     }
 
-    public void removeProduct(Product product, int quantity) {
+    public void removeProduct(Product product) {
         for (BasketProduct basketProduct : productsInBasket) {
             if (basketProduct.getProduct().getName().equals(product.getName())) {
-                basketProduct.setQuantity(basketProduct.getQuantity() - quantity);
-                if (basketProduct.getQuantity() <= 0) {
-                    productsInBasket.remove(basketProduct);
-                }
+                productsInBasket.remove(basketProduct);
                 return;
             }
         }
