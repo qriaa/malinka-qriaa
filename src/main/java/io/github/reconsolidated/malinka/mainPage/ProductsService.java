@@ -15,4 +15,8 @@ public class ProductsService {
     public List<Product> getByCategory(String category) {
         return productsRepository.getByCategory(category);
     }
+
+    public Product getByName(String productName) {
+        return productsRepository.getByName(productName);
+    }
 }

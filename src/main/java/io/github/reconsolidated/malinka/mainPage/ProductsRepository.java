@@ -68,4 +68,13 @@ public class ProductsRepository {
         productList.add(new Product("Kalafior 1kg", "/images/mleko.jpg","sweet", "9,49 zł", 9.49));
 
     }
+
+    public Product getByName(String productName) {
+        for (Product product : productList) {
+            if (product.getName().equals(productName)) {
+                return product;
+            }
+        }
+        return null;
+    }
 }

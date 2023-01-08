@@ -404,9 +404,9 @@
   color: #000000;
 }
 
-.products-titles-items .nav-item:first-child a {
-  font-weight: 800;
-  color: #3BB77E;
+.chosen-category a{
+    font-weight: 800;
+    color: #3BB77E;
 }
 
 .add-to-cart-green {
