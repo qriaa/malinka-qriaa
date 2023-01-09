@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
       
-        <title>Sklep Malinka - storna główna</title>
+        <title>Sklep Malinka - strona główna</title>
         <meta name="description" content="Strona internetowa sklepu Malinka">
         <meta name="author" content="Wojciech Begierski">
 
@@ -114,9 +114,9 @@
                             </a>
                             
                             <ul class="dropdown-menu" aria-labelledby="basketDropdown">
-                                <li><a class="dropdown-item navbar-text" href="/">Historia Transakcji</a></li>
+                                <li><a class="dropdown-item navbar-text" th:href="@{/basket}">Zawartość koszyka</a></li>
                                 <li><hr class="dropdown-divider navbar-text" /></li>
-                                <li><a class="dropdown-item navbar-text" href="/">Popular Items</a></li>
+                                <li><a class="dropdown-item navbar-text" th:href="@{/history}">Historia Transakcji</a></li>
                                 <li><a class="dropdown-item navbar-text" href="/">Wyloguj</a></li>
                             </ul>
                         </div>
@@ -136,9 +136,9 @@
                         <li class="nav-item dropdown user">
                             <a class="nav-link dropdown-toggle navbar-text" id="navbarDropdown" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Jan Kowalski</a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item navbar-text" href="/">Historia Transakcji</a></li>
+                                <li><a class="dropdown-item navbar-text" href="/history">Historia Transakcji</a></li>
                                 <li><hr class="dropdown-divider navbar-text" /></li>
-                                <li><a class="dropdown-item navbar-text" href="/">Popular Items</a></li>
+                                <li><a class="dropdown-item navbar-text" href="/basket">Zawartość koszyka</a></li>
                                 <li><a class="dropdown-item navbar-text" href="/">Wyloguj</a></li>
                             </ul>
                         </li>

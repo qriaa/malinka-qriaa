@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-    <title>Sklep Malinka - storna główna</title>
+    <title>Sklep Malinka - strona główna</title>
     <meta name="description" content="Strona internetowa sklepu Malinka">
     <meta name="author" content="Wojciech Begierski">
 
@@ -80,10 +80,10 @@
                             <div class="">
                                 <div class="row position-relative">
                                     <div class="col shopping-cart">
-                                        <img src="./images/shopping-cart.svg" alt="">
+                                        <img th:src="@{/images/shopping-cart.svg}" alt="">
                                     </div>
                                     <div class="col position-absolute top-0 start-50 p-0">
-                                        <span class="badge item-count text-white ms-1 rounded-pill">0</span>
+                                        <span class="badge item-count text-white ms-1 rounded-pill" th:text="${basketProducts.size()}"></span>
                                     </div>
 
                                 </div>
@@ -104,19 +104,19 @@
 
                                     <span class="navbar-text">Mój koszyk</span>
 
-                                    <img src="./images/dropdown.svg" alt="">
+                                    <img th:src="@{/images/dropdown.svg}" alt="">
 
                                 </div>
-                                <p class="text-right navbar-money">25,00zł</p>
+                                <p class="text-right navbar-money" th:text="${basketTotal}"></p>
                             </div>
                         </div>
 
                     </a>
 
                     <ul class="dropdown-menu" aria-labelledby="basketDropdown">
-                        <li><a class="dropdown-item navbar-text" href="/">Historia Transakcji</a></li>
+                        <li><a class="dropdown-item navbar-text" href="/history">Historia Transakcji</a></li>
                         <li><hr class="dropdown-divider navbar-text" /></li>
-                        <li><a class="dropdown-item navbar-text" href="/">Popular Items</a></li>
+                        <li><a class="dropdown-item navbar-text" href="/basket">Zawartość koszyka</a></li>
                         <li><a class="dropdown-item navbar-text" href="/">Wyloguj</a></li>
                     </ul>
                 </div>
@@ -134,14 +134,14 @@
                 </li>
 
                 <li class="nav-item dropdown user">
-                    <a class="nav-link dropdown-toggle navbar-text" id="navbarDropdown" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Jan Kowalski</a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item navbar-text" href="/">Historia Transakcji</a></li>
-                        <li><hr class="dropdown-divider navbar-text" /></li>
-                        <li><a class="dropdown-item navbar-text" href="/">Popular Items</a></li>
-                        <li><a class="dropdown-item navbar-text" href="/">Wyloguj</a></li>
-                    </ul>
-                </li>
+                            <a class="nav-link dropdown-toggle navbar-text" id="navbarDropdown" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Jan Kowalski</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item navbar-text" href="/history">Historia Transakcji</a></li>
+                                <li><hr class="dropdown-divider navbar-text" /></li>
+                                <li><a class="dropdown-item navbar-text" href="/basket">Zawartość koszyka</a></li>
+                                <li><a class="dropdown-item navbar-text" href="/">Wyloguj</a></li>
+                            </ul>
+                        </li>
 
             </ul>
 
@@ -157,7 +157,7 @@
 
 
             <div class="container align-items-center my-3 mt-5 basket-products-container products-titles">
-                <div class="basket-title-center mb-3">
+                <div class="basket-title-center mb-3" style="margin-top: 100px;">
                     <p>Reklamacja</p>
                 </div>
 
@@ -165,44 +165,36 @@
                 <div id="basket-products" class="mb-5 me-4 d-flex flex-column ml-5">
 
                     <div class="card product-card product-card-basket" style="width: 60vw;">
-
-                        <div class="adress-text mt-3 ml-5 pl-5" style="margin-left: 10px;">
-                            <p class="p-0 mb-1 ml-5 pl-5">Zamówienie z 20.11.2022</p>
-                        </div>
-
-                        <div class="card-body d-flex justify-content-center " style="margin-left: 10px;">
-
-                            <div class="col me-3 align-items-start pl-5 ml-5">
-
-                                <label for="reason" class="form-text">Sposób rozliczenia:</label><br>
-                                <textarea class="form-text form-input" id="reason" name="reason" rows="6" cols="30"></textarea>
-
+                        <form th:action="@{/reclamation_success}" method="get">
+                            <div class="adress-text mt-3 ml-5 pl-5" style="margin-left: 30px;">
+                                <p class="p-0 mb-1 ml-5 pl-5">Zamówienie z 20.11.2022 nr 18928391298</p>
                             </div>
 
-                            <div class="col me-3 align-items-start">
+                            <div class="card-body d-flex justify-content-center " style="margin-left: 10px;">
 
+                                <div class="col me-3 align-items-start pl-5 ml-5">
 
-                                <label for="select-parcel-locker" class="form-text">Sposób rozliczenia:</label><br>
-                                <!-- <input type="text" class="form-text form-input" id="select-parcel-locker" name="select-parcel-locker"><br><br> -->
+                                    <label for="reason" class="form-text">Sposób rozliczenia:</label><br>
+                                    <textarea class="form-text form-input" id="reason" name="reason" rows="6" cols="30"></textarea>
 
-                                <select class="form-text form-input select-input" id="select-parcel-locker" name="select-parcel-locker">
-                                    <option value="cash">Gotówka</option>
-                                    <option value="card">Karta</option>
-                                    <option value="blik">Blik</option>
-                                    {# <option value="audi"></option> #}
-                                </select><br><br>
-
-                            </div>
-
-                            <div class="col-2 me-3 d-flex align-items-end justify-content-center">
-
-                                <div class="col col-small mt-1">
-                                    <input type="radio" id="html" name="fav_language" class="" value="HTML">
                                 </div>
 
-                            </div>
+                                <div class="col me-3 align-items-start">
 
-                        </div>
+
+                                    <label for="select-parcel-locker" class="form-text">Sposób rozliczenia:</label><br>
+                                    <!-- <input type="text" class="form-text form-input" id="select-parcel-locker" name="select-parcel-locker"><br><br> -->
+
+                                    <select class="form-text form-input select-input" id="select-parcel-locker" name="select-parcel-locker">
+                                        <option value="cash">Gotówka</option>
+                                        <option value="card">Karta</option>
+                                        <option value="blik">Blik</option>
+                                    </select><br><br>
+
+                                </div>
+                            </div>
+                        </form>
+
 
                     </div>
 
@@ -213,11 +205,11 @@
 
                     <div class="d-flex col align-items-center justify-content-center p-1 m-xxl-2 mt-0 p-3" id="order-basket2">
                         <img src="./assets/arrow-left.svg" class="me-2 p-1" alt="" style="color:white; fill: white;">
-                        <a class="nav-link active text-center me-1" aria-current="page" href="/">Cofnij do zamówienia</a>
+                        <a class="nav-link active text-center me-1" aria-current="page" href="/history">Wróć</a>
                     </div>
 
                     <div class="d-flex col align-items-center justify-content-center p-1 add-to-cart-green m-2 mt-0 p-3" id="order-basket">
-                        <a class="nav-link active text-center me-1" aria-current="page" href="/">Wybierz sposób<br> płatności</a>
+                        <a class="nav-link active text-center me-1" aria-current="page" href="/reclamation_success">Prześlij<br></a>
                         <img src="./assets/arrow-right-white.svg" class="me-2 p-1" alt="" style="color:white; fill: white;">
                     </div>
 

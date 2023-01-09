@@ -35,10 +35,19 @@ public class MainPageController {
         return "index";
     }
 
+    @GetMapping("/reclamation_success")
+    public String reclamationSuccess(Model model) {
+        model.addAttribute("basket", basketService.getProductsInBasket());
+        model.addAttribute("basketTotal", String.format("%.2f", basketService.getTotal()) + " zł");
+        return "reclamation_success";
+    }
+
     @GetMapping("/reclamation")
     public String reclamationsPage(@RequestParam("orderId") long orderId, Model model) {
         Order order = orderService.getOrders().stream().filter((o) -> o.getId() == orderId).findFirst().orElseThrow();
         model.addAttribute("order", order);
+        model.addAttribute("basketProducts", basketService.getProductsInBasket());
+        model.addAttribute("basketTotal", String.format("%.2f", basketService.getTotal()) + " zł");
         return "reclamation";
     }
 
@@ -95,6 +104,8 @@ public class MainPageController {
     @GetMapping("/history")
     public String transactionHistory(Model model) {
         model.addAttribute("orders", orderService.getOrders());
+        model.addAttribute("basketProducts", basketService.getProductsInBasket());
+        model.addAttribute("basketTotal", String.format("%.2f", basketService.getTotal()) + " zł");
         return "transaction_history";
     }
 
@@ -156,6 +167,8 @@ public class MainPageController {
 
     @GetMapping("/fail")
     public String fail(Model model) {
+        model.addAttribute("basketProducts", basketService.getProductsInBasket());
+        model.addAttribute("basketTotal", String.format("%.2f", basketService.getTotal()) + " zł");
         return "no_payment";
     }
 }
