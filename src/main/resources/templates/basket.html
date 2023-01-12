@@ -242,13 +242,13 @@
                     </div>
 
 
-                    <div class="card product-card product-card-basket promotion-card-basket">
+                    <div class="card product-card product-card-basket promotion-card-basket" th:each="basketProduct: ${basketLoyaltyProducts}">
 
                         <div class="card-body d-flex justify-content-center">
 
                             <div class="col d-flex align-items-center basket-col">
                                 <div class="product-thumb product-thumb-basket  align-items-center justify-content-center">
-                                    <img src="./images/pomarancza_1_kg_1.png" alt="..." class="product-thumb">
+                                    <img th:src="@{${basketProduct.loyaltyProduct.fileName}}" alt="..." class="product-thumb">
                                 </div>
                             </div>
 
@@ -257,7 +257,7 @@
                                     <p class="p-0">Promocja za punkty lojalnościowe</p>
                                 </div>
                                 <div class="row product-text">
-                                    <p class="p-0">Herbata lipton</p>
+                                    <p class="p-0" th:text="${basketProduct.loyaltyProduct.name}"></p>
                                 </div>
                                 <div class="row align-items-center basket-items-container">
 
@@ -279,7 +279,9 @@
 
                                     <div class="col d-flex p-0 align-items-center justify-content-center">
                                         <div class="col">
-                                            <p class="basket-item-sum-price p-0 m-0">130 pkt</p>
+<!--                                            <p class="basket-item-sum-price p-0 m-0">130 pkt</p>-->
+<!--                                            <p class="basket-item-sum-price p-0 m-0" th:text="${basketProduct.total} + ' pkt'"></p>-->
+                                            <p class="basket-item-sum-price p-0 m-0" th:text="${basketProduct.total} + ' pkt'"></p>
                                         </div>
                                         <div class="col-2 justify-content-end align-items-center trash-col p-0 ms-2 me-1">
                                             <img src="./assets/trashcan.svg" class="trash" alt="">

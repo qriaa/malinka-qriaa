@@ -1,5 +1,6 @@
 package io.github.reconsolidated.malinka.mainPage;
 
+import io.github.reconsolidated.malinka.basket.BasketLoyaltyProduct;
 import io.github.reconsolidated.malinka.basket.BasketProduct;
 import io.github.reconsolidated.malinka.basket.BasketService;
 import io.github.reconsolidated.malinka.model.LoyaltyProduct;
@@ -100,12 +101,14 @@ public class MainPageController {
     @GetMapping("/basket")
     public String basketPage(Model model) {
         List<BasketProduct> basketProducts = basketService.getProductsInBasket();
+        List<BasketLoyaltyProduct> basketLoyaltyProducts = basketService.getLoyaltyProductsInBasket();
 
-        if(basketProducts.isEmpty()) {
+        if(basketProducts.isEmpty() && basketLoyaltyProducts.isEmpty()) {
             return "basket_empty";
         }
 
         model.addAttribute("basketProducts", basketProducts);
+        model.addAttribute("basketLoyaltyProducts", basketLoyaltyProducts);
         model.addAttribute("basketTotal", String.format("%.2f", basketService.getTotal()) + " zł");
         return "basket";
     }
