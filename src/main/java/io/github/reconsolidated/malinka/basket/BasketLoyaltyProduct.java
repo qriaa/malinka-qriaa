@@ -23,8 +23,8 @@ public class BasketLoyaltyProduct {
     @Transient
     private LoyaltyProduct loyaltyProduct = new LoyaltyProduct();
 
-    public String getTotal() {
-        return String.valueOf(quantity * loyaltyProduct.getPoints());
+    public int getTotal() {
+        return quantity * loyaltyProduct.getPoints();
     }
 
     public BasketLoyaltyProduct(LoyaltyProduct product, int quantity) {

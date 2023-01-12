@@ -82,8 +82,8 @@
                                           <div class="col shopping-cart"> 
                                             <img th:src="@{/images/shopping-cart.svg}" alt="">
                                           </div>
-                                          <div class="col position-absolute top-0 start-50 p-0"> 
-                                            <span class="badge item-count text-white ms-1 rounded-pill">0</span>
+                                          <div class="col position-absolute top-0 start-50 p-0">
+                                              <span class="badge item-count text-white ms-1 rounded-pill" th:text="${basketSize}"></span>
                                           </div>
     
                                         </div>

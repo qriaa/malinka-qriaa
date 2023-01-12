@@ -110,6 +110,8 @@ public class MainPageController {
         model.addAttribute("basketProducts", basketProducts);
         model.addAttribute("basketLoyaltyProducts", basketLoyaltyProducts);
         model.addAttribute("basketTotal", String.format("%.2f", basketService.getTotal()) + " zł");
+        model.addAttribute("loyaltyTotal", basketService.getLoyaltyTotal() + " pkt.");
+        model.addAttribute("basketSize", basketService.getNumOfProducts());
         return "basket";
     }
 
@@ -123,6 +125,25 @@ public class MainPageController {
             if (bp.getProduct().getName().equals(productName)) {
                 if (quantity + added <= 0) {
                     basketService.removeProduct(bp.getProduct());
+                } else {
+                    bp.setQuantity(quantity + added);
+                }
+                return "redirect:/basket";
+            }
+        }
+        return "redirect:/basket";
+    }
+
+    @PostMapping("/update_basket_loyalty_amount")
+    public String updateBasketLoyaltyAmount(@RequestParam(name="productName") String productName,
+                                     @RequestParam(name="quantity") int quantity,
+                                     @RequestParam(name="added", required = false) Integer added,
+                                     RedirectAttributes redirectAttributes) {
+        if (added == null) added = 0;
+        for (BasketLoyaltyProduct bp : basketService.getLoyaltyProductsInBasket()) {
+            if (bp.getLoyaltyProduct().getName().equals(productName)) {
+                if (quantity + added <= 0) {
+                    basketService.removeLoyaltyProduct(bp.getLoyaltyProduct());
                 } else {
                     bp.setQuantity(quantity + added);
                 }

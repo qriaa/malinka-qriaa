@@ -71,6 +71,14 @@ public class BasketService {
         return total;
     }
 
+    public int getLoyaltyTotal() {
+        int total = 0;
+        for (BasketLoyaltyProduct basketProduct : loyaltyProductsInBasket) {
+            total += basketProduct.getTotal();
+        }
+        return total;
+    }
+
     public int getNumOfProducts() {
         int total = 0;
         for (BasketProduct basketProduct : productsInBasket) {
