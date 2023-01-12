@@ -1,4 +1,4 @@
-package io.github.reconsolidated.malinka.mainPage;
+package io.github.reconsolidated.malinka.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,28 +11,26 @@ import java.util.Objects;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Product {
+public class LoyaltyProduct {
     private Long id;
     private String name = "default";
     private String fileName = "default";
     private String category = "default";
-    private String priceTag = "default";
-    private double price = 0.01;
 
-    public Product(String name, String fileName, String category, String priceTag, double price) {
+    private int points = 1;
+
+    public LoyaltyProduct(String name, String fileName, String category, int points) {
         this.name = name;
         this.fileName = fileName;
         this.category = category;
-        this.priceTag = priceTag;
-        this.price = price;
+        this.points = points;
     }
 
     @Override
     public boolean equals(Object obj) {
         if (getClass() != obj.getClass())
             return false;
-        Product other = (Product) obj;
-
+        LoyaltyProduct other = (LoyaltyProduct) obj;
         return Objects.equals(this.id, other.id);
     }
 }

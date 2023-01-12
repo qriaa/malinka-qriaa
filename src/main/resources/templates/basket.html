@@ -172,16 +172,21 @@
                             </div>
 
                             <div class="col ps-1 me-3 align-items-start">
-                                <div class="row category-text">
-                                    <p class="p-0"></p>
+                                <div class="row category-text" th:switch="${basketProduct.product.category}">
+                                    <p class="p-0" th:case="'sweet'">Słodycze</p>
+                                    <p class="p-0" th:case="'vegetable'">Warzywa</p>
+                                    <p class="p-0" th:case="'fruit'">Owoce</p>
+                                    <p class="p-0" th:case="'meat'">Mięsa</p>
+                                    <p class="p-0" th:case="'other'">Inne</p>
+                                    <p class="p-0" th:case="'dairy'">Nabiał</p>
                                 </div>
                                 <div class="row product-text"> 
                                     <p class="p-0" th:text="${basketProduct.product.name}"></p>
                                 </div>
-                                <div class="row align-items-center basket-items-container"> 
-                                    
+                                <div class="row align-items-center basket-items-container">
+
                                     <div class="col d-flex button-col pe-0">
-                                        
+
                                         <div class="row text-center red-col align-items-center price-info-basket">
                                             <div class="col dark-red m-0 h-100">
                                                 <form th:action="@{/update_basket_amount}" method="post">
@@ -209,23 +214,83 @@
 
                                         </div>
                                     </div>
-                                    <form th:action="@{/update_basket_amount}" method="post">
                                         <div class="col d-flex p-0 align-items-center justify-content-center">
+
                                             <div class="col">
-                                                <p class="basket-item-sum-price p-0 m-0" th:text="${basketProduct.total}"></p>
+                                                <p class="basket-item-sum-price p-0 m-0" th:text="${basketProduct.total} + ' zł'"></p>
                                             </div>
                                             <div class="col-2 justify-content-end align-items-center trash-col p-0 ms-2 me-1">
-                                                    <input type="hidden" th:name="productName" th:value="${basketProduct.product.name}">
+                                                <form th:action="@{/update_basket_amount}" method="post">
+
+                                                <input type="hidden" th:name="productName" th:value="${basketProduct.product.name}">
                                                     <input type="hidden" th:name="quantity" th:value="0">
                                                     <input type="image" th:src="@{/assets/trashcan.svg}" class="trash" alt="">
+                                                </form>
+
                                             </div>
                                         </div>
-                                    </form>
 
                                 </div>
 
                                 <div class="row"> 
                                     <p class="basket-item-price p-0 m-0 mt-2">10 zł/kg</p> 
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card product-card product-card-basket promotion-card-basket">
+
+                        <div class="card-body d-flex justify-content-center">
+
+                            <div class="col d-flex align-items-center basket-col">
+                                <div class="product-thumb product-thumb-basket  align-items-center justify-content-center">
+                                    <img src="./images/pomarancza_1_kg_1.png" alt="..." class="product-thumb">
+                                </div>
+                            </div>
+
+                            <div class="col ps-1 me-3 align-items-start">
+                                <div class="row category-text">
+                                    <p class="p-0">Promocja za punkty lojalnościowe</p>
+                                </div>
+                                <div class="row product-text">
+                                    <p class="p-0">Herbata lipton</p>
+                                </div>
+                                <div class="row align-items-center basket-items-container">
+
+                                    <div class="col d-flex button-col pe-0">
+
+                                        <div class="row text-center red-col align-items-center price-info-basket">
+                                            <a href="" class="col dark-red m-0 h-100">
+                                                <img src="./assets/minus.svg" class="basket-product-btn" alt="">
+                                            </a>
+
+
+                                            <div class="col basket-amount h-100">1</div>
+
+                                            <a href="" class="col dark-red m-0 h-100 align-items-center justify-content-center">
+                                                <img src="./assets/plus.svg" class="basket-product-btn" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="col d-flex p-0 align-items-center justify-content-center">
+                                        <div class="col">
+                                            <p class="basket-item-sum-price p-0 m-0">130 pkt</p>
+                                        </div>
+                                        <div class="col-2 justify-content-end align-items-center trash-col p-0 ms-2 me-1">
+                                            <img src="./assets/trashcan.svg" class="trash" alt="">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <p class="basket-item-price p-0 m-0 mt-2">40 pkt/ szt.</p>
                                 </div>
                             </div>
 

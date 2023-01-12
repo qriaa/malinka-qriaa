@@ -1,8 +1,11 @@
 package io.github.reconsolidated.malinka.mainPage;
 
+import io.github.reconsolidated.malinka.utils.Constants;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class ProductsService {
@@ -22,5 +25,14 @@ public class ProductsService {
 
     public Product getRandomProduct() {
         return productsRepository.getRandomProduct();
+    }
+
+    public List<Product> getUniqueRandomForMainPage() {
+       Set<Product> uniqueProducts = new HashSet<Product>();
+       while (uniqueProducts.size() < Constants.RANDOM_PRODUCTS_FOR_MAIN_PAGE) {
+           uniqueProducts.add(productsRepository.getRandomProduct());
+       }
+
+       return uniqueProducts.stream().toList();
     }
 }

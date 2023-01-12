@@ -2,6 +2,7 @@ package io.github.reconsolidated.malinka.mainPage;
 
 import io.github.reconsolidated.malinka.basket.BasketProduct;
 import io.github.reconsolidated.malinka.basket.BasketService;
+import io.github.reconsolidated.malinka.model.LoyaltyProduct;
 import io.github.reconsolidated.malinka.orders.Order;
 import io.github.reconsolidated.malinka.orders.OrderService;
 import lombok.AllArgsConstructor;
@@ -18,19 +19,34 @@ import java.util.List;
 @AllArgsConstructor
 public class MainPageController {
     private final ProductsService productsService;
+
+    private final LoyaltyProductsService loyaltyProductsService;
     private final BasketService basketService;
     private final OrderService orderService;
 
+
     @GetMapping("/")
-    public String mainPage(@RequestParam(required = false) String category, Model model) {
+    public String mainPage(@RequestParam(required = false) String category,
+                           @RequestParam(required = false) String promotionCategory,
+                           Model model) {
+
         if (category == null) {
             category = "all";
         }
+        if (promotionCategory == null) {
+            promotionCategory = "all";
+        }
 
         List<Product> products = productsService.getByCategory(category);
+        List<Product> randomProducts = productsService.getUniqueRandomForMainPage();
+        List<LoyaltyProduct> loyaltyProducts = loyaltyProductsService.getLoyaltyProducts();
+
         model.addAttribute("category", category);
+        model.addAttribute("promotionCategory", promotionCategory);
         model.addAttribute("products", products);
-        model.addAttribute("basket", basketService.getProductsInBasket());
+        model.addAttribute("loyaltyProducts", loyaltyProducts);
+        model.addAttribute("randomProducts", randomProducts);
+        model.addAttribute("basketSize", basketService.getNumOfProducts());
         model.addAttribute("basketTotal", String.format("%.2f", basketService.getTotal()) + " zł");
         return "index";
     }
@@ -66,9 +82,29 @@ public class MainPageController {
         return "redirect:/";
     }
 
+    @PostMapping("/add_loyalty_to_basket")
+    public String addLoyaltyToBasket(@RequestParam(name="category") String category,
+                              @RequestParam(name="productName") String productName,
+                              @RequestParam(name="quantity") int quantity,
+                              RedirectAttributes redirectAttributes) {
+        if (category == null) {
+            category = "all";
+        }
+
+        LoyaltyProduct product = loyaltyProductsService.getByName(productName);
+        basketService.addLoyaltyProduct(product, quantity);
+        redirectAttributes.addAttribute("category", category);
+        return "redirect:/";
+    }
+
     @GetMapping("/basket")
     public String basketPage(Model model) {
         List<BasketProduct> basketProducts = basketService.getProductsInBasket();
+
+        if(basketProducts.isEmpty()) {
+            return "basket_empty";
+        }
+
         model.addAttribute("basketProducts", basketProducts);
         model.addAttribute("basketTotal", String.format("%.2f", basketService.getTotal()) + " zł");
         return "basket";
