@@ -4,8 +4,10 @@ import io.github.reconsolidated.malinka.basket.BasketLoyaltyProduct;
 import io.github.reconsolidated.malinka.basket.BasketProduct;
 import io.github.reconsolidated.malinka.basket.BasketService;
 import io.github.reconsolidated.malinka.model.LoyaltyProduct;
+import io.github.reconsolidated.malinka.model.User;
 import io.github.reconsolidated.malinka.orders.Order;
 import io.github.reconsolidated.malinka.orders.OrderService;
+import io.github.reconsolidated.malinka.user.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,11 +22,11 @@ import java.util.List;
 @AllArgsConstructor
 public class MainPageController {
     private final ProductsService productsService;
-
     private final LoyaltyProductsService loyaltyProductsService;
     private final BasketService basketService;
     private final OrderService orderService;
 
+    private final UserService userService;
 
     @GetMapping("/")
     public String mainPage(@RequestParam(required = false) String category,
@@ -41,6 +43,7 @@ public class MainPageController {
         List<Product> products = productsService.getByCategory(category);
         List<Product> randomProducts = productsService.getUniqueRandomForMainPage();
         List<LoyaltyProduct> loyaltyProducts = loyaltyProductsService.getLoyaltyProducts();
+        User user = userService.getUserByUsername("jkowal");
 
         model.addAttribute("category", category);
         model.addAttribute("promotionCategory", promotionCategory);
@@ -49,6 +52,8 @@ public class MainPageController {
         model.addAttribute("randomProducts", randomProducts);
         model.addAttribute("basketSize", basketService.getNumOfProducts());
         model.addAttribute("basketTotal", String.format("%.2f", basketService.getTotal()) + " zł");
+        model.addAttribute("userInfo", String.format("%s %s", user.getName(), user.getSurname()));
+        model.addAttribute("userPoints", user.getLoyaltyPoints());
         return "index";
     }
 
@@ -87,12 +92,24 @@ public class MainPageController {
     public String addLoyaltyToBasket(@RequestParam(name="category") String category,
                               @RequestParam(name="productName") String productName,
                               @RequestParam(name="quantity") int quantity,
-                              RedirectAttributes redirectAttributes) {
+                              @RequestParam(name="points") int points,
+                              RedirectAttributes redirectAttributes,
+                              Model model) {
+
         if (category == null) {
             category = "all";
         }
 
         LoyaltyProduct product = loyaltyProductsService.getByName(productName);
+
+        int usedPoints = basketService.getLoyaltyTotal();
+
+        if(product.getPoints() * quantity + usedPoints > points) {
+            model.addAttribute("product", String.format("%s %d pkt", product.getName(), product.getPoints()));
+            model.addAttribute("userPoints", String.format("%d pkt", points));
+            return "basket_error_points";
+        }
+
         basketService.addLoyaltyProduct(product, quantity);
         redirectAttributes.addAttribute("category", category);
         return "redirect:/";
@@ -106,12 +123,15 @@ public class MainPageController {
         if(basketProducts.isEmpty() && basketLoyaltyProducts.isEmpty()) {
             return "basket_empty";
         }
+        User user = userService.getUserByUsername("jkowal");
 
         model.addAttribute("basketProducts", basketProducts);
         model.addAttribute("basketLoyaltyProducts", basketLoyaltyProducts);
         model.addAttribute("basketTotal", String.format("%.2f", basketService.getTotal()) + " zł");
         model.addAttribute("loyaltyTotal", basketService.getLoyaltyTotal() + " pkt.");
         model.addAttribute("basketSize", basketService.getNumOfProducts());
+        model.addAttribute("userInfo", String.format("%s %s", user.getName(), user.getSurname()));
+        model.addAttribute("userPoints", user.getLoyaltyPoints());
         return "basket";
     }
 

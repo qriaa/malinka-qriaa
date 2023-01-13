@@ -213,15 +213,15 @@
 
                                 <div class="mt-5 ms-2 me-2">
                                     <p class="error-title error-info">
-                                        Nie masz odpowiedniej ilości <br> punktów lojalnościowych aby kupić <br>dany produkt  z wybranej promocji:
+                                        Nie masz odpowiedniej ilości <br> punktów lojalnościowych aby kupić <br>dany produkt z wybranej promocji <br> lub w Twoim koszyku już znajdują się produkty, które wykorzystują punkty:
                                     </p>
                                 </div>
 
                                 <div class="mt-5 ms-2 me-2">
                                     <!-- <p class="error-title error-info"> -->
                                     <p class="points-info">
-                                        Wybrano: <span id="product-points-info" class="text-dark">Kawa lawazza 200 pkt</span><br>
-                                        Liczba Twoich punktów: <span id="points-info-num" class="text-dark">120 pkt</span>
+                                        Wybrano: <span id="product-points-info" class="text-dark" th:text="${product}"></span><br>
+                                        Liczba Twoich punktów: <span id="points-info-num" class="text-dark" th:text="${userPoints}"></span>
                                     </p>
                                 </div>
 

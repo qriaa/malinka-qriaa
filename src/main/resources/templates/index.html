@@ -116,15 +116,15 @@
 
                         <li class="nav-item">
                             <div class="nav-item-item">
-                                <a class="nav-link active navbar-text" href="/">
+                                <a class="nav-link active navbar-text" href="/" >
                                     <img th:src="@{/images/leaf.svg}" alt="">
-                                    120 punktów
+                                    <span th:text="${userPoints} + ' punktów'"></span>
                                 </a>
                             </div>
                         </li>
 
                         <li class="nav-item dropdown user">
-                            <a class="nav-link dropdown-toggle navbar-text" id="navbarDropdown" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Jan Kowalski</a>
+                            <a class="nav-link dropdown-toggle navbar-text" id="navbarDropdown" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="${userInfo}"></a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item navbar-text" href="/history">Historia Transakcji</a></li>
                                 <li><hr class="dropdown-divider navbar-text" /></li>
@@ -563,6 +563,7 @@
                                         <input type="hidden" name="productName" th:value="${product.name}"/>
                                         <input type="hidden" name="quantity" value="1"/>
                                         <input type="hidden" name="category" th:value="${category}"/>
+                                        <input type="hidden" name="points" th:value="${userPoints}"/>
                                         <button class="" style="background-color: transparent; border: none;" type="submit">
                                             <span class="nav-link active text-center me-1" aria-current="page">Dodaj do koszyka</span>
                                         </button>
