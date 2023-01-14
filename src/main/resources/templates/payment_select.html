@@ -83,7 +83,7 @@
                                             <img th:src="@{/images/shopping-cart.svg}" alt="">
                                           </div>
                                           <div class="col position-absolute top-0 start-50 p-0"> 
-                                            <span class="badge item-count text-white ms-1 rounded-pill">0</span>
+                                            <span class="badge item-count text-white ms-1 rounded-pill" th:text="${basketSize}"></span>
                                           </div>
     
                                         </div>
@@ -107,7 +107,7 @@
                                             <img th:src="@{/images/dropdown.svg}" alt="">
                                             
                                         </div>
-                                        <p class="text-right navbar-money">25,00zł</p>
+                                        <p class="text-right navbar-money" th:text="${basketTotal}"></p>
                                     </div>
                                 </div>
                                 
@@ -128,13 +128,13 @@
                             <div class="nav-item-item">
                                 <a class="nav-link active navbar-text" href="/">
                                     <img th:src="@{/images/leaf.svg}" alt="">
-                                    120 punktów
+                                    <span th:text="${userPoints} + ' punktów'"></span>
                                 </a>
                             </div>
                         </li>
 
                         <li class="nav-item dropdown user">
-                            <a class="nav-link dropdown-toggle navbar-text" id="navbarDropdown" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">Jan Kowalski</a>
+                            <a class="nav-link dropdown-toggle navbar-text" id="navbarDropdown" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="${userInfo}"></a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item navbar-text" href="/history">Historia Transakcji</a></li>
                                 <li><hr class="dropdown-divider navbar-text" /></li>
@@ -152,7 +152,7 @@
         </nav>
 
         <!-- Section-->
-        <section class="p-1">
+        <section class="p-1 mt-5">
 
             <form th:action="@{/payment_info}" method="post">
 
@@ -161,6 +161,11 @@
                         <p>Wybierz sposób płatności</p>
                     </div>
 
+                    <div class="ms-5 me-5" id="error_not_selected" style="display: none;">
+                        <p class="error-title">Uwaga!<br>
+                            Nie można przejść dalej bez<br>
+                            wybranego sposobu płatności</p>
+                    </div>
 
                     <div id="basket-products" class="mb-5 me-4 d-flex flex-column">
                         
@@ -180,7 +185,7 @@
 
                                     <label for="cash-on-delivery" class="form-text mt-4">Płatność za pobraniem</label>
 
-                                    <input checked="checked" type="radio" id="cash-on-delivery" name="payment" class="mt-2" value="Za pobraniem"><br>
+                                    <input type="radio" id="cash-on-delivery" name="payment" class="mt-2" value="Za pobraniem"><br>
                                     
 
                                 </div>
@@ -356,7 +361,8 @@
  
         <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> -->
         <!-- Core theme JS-->
-        <script src="../static/js/scripts.js"></script>
+        <script src="/js/scripts.js"></script>
+        <script src="/js/payment.js"></script>
 
     </body>
 </html>

@@ -239,8 +239,18 @@ public class MainPageController {
     @GetMapping("/payment")
     public String payment(Model model) {
         List<BasketProduct> basketProducts = basketService.getProductsInBasket();
+        List<BasketLoyaltyProduct> loyaltyInBasket = basketService.getLoyaltyProductsInBasket();
+
+        if(basketProducts.isEmpty() && loyaltyInBasket.isEmpty()) {
+            return "redirect:/";
+        }
+        User user = userService.getUserByUsername("jkowal");
+
         model.addAttribute("basketProducts", basketProducts);
         model.addAttribute("basketTotal", String.format("%.2f", basketService.getTotal()) + " zł");
+        model.addAttribute("basketSize", basketService.getNumOfProducts());
+        model.addAttribute("userInfo", String.format("%s %s", user.getName(), user.getSurname()));
+        model.addAttribute("userPoints", user.getLoyaltyPoints());
         return "payment_select";
     }
 
