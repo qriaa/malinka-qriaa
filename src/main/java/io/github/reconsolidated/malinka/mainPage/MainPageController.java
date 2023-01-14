@@ -274,39 +274,70 @@ public class MainPageController {
     }
 
     @PostMapping("/payment_info")
-    public String paymentInfo(@RequestParam(name="payment") String paymentMethod,
+    public String paymentInfo(@RequestParam(name="pay") String isPaid,
                               RedirectAttributes redirectAttributes) {
+
+        if (isPaid.equals("Tak")) {
+            orderService.getCurrentOrder().setPaymentSuccessful(true);
+            orderService.saveOrder();
+            basketService.clearBasket();
+            return "redirect:/success";
+        } else {
+            redirectAttributes.addAttribute("orderNum", String.valueOf(orderService.getCurrentOrder().getId()));
+            orderService.getCurrentOrder().setPaymentSuccessful(true);
+            orderService.saveOrder();
+            basketService.clearBasket();
+            return "redirect:/fail";
+        }
+    }
+
+    @PostMapping("/pay_for_order")
+    public String payForOrder(@RequestParam(name="payment") String paymentMethod,
+                              Model model,
+                              RedirectAttributes redirectAttributes) {
+
         orderService.getCurrentOrder().setPaymentMethod(paymentMethod);
         orderService.getCurrentOrder().setCost(String.format("%.2f",basketService.getTotal()) + " zł");
         orderService.getCurrentOrder().setAmount(basketService.getProductsInBasket().size());
         orderService.getCurrentOrder().getProducts().addAll(basketService.getProductsInBasket());
 
-        if (paymentMethod.equals("BLIK")) {
-            orderService.getCurrentOrder().setPaymentSuccessful(false);
-            orderService.saveOrder();
-            basketService.clearBasket();
-            return "redirect:/fail";
-        } else {
-            orderService.getCurrentOrder().setPaymentSuccessful(true);
-            orderService.saveOrder();
-            basketService.clearBasket();
-            return "redirect:/success";
-        }
+
+        List<BasketProduct> basketProducts = basketService.getProductsInBasket();
+        User user = userService.getUserByUsername("jkowal");
+
+        model.addAttribute("basketProducts", basketService.getProductsInBasket());
+        model.addAttribute("basketTotal", String.format("%.2f", basketService.getTotal()) + " zł");
+        model.addAttribute("userInfo", String.format("%s %s", user.getName(), user.getSurname()));
+        model.addAttribute("userPoints", user.getLoyaltyPoints());
+
+        return "payment_try";
     }
 
     @GetMapping("/success")
     public String success(Model model) {
         List<BasketProduct> basketProducts = basketService.getProductsInBasket();
+        User user = userService.getUserByUsername("jkowal");
+
         model.addAttribute("basketProducts", basketProducts);
         model.addAttribute("basketTotal", String.format("%.2f", basketService.getTotal()) + " zł");
         model.addAttribute("order", orderService.getCurrentOrder());
+        model.addAttribute("userInfo", String.format("%s %s", user.getName(), user.getSurname()));
+        model.addAttribute("userPoints", user.getLoyaltyPoints());
+
         return "payment_success";
     }
 
     @GetMapping("/fail")
-    public String fail(Model model) {
+    public String fail(@RequestParam(name="orderNum") String orderNumber,
+            Model model) {
+        User user = userService.getUserByUsername("jkowal");
+
         model.addAttribute("basketProducts", basketService.getProductsInBasket());
         model.addAttribute("basketTotal", String.format("%.2f", basketService.getTotal()) + " zł");
+        model.addAttribute("userInfo", String.format("%s %s", user.getName(), user.getSurname()));
+        model.addAttribute("userPoints", user.getLoyaltyPoints());
+        model.addAttribute("orderNum", orderNumber);
+
         return "no_payment";
     }
 }
