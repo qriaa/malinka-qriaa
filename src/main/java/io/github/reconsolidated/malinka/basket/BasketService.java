@@ -48,7 +48,7 @@ public class BasketService {
     public void removeLoyaltyProduct(LoyaltyProduct product) {
         for (BasketLoyaltyProduct basketLoyaltyProduct: loyaltyProductsInBasket) {
             if (basketLoyaltyProduct.getLoyaltyProduct().getName().equals(product.getName())) {
-                loyaltyProductsInBasket.remove(product);
+                loyaltyProductsInBasket.remove(basketLoyaltyProduct);
                 return;
             }
         }

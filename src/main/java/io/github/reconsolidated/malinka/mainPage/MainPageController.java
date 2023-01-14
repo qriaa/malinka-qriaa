@@ -157,15 +157,28 @@ public class MainPageController {
     @PostMapping("/update_basket_loyalty_amount")
     public String updateBasketLoyaltyAmount(@RequestParam(name="productName") String productName,
                                      @RequestParam(name="quantity") int quantity,
+                                     @RequestParam(name="points") int points,
                                      @RequestParam(name="added", required = false) Integer added,
-                                     RedirectAttributes redirectAttributes) {
+                                     RedirectAttributes redirectAttributes,
+                                     Model model) {
+
         if (added == null) added = 0;
-        for (BasketLoyaltyProduct bp : basketService.getLoyaltyProductsInBasket()) {
+        List<BasketLoyaltyProduct> productsInBasket = basketService.getLoyaltyProductsInBasket();
+
+        for (BasketLoyaltyProduct bp : productsInBasket) {
             if (bp.getLoyaltyProduct().getName().equals(productName)) {
                 if (quantity + added <= 0) {
                     basketService.removeLoyaltyProduct(bp.getLoyaltyProduct());
                 } else {
                     bp.setQuantity(quantity + added);
+                    int totalPoints = basketService.getLoyaltyTotal();
+
+                    if (totalPoints > points) {
+                        bp.setQuantity(quantity);
+                        model.addAttribute("product", String.format("%s %d pkt", bp.getLoyaltyProduct().getName(), bp.getLoyaltyProduct().getPoints()));
+                        model.addAttribute("userPoints", String.format("%d pkt", points));
+                        return "basket_error_points";
+                    }
                 }
                 return "redirect:/basket";
             }

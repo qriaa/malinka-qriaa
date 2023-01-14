@@ -233,7 +233,7 @@
                                 </div>
 
                                 <div class="row"> 
-                                    <p class="basket-item-price p-0 m-0 mt-2">10 zł/kg</p> 
+                                    <p class="basket-item-price p-0 m-0 mt-2" th:text="${basketProduct.product.priceTag}"></p>
                                 </div>
                             </div>
 
@@ -269,6 +269,7 @@
                                                     <input type="hidden" th:name="productName" th:value="${basketProduct.loyaltyProduct.name}">
                                                     <input type="hidden" th:name="quantity" th:value="${basketProduct.quantity}">
                                                     <input type="hidden" th:name="added" th:value="-1">
+                                                    <input type="hidden" th:name="points" th:value="${userPoints}">
     <!--                                                <a href="" class="col dark-red m-0 h-100">-->
     <!--                                                    <img th:src="@{/assets/minus.svg}" class="basket-product-btn" alt="-">-->
     <!--                                                </a>-->
@@ -286,6 +287,7 @@
                                                     <input type="hidden" th:name="productName" th:value="${basketProduct.loyaltyProduct.name}">
                                                     <input type="hidden" th:name="quantity" th:value="${basketProduct.quantity}">
                                                     <input type="hidden" th:name="added" th:value="1">
+                                                    <input type="hidden" th:name="points" th:value="${userPoints}">
                                                     <button type="submit" class="basket-product-btn">
                                                         <img class="basket-product-btn" th:src="@{/assets/plus.svg}" alt="+">
                                                     </button>
@@ -305,8 +307,10 @@
                                         </div>
                                         <div class="col-2 justify-content-end align-items-center trash-col p-0 ms-2 me-1">
                                             <form th:action="@{/update_basket_loyalty_amount}" method="post">
+
                                                 <input type="hidden" th:name="productName" th:value="${basketProduct.loyaltyProduct.name}">
                                                 <input type="hidden" th:name="quantity" th:value="0">
+                                                <input type="hidden" th:name="points" th:value="${userPoints}">
                                                 <input type="image" th:src="@{/assets/trashcan.svg}" class="trash" alt="">
                                             </form>
                                         </div>
@@ -316,7 +320,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <p class="basket-item-price p-0 m-0 mt-2">40 pkt/ szt.</p>
+                                    <p class="basket-item-price p-0 m-0 mt-2" th:text="${basketProduct.loyaltyProduct.points} + ' pkt/szt'"></p>
                                 </div>
                             </div>
 

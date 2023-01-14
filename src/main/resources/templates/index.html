@@ -428,7 +428,7 @@
                                     <h5 class="fw-bolder promotion-name" th:utext="${product.name}"/>
 
                                     <div class="d-flex flex-row justify-content-between">
-                                        <span class="item-price">10zł/kg</span>
+                                        <span class="item-price" th:text="${product.priceTag}"></span>
 
                                         <div class="pt-0 pb-0 bg-transparent ms-2 me-2">
                                             <form th:action="@{/add_to_basket}" method="post">
@@ -493,7 +493,7 @@
                                                 </div>
 
                                                 <div class="d-flex flex-row align-items-center mb-1">
-                                                    <span class="item-price" th:text="${product.price} + 'zł'"></span>
+                                                    <span class="item-price" th:text="${product.priceTag}"></span>
             
                                                     <div class="pt-0 pb-0 bg-transparent ms-2">
                                                         <div class="btn container add-to-basket-btn">
@@ -549,7 +549,14 @@
                             <div class="card-body p-4">
                                 <div class="text-start">
                                     <!-- Product name-->
-                                    <span class="products-for-points-type" th:text="${product.category}"></span>
+                                    <span class="products-for-points-type" th:switch="${product.category}">
+                                        <span th:case="'sweet'">Słodycze</span>
+                                        <span th:case="'vegetable'">Warzywa</span>
+                                        <span th:case="'fruit'">Owoce</span>
+                                        <span th:case="'meat'">Mięsa</span>
+                                        <span th:case="'other'">Inne</span>
+                                        <span th:case="'dairy'">Nabiał</span>
+                                    </span>
                                     <h5 class="fw-bolder products-for-points-name" th:utext="${product.name}"></h5>
                                     <span class="products-for-points" th:text="${product.points} + ' punktów'"></span>
                                 </div>
