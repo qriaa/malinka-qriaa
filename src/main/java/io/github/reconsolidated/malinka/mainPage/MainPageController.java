@@ -41,6 +41,7 @@ public class MainPageController {
         }
 
         List<Product> products = productsService.getByCategory(category);
+        List<Product> promotions = productsService.getPromotionsByCategory(category);
         List<Product> randomProducts = productsService.getUniqueRandomForMainPage();
         List<LoyaltyProduct> loyaltyProducts = loyaltyProductsService.getLoyaltyProducts();
         User user = userService.getUserByUsername("jkowal");
@@ -48,6 +49,7 @@ public class MainPageController {
         model.addAttribute("category", category);
         model.addAttribute("promotionCategory", promotionCategory);
         model.addAttribute("products", products);
+        model.addAttribute("promotions", promotions);
         model.addAttribute("loyaltyProducts", loyaltyProducts);
         model.addAttribute("randomProducts", randomProducts);
         model.addAttribute("basketSize", basketService.getNumOfProducts());

@@ -19,12 +19,15 @@ public class Product {
     private String priceTag = "default";
     private double price = 0.01;
 
-    public Product(String name, String fileName, String category, String priceTag, double price) {
+    private boolean isOnSale = false;
+
+    public Product(String name, String fileName, String category, String priceTag, double price, boolean isOnSale) {
         this.name = name;
         this.fileName = fileName;
         this.category = category;
         this.priceTag = priceTag;
         this.price = price;
+        this.isOnSale = isOnSale;
     }
 
     @Override

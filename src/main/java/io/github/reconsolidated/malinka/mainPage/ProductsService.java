@@ -19,6 +19,10 @@ public class ProductsService {
         return productsRepository.getByCategory(category);
     }
 
+    public List<Product> getPromotionsByCategory(String category) {
+        return productsRepository.getPromotionByCategory(category);
+    }
+
     public Product getByName(String productName) {
         return productsRepository.getByName(productName);
     }
