@@ -1,6 +1,9 @@
 package io.github.reconsolidated.malinka.orders;
 
+import io.github.reconsolidated.malinka.basket.BasketLoyaltyProduct;
 import io.github.reconsolidated.malinka.basket.BasketProduct;
+import io.github.reconsolidated.malinka.model.delivery.Delivery;
+import io.github.reconsolidated.malinka.model.delivery.DeliveryMethod;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,6 +28,10 @@ public class Order {
     private int amount;
     private LocalDateTime date;
     private List<BasketProduct> products = new ArrayList<>();
+    private List<BasketLoyaltyProduct> loyaltyProducts = new ArrayList<>();
+
+    private Delivery delivery;
+    private DeliveryMethod deliveryMethod;
 
     public Order() {
         id = lastId++;

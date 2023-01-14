@@ -1281,7 +1281,7 @@ button {
 }
 
 .form-inactive {
-  background: #74817C;
+  background-color: #74817C!important;
 }
 
 .address-thumb-basket {

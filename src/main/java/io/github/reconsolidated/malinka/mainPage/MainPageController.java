@@ -5,6 +5,10 @@ import io.github.reconsolidated.malinka.basket.BasketProduct;
 import io.github.reconsolidated.malinka.basket.BasketService;
 import io.github.reconsolidated.malinka.model.LoyaltyProduct;
 import io.github.reconsolidated.malinka.model.User;
+import io.github.reconsolidated.malinka.model.delivery.DeliveryMethod;
+import io.github.reconsolidated.malinka.model.delivery.ParcelDelivery;
+import io.github.reconsolidated.malinka.model.delivery.SelfPickupDelivery;
+import io.github.reconsolidated.malinka.model.delivery.StandardDelivery;
 import io.github.reconsolidated.malinka.orders.Order;
 import io.github.reconsolidated.malinka.orders.OrderService;
 import io.github.reconsolidated.malinka.user.UserService;
@@ -225,6 +229,7 @@ public class MainPageController {
                                  @RequestParam(name="local_num", required = false) String localNum,
                                  @RequestParam(name="select-parcel-locker", required = false) String selectParcelLocker,
                                  @RequestParam(name="pickup-time", required = false) String pickupTime,
+                                 @RequestParam(name="shipment_type", required = false) String shipment_type,
                                  RedirectAttributes redirectAttributes) {
         orderService.getCurrentOrder().setAddress(address);
         orderService.getCurrentOrder().setCity(city);
@@ -232,6 +237,19 @@ public class MainPageController {
         orderService.getCurrentOrder().setLocalNumber(localNum);
         orderService.getCurrentOrder().setSelectParcelLocker(selectParcelLocker);
         orderService.getCurrentOrder().setPickupTime(pickupTime);
+
+        if (shipment_type.equals("standard")) {
+            orderService.getCurrentOrder().setDeliveryMethod(DeliveryMethod.STANDARD);
+            orderService.getCurrentOrder().setDelivery(new StandardDelivery(
+                    address, city, street, localNum
+            ));
+        } else if (shipment_type.equals("parcel")) {
+            orderService.getCurrentOrder().setDeliveryMethod(DeliveryMethod.PARCEL);
+            orderService.getCurrentOrder().setDelivery(new ParcelDelivery(selectParcelLocker));
+        } else {
+            orderService.getCurrentOrder().setDeliveryMethod(DeliveryMethod.SELF_PICKUP);
+            orderService.getCurrentOrder().setDelivery(new SelfPickupDelivery(pickupTime));
+        }
 
         return "redirect:/payment";
     }
@@ -251,6 +269,7 @@ public class MainPageController {
         model.addAttribute("basketSize", basketService.getNumOfProducts());
         model.addAttribute("userInfo", String.format("%s %s", user.getName(), user.getSurname()));
         model.addAttribute("userPoints", user.getLoyaltyPoints());
+        model.addAttribute("deliveryType", orderService.getCurrentOrder().getDeliveryMethod().name());
         return "payment_select";
     }
 
@@ -261,6 +280,7 @@ public class MainPageController {
         orderService.getCurrentOrder().setCost(String.format("%.2f",basketService.getTotal()) + " zł");
         orderService.getCurrentOrder().setAmount(basketService.getProductsInBasket().size());
         orderService.getCurrentOrder().getProducts().addAll(basketService.getProductsInBasket());
+
         if (paymentMethod.equals("BLIK")) {
             orderService.getCurrentOrder().setPaymentSuccessful(false);
             orderService.saveOrder();
