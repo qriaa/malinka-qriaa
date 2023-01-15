@@ -1,5 +1,9 @@
-package io.github.reconsolidated.malinka.model;
+package io.github.reconsolidated.malinka.loyaltyProduct;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,9 +15,13 @@ import java.util.Objects;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 public class LoyaltyProduct {
+    @Id
+    @GeneratedValue
     private Long id;
     private String name = "default";
+    @Column(length = 50000)
     private String fileName = "default";
     private String category = "default";
 

@@ -1,4 +1,4 @@
-package io.github.reconsolidated.malinka.model.delivery;
+package io.github.reconsolidated.malinka.delivery;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

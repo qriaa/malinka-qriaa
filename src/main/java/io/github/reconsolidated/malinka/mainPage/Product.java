@@ -1,5 +1,6 @@
 package io.github.reconsolidated.malinka.mainPage;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,14 +12,31 @@ import java.util.Objects;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 public class Product {
-    private Long id;
+    @Id
+    @GeneratedValue
+    @Column(name="IdProduktu")
+    private Long generatedId;
+    @Column(name="NazwaProduktu")
     private String name = "default";
+    @Column(name="AdresZdjecia", length = 50000)
     private String fileName = "default";
-    private String category = "default";
-    private String priceTag = "default";
+    @Column(name="Cena")
     private double price = 0.01;
+    @Column(name="RodzajCeny")
+    private Integer priceType = 0;
+    @Column(name="Kategoria")
+    private String category = "default";
+    @Column(name="CreatedAt")
+    private Long createdAtTimestamp;
+    @Column(name="UpdatedAt")
+    private Long updatedAtTimestamp;
 
+    @Transient
+    private Long id;
+    @Transient
+    private String priceTag = "default";
     private boolean isOnSale = false;
 
     public Product(String name, String fileName, String category, String priceTag, double price, boolean isOnSale) {

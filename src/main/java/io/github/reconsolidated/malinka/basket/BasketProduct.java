@@ -7,14 +7,22 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
+@Entity(name = "Produkt_Koszyk")
 public class BasketProduct {
     @GeneratedValue
     @Id
     private Long id;
+    @Column(name="ProduktIdProduktu")
+    private Integer productId;
+    @Column(name="KoszykIdKoszyka")
+    private Integer basketId;
+    @Column(name="IloscProduktu")
+    private int quantity;
+    @Transient
     private String productName;
     @Transient
     private Product product = new Product();
-    private int quantity;
+
 
     public String getTotal() {
         return String.format("%.2f", product.getPrice() * quantity);

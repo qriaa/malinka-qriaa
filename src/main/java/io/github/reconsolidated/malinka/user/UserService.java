@@ -1,6 +1,5 @@
 package io.github.reconsolidated.malinka.user;
 
-import io.github.reconsolidated.malinka.model.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

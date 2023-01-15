@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * This is a mock for usecase purposes. Do not use it in production.
+ */
 @Repository
 public class ProductsRepository {
     private final List<Product> productList;

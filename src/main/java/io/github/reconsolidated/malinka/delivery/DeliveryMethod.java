@@ -1,4 +1,4 @@
-package io.github.reconsolidated.malinka.model.delivery;
+package io.github.reconsolidated.malinka.delivery;
 
 public enum DeliveryMethod {
     //name of delivery and price

@@ -1,7 +1,7 @@
 package io.github.reconsolidated.malinka.basket;
 
 import io.github.reconsolidated.malinka.mainPage.Product;
-import io.github.reconsolidated.malinka.model.LoyaltyProduct;
+import io.github.reconsolidated.malinka.loyaltyProduct.LoyaltyProduct;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -11,6 +11,11 @@ import java.util.List;
 public class BasketService {
     private List<BasketProduct> productsInBasket = new ArrayList<>();
     private List<BasketLoyaltyProduct> loyaltyProductsInBasket = new ArrayList<>();
+    private final BasketProductRepository basketProductRepository;
+
+    public BasketService(BasketProductRepository basketProductRepository) {
+        this.basketProductRepository = basketProductRepository;
+    }
 
     public void addProduct(Product product, int quantity) {
         for (BasketProduct basketProduct : productsInBasket) {
@@ -19,7 +24,9 @@ public class BasketService {
                 return;
             }
         }
-        productsInBasket.add(new BasketProduct(product, quantity));
+        BasketProduct basketProduct = new BasketProduct(product, quantity);
+        productsInBasket.add(basketProduct);
+        basketProductRepository.save(basketProduct);
     }
 
     public void removeProduct(Product product) {
@@ -29,6 +36,7 @@ public class BasketService {
                 return;
             }
         }
+        basketProductRepository.delete(basketProductRepository.findById(product.getId()).orElse(new BasketProduct()));
     }
 
     public List<BasketProduct> getProductsInBasket() {

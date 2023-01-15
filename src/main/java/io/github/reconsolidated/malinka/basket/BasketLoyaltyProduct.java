@@ -1,6 +1,6 @@
 package io.github.reconsolidated.malinka.basket;
 
-import io.github.reconsolidated.malinka.model.LoyaltyProduct;
+import io.github.reconsolidated.malinka.loyaltyProduct.LoyaltyProduct;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Transient;
