@@ -27,6 +27,10 @@ public class ProductsService {
         return productsRepository.getByName(productName);
     }
 
+    public Product getById(Long id){
+        return productsRepository.getById(id);
+    }
+
     public Product getRandomProduct() {
         return productsRepository.getRandomProduct();
     }

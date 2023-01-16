@@ -110,6 +110,15 @@ public class ProductsRepository {
         return null;
     }
 
+    public Product getById(Long id) {
+        for (Product product: productList) {
+            if(product.getId().equals(id)){
+                return product;
+            }
+        }
+        return null;
+    }
+
     public Product getRandomProduct() {
         Random random = new Random();
         int randomIndex = random.nextInt(productList.size());

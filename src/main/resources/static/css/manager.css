@@ -1,0 +1,270 @@
+:root {
+    background: #FFFFFF;
+    font-family: 'Inter', serif;
+}
+
+.topBar {
+    position: absolute;
+    width: 100%;
+    height: 77px;
+    left: 0px;
+    top: 0px;
+    background: #DDCEDC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.topBar > #malinkaLogo {
+    position: absolute;
+    left: 2.85%;
+    right: 89.1%;
+    top: 24.68%;
+    bottom: 24.68%;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+    color: #000000;
+}
+
+.topBar > #profileBar {
+    position: absolute;
+    width: 146px;
+    height: 38px;
+    left: 1073px;
+    top: 34px;
+}
+
+#profileBar > #underscoreBox {
+    position: absolute;
+    width: 100%;
+    top: 84.42%;
+    bottom: 6.49%;
+    background: #C097C7;
+}
+
+#profileBar > #loggedPerson {
+    position: absolute;
+    width: 100%;
+    left: 0%;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    text-align: center;
+    line-height: 29px;
+
+    color: #000000;
+}
+
+.topBar > #logOutButton {
+    position: absolute;
+    left: 94.79%;
+    right: 2.01%;
+    top: 19.48%;
+    bottom: 20.78%;
+    box-sizing: border-box;
+    background: #FAF0F9;
+    border: 1px solid #705B6E;
+    border-radius: 2px;
+    transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.topBar > #logOutButton > .vector { /* TODO: add vector itself */
+    position: absolute;
+    left: 17.39%;
+    right: 17.39%;
+    top: 17.39%;
+    bottom: 17.39%;
+
+    /* lightStroke */
+    background: #705B6E;
+}
+
+/* LogInButton */
+.mainButton {
+    box-sizing: border-box;
+    background: #AE8DAB;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+.mainButton > .buttonText {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+/* offer page css */
+
+.offer {
+    width: 848px;
+    height: 45px;
+    box-sizing: border-box;
+    /* verylightbg */
+    background: #F5EEF5;
+    /* contrastLow */
+    border: 1px solid #C097C7;
+    border-radius: 2px;
+}
+
+.offer > .productText {
+    position: absolute;
+    width: 84px;
+    height: 18px;
+    left: 324px;
+    top: 318px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+.offer > .price {
+    position: absolute;
+    width: 48px;
+    height: 18px;
+    left: 896px;
+    top: 318px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+}
+
+.offer > .firstLine {
+    position: absolute;
+    left: 69.72%;
+    right: 27.99%;
+    top: 30.37%;
+    bottom: 69.63%;
+
+    /* lightStroke */
+    border: 1px solid #705B6E;
+    transform: rotate(90deg);
+}
+
+.offer > .sndLine {
+    position: absolute;
+    left: 61.53%;
+    right: 36.18%;
+    top: 30.37%;
+    bottom: 69.63%;
+
+    /* lightStroke */
+    border: 1px solid #705B6E;
+    transform: rotate(90deg);
+}
+
+.offer > .trdLine {
+    position: absolute;
+    left: 41.81%;
+    right: 55.9%;
+    top: 30.37%;
+    bottom: 69.63%;
+
+    /* lightStroke */
+    border: 1px solid #705B6E;
+    transform: rotate(90deg);
+}
+
+.offer > .inlineButton {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    left: 1103px;
+    top: 310px;
+
+    /* background */
+    background: #DDCEDC;
+    /* contrastHigh */
+    border: 1px solid #955E9E;
+    border-radius: 2px;
+}
+
+.offer > .inlineButton > .vector {
+    position: absolute;
+    left: 77.18%;
+    right: 21.61%;
+    top: 30.87%;
+    bottom: 66.9%;
+
+    /* contrastHigh */
+    background: #955E9E;
+}
+
+.actionButton {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 147px;
+    height: 46px;
+    left: 997px;
+    top: 245px;
+    /* background */
+    background: #DDCEDC;
+    /* contrastHigh */
+    border: 1px solid #955E9E;
+    border-radius: 2px;
+}
+
+.actionButton > text {
+    position: absolute;
+    width: 89px;
+    height: 18px;
+    left: 1045px;
+    top: 259px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+}
+
+.actionButton > .vector {
+    position: absolute;
+    left: 69.79%;
+    right: 28.12%;
+    top: 24.71%;
+    bottom: 72.36%;
+
+    /* contrastHigh */
+    background: #955E9E;
+}
+
+
