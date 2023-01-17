@@ -13,6 +13,9 @@ import java.util.Random;
 public class ProductsRepository {
     private final List<Product> productList;
 
+    public List<Product> getAll(){
+        return new ArrayList<>(productList);
+    }
     public List<Product> getByCategory(String category) {
         if (category.equals("all")) {
             return productList;

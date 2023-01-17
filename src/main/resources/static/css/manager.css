@@ -280,6 +280,7 @@
 }
 
 .list {
+    overflow: auto;
     width: 400px;
     height: 450px;
     background: #F5EEF5;
@@ -312,6 +313,11 @@
     border: 1px solid #705B6E;
     border-radius: 2px;
 
+}
+
+.listInputSelector {
+    width:90%;
+    left:4px;
 }
 
 .listElement {

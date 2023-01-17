@@ -30,8 +30,11 @@ public class OfferService {
         this.offerPromotionRepository = offerPromotionRepository;
     }
 
-    public void addOffer(List<Product> products, List<Promotion> promotions) {
+    public Offer getNewOffer(){
         Offer newOffer = new Offer();
+        return this.offerRepository.save(newOffer); //i really need that generated value - i'm sorry
+    }
+    public void addOffer(Offer newOffer, List<Product> products, List<Promotion> promotions) {
 
         List<OfferProduct> offerProductList = new ArrayList<>();
         for (Product product: products){

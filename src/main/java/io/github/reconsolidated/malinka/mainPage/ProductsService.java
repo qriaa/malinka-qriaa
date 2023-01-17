@@ -9,12 +9,19 @@ import java.util.Set;
 
 @Service
 public class ProductsService {
+    // this is cursed. i love tight deadlines
     private final ProductsRepository productsRepository;
+    private final ProductsDbRepo productsDbRepo;
 
-    public ProductsService(ProductsRepository productsRepository) {
+    public ProductsService(ProductsRepository productsRepository, ProductsDbRepo productsDbRepo) {
         this.productsRepository = productsRepository;
+        this.productsDbRepo = productsDbRepo;
+        this.productsDbRepo.saveAll(productsRepository.getAll());
     }
 
+    public List<Product> getAll(){
+        return productsDbRepo.findAll();
+    }
     public List<Product> getByCategory(String category) {
         return productsRepository.getByCategory(category);
     }
@@ -28,7 +35,7 @@ public class ProductsService {
     }
 
     public Product getById(Long id){
-        return productsRepository.getById(id);
+        return productsDbRepo.getReferenceById(id);
     }
 
     public Product getRandomProduct() {
