@@ -42,9 +42,7 @@ public class OfferController {
     }
 
     @GetMapping("/manager/offer/add")
-    public String addOfferPage(
-            @RequestParam(name="offer") Offer offer,
-            Model model){
+    public String addOfferPage(Model model){
         return "manager_offer_add";
     }
 

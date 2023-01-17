@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{manager_fragments :: header('Dodaj ofertę')}">
+</head>
+<body>
+    <div th:replace="~{manager_fragments :: top_bar}"></div>
+
+    <div class="windowRectangle">
+        <div id="windowTitle" class="defaultText">
+            Dodawanie oferty
+        </div>
+
+        <div class="defaultText" style="position:absolute; left: 5%; top:3%; font-size: 24px">
+            Suma: 10,00 zł
+        </div>
+
+        <div class="iconButton" style="right:10%; top:3%">
+            <img th:src="@{~/images/manager_confirm.svg}" alt="confirm">
+        </div>
+        <div class="iconButton" style="right:5%; top:3%">
+            <img th:src="@{~/images/manager_cancel.svg}" alt="confirm">
+        </div>
+
+        <div id="productSection" style="position:absolute; top:15%; left: 3%">
+            <div class="defaultText" style="position: relative; width: 100%; text-align:center">
+                Produkty
+            </div>
+
+            <div class="list">
+                <div class="listInputBox">
+
+                    <div class="smallIconButton" style="position: absolute; right:4px;">
+                        <img th:src="@{~/images/manager_add.svg}" style="height:15px; width:15px">
+                    </div>
+                </div>
+
+                <div class="listElement">
+
+                    <div class="smallIconButton" style="position: absolute; right:4px;">
+                        <img th:src="@{~/images/manager_minus.svg}" style="height:15px; width:15px">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div id="promotionSection"style="position:absolute; top:15%; right: 3%">
+
+            <div class="defaultText" style="position: relative; width: 100%; text-align:center">
+                Promocje
+            </div>
+
+            <div class="list">
+                <div class="listInputBox">
+
+                    <div class="smallIconButton" style="position: absolute; right:4px;">
+                        <img th:src="@{~/images/manager_add.svg}" style="height:15px; width:15px">
+                    </div>
+                </div>
+
+                <div class="listElement">
+
+                    <div class="smallIconButton" style="position: absolute; right:4px;">
+                        <img th:src="@{~/images/manager_minus.svg}" style="height:15px; width:15px">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
