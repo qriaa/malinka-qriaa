@@ -40,7 +40,7 @@ public class OfferService {
         for (Product product: products){
             OfferProduct offerProduct = new OfferProduct();
             offerProduct.setOfferId(newOffer.getId());
-            offerProduct.setProductId(product.getId());
+            offerProduct.setProductId(product.getGeneratedId());
             offerProductList.add(offerProduct);
         }
 
@@ -107,7 +107,22 @@ public class OfferService {
         double sum = 0;
 
         for(Product product: products){
-            List<Promotion> applicablePromotions = promotions.stream().filter(p -> p.getProductId().equals(product.getId())).toList();
+            List<Promotion> applicablePromotions = promotions.stream().filter(p -> p.getProductId().equals(product.getGeneratedId())).toList();
+            double price = product.getPrice();
+            for(Promotion promotion: applicablePromotions){
+                price *= promotion.getSale();
+            }
+            sum += price;
+        }
+
+        return sum;
+    }
+
+    public double getTotal(List<Product> products, List<Promotion> promotions) {
+        double sum = 0;
+
+        for(Product product: products){
+            List<Promotion> applicablePromotions = promotions.stream().filter(p -> p.getProductId().equals(product.getGeneratedId())).toList();
             double price = product.getPrice();
             for(Promotion promotion: applicablePromotions){
                 price *= promotion.getSale();

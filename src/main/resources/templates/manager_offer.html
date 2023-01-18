@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en">
 <head th:replace="~{manager_fragments :: header('Oferty')}">
 </head>
 <body>
@@ -9,27 +9,29 @@
         <div>Powrót</div>
     </a>
 
-    <a th:href="@{~/manager/offer/add}" class="actionButton" style="left: 300px;">
+    <a th:href="@{~/manager/offer/add}" class="actionButton" style="position:absolute; left: 70%; top: 20%">
         <img class="vector" th:src="@{~/images/manager_add.svg}" alt="back" />
         <div>Dodaj ofertę</div>
     </a>
 
-    <div class="offer">
-        <div class="elementText">Czekolada</div>
-        <div class="spacerLine" style="position: absolute; left: 30%"></div>
-        <div class="elementText" style="position: absolute; left: 30%">Promocja czekolada 20%</div>
-        <div class="spacerLine" style="position: absolute; left: 75%"></div>
-        <div class="elementText" style="position:absolute; left:75%; min-width: 50px">10,00 zł</div>
-        <div class="spacerLine" style="position:absolute; right:11%"></div>
+    <div class="offerBox">
+        <div th:each="offer: ${tableOffers}" class="offer">
+            <div th:text="${offer.firstProductName}" class="elementText"></div>
+            <div class="spacerLine" style="position: absolute; left: 30%"></div>
+            <div th:text="${offer.firstPromotionName}" class="elementText" style="position: absolute; left: 30%">Promocja czekolada 20%</div>
+            <div class="spacerLine" style="position: absolute; left: 75%"></div>
+            <div th:text="${offer.total}" class="elementText" style="position:absolute; left:75%; min-width: 50px">10,00 zł</div>
+            <div class="spacerLine" style="position:absolute; right:11%"></div>
 
-        <div class="inlineButton" style="position:absolute; right: 6%">
-            <img th:src="@{~/images/manager_edit.svg}">
+            <a  class="inlineButton" style="position:absolute; right: 6%">
+                <img th:src="@{~/images/manager_edit.svg}">
+            </a>
+
+            <a th:href="@{~/manager/offer/delete(offerId=${offer.offer.id})}" class="inlineButton" style="position:absolute; right: 1%">
+                <img th:src="@{~/images/manager_delete.svg}">
+            </a>
+
         </div>
-
-        <div class="inlineButton" style="position:absolute; right: 1%">
-            <img th:src="@{~/images/manager_delete.svg}">
-        </div>
-
     </div>
 </body>
 </html>

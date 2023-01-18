@@ -10,16 +10,15 @@
             Dodawanie oferty
         </div>
 
-        <div class="defaultText" style="position:absolute; left: 5%; top:3%; font-size: 24px">
-            Suma: 10,00 zł
+        <div th:text="'Suma: ' + ${total}" class="defaultText" style="position:absolute; left: 5%; top:3%; font-size: 24px">
         </div>
 
-        <div class="iconButton" style="right:8%; top:3%">
+        <a th:href="@{~/manager/offer/add/confirm}" class="iconButton" style="right:8%; top:3%">
             <img th:src="@{~/images/manager_confirm.svg}" alt="confirm">
-        </div>
-        <div class="iconButton" style="right:3%; top:3%">
+        </a>
+        <a th:href="@{~/manager/offer/add/cancel} "class="iconButton" style="right:3%; top:3%">
             <img th:src="@{~/images/manager_cancel.svg}" alt="confirm">
-        </div>
+        </a>
 
         <div id="productSection" style="position:absolute; top:15%; left: 3%">
             <div class="defaultText" style="width: 100%; text-align:center">

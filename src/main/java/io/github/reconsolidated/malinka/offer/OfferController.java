@@ -21,15 +21,6 @@ import java.util.List;
 public class OfferController {
     @Getter
     @Setter
-    private class TableOfferViewModel {
-        private Offer offer;
-        private String firstProductName;
-        private String firstPromotionName;
-        private double total;
-    }
-
-    @Getter
-    @Setter
     private class TempOffer {
         private Offer offer;
         private List<Product> products;
@@ -59,6 +50,13 @@ public class OfferController {
             }
             return candidates;
         }
+
+        public String getTotalAsStr() {
+            double roundedDouble = offerService.getTotal(products, promotions);
+            roundedDouble = Math.round(roundedDouble * 100);
+            roundedDouble /= 100;
+            return Double.valueOf(roundedDouble).toString() + " zł";
+        }
     }
     private static TempOffer tempOffer;
 
@@ -75,15 +73,48 @@ public class OfferController {
         for(Offer offer: allOffers){
             TableOfferViewModel newTableOffer = new TableOfferViewModel();
             newTableOffer.setOffer(offer);
-            newTableOffer.setFirstProductName(offerService.getProductsByOffer(offer).get(0).getName());
-            newTableOffer.setFirstPromotionName(offerService.getPromotionsByOffer(offer).get(0).getName());
-            newTableOffer.setTotal(offerService.getTotal(offer));
+
+            List<Product> prodByOff = offerService.getProductsByOffer(offer);
+            if (prodByOff.isEmpty()){
+                newTableOffer.setFirstProductName("");
+            } else
+                newTableOffer.setFirstProductName(prodByOff.get(0).getName());
+
+            List<Promotion> promoByOff = offerService.getPromotionsByOffer(offer);
+            if (promoByOff.isEmpty()){
+                newTableOffer.setFirstPromotionName("");
+            } else
+                newTableOffer.setFirstPromotionName(promoByOff.get(0).getName());
+
+            double roundedDouble = offerService.getTotal(offer);
+            roundedDouble = Math.round(roundedDouble * 100);
+            roundedDouble /= 100;
+            newTableOffer.setTotal(Double.valueOf(roundedDouble).toString() + " zł");
             tableOffers.add(newTableOffer);
         }
         model.addAttribute("tableOffers", tableOffers);
         return "manager_offer";
     }
+    @GetMapping("/manager/offer/delete")
+    public String offerPageDelete(Model model, @RequestParam() Long offerId) {
+        Offer offer = new Offer();
+        offer.setId(offerId);
+        offerService.removeOffer(offer);
+        return offerPage(model);
+    }
 
+    @GetMapping("/manager/offer/add/confirm")
+    public String addOfferConfirm(Model model) {
+        offerService.addOffer(tempOffer.offer, tempOffer.products, tempOffer.promotions);
+        tempOffer = new TempOffer();
+        return "redirect:/manager/offer";
+    }
+    @GetMapping("/manager/offer/add/cancel")
+    public String addOfferCancelAdd(Model model) {
+        offerService.removeOffer(tempOffer.offer);
+        tempOffer = new TempOffer();
+        return "redirect:/manager/offer";
+    }
     @GetMapping("/manager/offer/add")
     public String addOfferPage(Model model){
         OfferAddEditViewModel viewModel = new OfferAddEditViewModel();
@@ -95,6 +126,7 @@ public class OfferController {
         List<Product> allProducts = productsService.getAll();
         model.addAttribute("viewModel", viewModel);
         model.addAttribute("allProducts", allProducts);
+        model.addAttribute("total", tempOffer.getTotalAsStr());
         return "manager_offer_add";
     }
 
@@ -112,6 +144,7 @@ public class OfferController {
         model.addAttribute("addedPromotions", tempOffer.getPromotions());
         model.addAttribute("allProducts", allProducts);
         model.addAttribute("candidatePromotions", candidatePromotions);
+        model.addAttribute("total", tempOffer.getTotalAsStr());
         return "manager_offer_add";
     }
 
@@ -125,6 +158,7 @@ public class OfferController {
         model.addAttribute("addedPromotions", tempOffer.getPromotions());
         model.addAttribute("allProducts", allProducts);
         model.addAttribute("candidatePromotions", candidatePromotions);
+        model.addAttribute("total", tempOffer.getTotalAsStr());
         return "manager_offer_add";
     }
 
@@ -141,6 +175,7 @@ public class OfferController {
         model.addAttribute("addedPromotions", tempOffer.getPromotions());
         model.addAttribute("allProducts", allProducts);
         model.addAttribute("candidatePromotions", candidatePromotions);
+        model.addAttribute("total", tempOffer.getTotalAsStr());
         return "manager_offer_add";
     }
 
@@ -154,6 +189,7 @@ public class OfferController {
         model.addAttribute("addedPromotions", tempOffer.getPromotions());
         model.addAttribute("allProducts", allProducts);
         model.addAttribute("candidatePromotions", candidatePromotions);
+        model.addAttribute("total", tempOffer.getTotalAsStr());
         return "manager_offer_add";
     }
 
