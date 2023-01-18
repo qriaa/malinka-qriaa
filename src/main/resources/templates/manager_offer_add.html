@@ -40,14 +40,15 @@
                         <img th:src="@{~/images/manager_add.svg}" alt="add" style="height:15px; width:15px">
                     </button>
                 </form>
-                <div th:each="product : ${addedProducts}" class="listElement">
+                <form th:action="@{~/manager/offer/add/removeProduct}" method="POST" th:each="product: ${addedProducts}" class="listElement">
+                    <input type="hidden" id="productId" name="productId" th:value="${product.getGeneratedId()}">
                     <div class="defaultText" th:text="${product.getName()}" style="width:100%">
                     </div>
 
-                    <div class="smallIconButton">
-                        <img th:src="@{~/images/manager_minus.svg}" style="height:15px; width:15px">
-                    </div>
-                </div>
+                    <button type="submit" class="smallIconButton">
+                        <img th:src="@{~/images/manager_minus.svg}" alt="remove" style="height:15px; width:15px">
+                    </button>
+                </form>
 
             </div>
         </div>
@@ -58,19 +59,28 @@
             </div>
 
             <div class="list">
-                <div class="listInputBox">
+                <form th:action="@{~/manager/offer/add/addPromotion}" th:object="${viewModel}" method="POST" class="listInputBox">
+                    <input type="hidden" th:field="*{offerId}" th:value="*{offerId}">
+                    <select th:field="*{promotionId}" class="listInputSelector">
+                        <option th:each="promotion : ${candidatePromotions}"
+                                th:value="${promotion.getId()}"
+                                th:text="${promotion.getName()}">
+                        </option>
+                    </select>
 
-                    <div class="smallIconButton" style="position: absolute; right:4px;">
-                        <img th:src="@{~/images/manager_add.svg}" style="height:15px; width:15px">
+                    <button type="submit" class="smallIconButton">
+                        <img th:src="@{~/images/manager_add.svg}" alt="add" style="height:15px; width:15px">
+                    </button>
+                </form>
+                <form th:action="@{~/manager/offer/add/removePromotion}" method="POST" th:each="promotion : ${addedPromotions}" class="listElement">
+                    <input type="hidden" id="promotionId" name="promotionId" th:value="${promotion.id}">
+                    <div class="defaultText" th:text="${promotion.getName()}" style="width:100%">
                     </div>
-                </div>
 
-                <div class="listElement">
-
-                    <div class="smallIconButton" style="position: absolute; right:4px;">
-                        <img th:src="@{~/images/manager_minus.svg}" style="height:15px; width:15px">
-                    </div>
-                </div>
+                    <button type="submit" class="smallIconButton">
+                        <img th:src="@{~/images/manager_minus.svg}" alt="remove" style="height:15px; width:15px">
+                    </button>
+                </form>
 
             </div>
         </div>

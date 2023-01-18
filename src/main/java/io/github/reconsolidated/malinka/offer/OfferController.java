@@ -3,6 +3,7 @@ package io.github.reconsolidated.malinka.offer;
 import io.github.reconsolidated.malinka.mainPage.Product;
 import io.github.reconsolidated.malinka.mainPage.ProductsService;
 import io.github.reconsolidated.malinka.promotion.Promotion;
+import io.github.reconsolidated.malinka.promotion.PromotionService;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -33,12 +34,39 @@ public class OfferController {
         private Offer offer;
         private List<Product> products;
         private List<Promotion> promotions;
+
+        public void removeProductById(Long id) {
+            for (int i=0; i<products.size(); i++) {
+                if(products.get(i).getGeneratedId().equals(id)) {
+                    products.remove(i);
+                    return;
+                }
+            }
+        }
+        public void removePromotionById(Long id) {
+            for (int i=0; i<promotions.size(); i++) {
+                if(promotions.get(i).getId().equals(id)) {
+                    promotions.remove(i);
+                    return;
+                }
+            }
+        }
+
+        public List<Promotion> findCandidatePromotions() {
+            List<Promotion> candidates = new ArrayList<>();
+            for(Product product: products) {
+                candidates.addAll(promotionService.getByProductId(product.getGeneratedId()));
+            }
+            return candidates;
+        }
     }
     private static TempOffer tempOffer;
 
     private OfferService offerService;
 
     private ProductsService productsService;
+
+    private PromotionService promotionService;
 
     @GetMapping("/manager/offer")
     public String offerPage(Model model){
@@ -78,9 +106,54 @@ public class OfferController {
     public String addOfferProduct(Model model, OfferAddEditViewModel viewModel) {
         tempOffer.getProducts().add(productsService.getById(viewModel.getProductId()));
         List<Product> allProducts = productsService.getAll();
+        List<Promotion> candidatePromotions = tempOffer.findCandidatePromotions();
         model.addAttribute("viewModel", viewModel);
         model.addAttribute("addedProducts", tempOffer.getProducts());
+        model.addAttribute("addedPromotions", tempOffer.getPromotions());
         model.addAttribute("allProducts", allProducts);
+        model.addAttribute("candidatePromotions", candidatePromotions);
+        return "manager_offer_add";
+    }
+
+    @PostMapping("/manager/offer/add/removeProduct")
+    public String removeOfferProduct(Model model ,OfferAddEditViewModel viewModel) {
+        tempOffer.removeProductById(viewModel.getProductId());
+        List<Product> allProducts = productsService.getAll();
+        List<Promotion> candidatePromotions = tempOffer.findCandidatePromotions();
+        model.addAttribute("viewModel", viewModel);
+        model.addAttribute("addedProducts", tempOffer.getProducts());
+        model.addAttribute("addedPromotions", tempOffer.getPromotions());
+        model.addAttribute("allProducts", allProducts);
+        model.addAttribute("candidatePromotions", candidatePromotions);
+        return "manager_offer_add";
+    }
+
+    @PostMapping("/manager/offer/add/addPromotion")
+    public String addOfferPromotion(Model model, OfferAddEditViewModel viewModel) {
+        Long promoId = viewModel.getPromotionId();
+        if (promoId != null) {
+            tempOffer.getPromotions().add(promotionService.getById(promoId));
+        }
+        List<Product> allProducts = productsService.getAll();
+        List<Promotion> candidatePromotions = tempOffer.findCandidatePromotions();
+        model.addAttribute("viewModel", viewModel);
+        model.addAttribute("addedProducts", tempOffer.getProducts());
+        model.addAttribute("addedPromotions", tempOffer.getPromotions());
+        model.addAttribute("allProducts", allProducts);
+        model.addAttribute("candidatePromotions", candidatePromotions);
+        return "manager_offer_add";
+    }
+
+    @PostMapping("/manager/offer/add/removePromotion")
+    public String removeOfferPromotion(Model model ,OfferAddEditViewModel viewModel) {
+        tempOffer.removePromotionById(viewModel.getPromotionId());
+        List<Product> allProducts = productsService.getAll();
+        List<Promotion> candidatePromotions = tempOffer.findCandidatePromotions();
+        model.addAttribute("viewModel", viewModel);
+        model.addAttribute("addedProducts", tempOffer.getProducts());
+        model.addAttribute("addedPromotions", tempOffer.getPromotions());
+        model.addAttribute("allProducts", allProducts);
+        model.addAttribute("candidatePromotions", candidatePromotions);
         return "manager_offer_add";
     }
 

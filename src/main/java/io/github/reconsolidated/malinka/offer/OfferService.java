@@ -59,7 +59,7 @@ public class OfferService {
         return offerRepository.findAll();
     }
     public Offer getOfferById(Long id) {
-        return offerRepository.getReferenceById(id);
+        return offerRepository.findById(id).orElse(null);
     }
     public List<OfferProduct> getOfferProducts(Offer offer) {
         List<OfferProduct> offerProducts = offerProductRepository.findAll();
