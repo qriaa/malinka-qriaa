@@ -55,6 +55,33 @@ public class OfferService {
         offerProductRepository.saveAll(offerProductList);
         offerPromotionRepository.saveAll(offerPromotionList);
     }
+
+    public void updateOffer(Offer offer, List<Product> products, List<Promotion> promotions) {
+        List<OfferProduct> offerProductsToDelete = getOfferProducts(offer);
+        List<OfferPromotion> offerPromotionsToDelete = getOfferPromotions(offer);
+
+        offerProductRepository.deleteAll(offerProductsToDelete);
+        offerPromotionRepository.deleteAll(offerPromotionsToDelete);
+
+
+        List<OfferProduct> offerProductList = new ArrayList<>();
+        for (Product product: products){
+            OfferProduct offerProduct = new OfferProduct();
+            offerProduct.setOfferId(offer.getId());
+            offerProduct.setProductId(product.getGeneratedId());
+            offerProductList.add(offerProduct);
+        }
+
+        List<OfferPromotion> offerPromotionList = new ArrayList<>();
+        for(Promotion promotion: promotions){
+            OfferPromotion offerPromotion = new OfferPromotion();
+            offerPromotion.setOfferId(offer.getId());
+            offerPromotion.setPromotionId(promotion.getId());
+            offerPromotionList.add(offerPromotion);
+        }
+        offerProductRepository.saveAll(offerProductList);
+        offerPromotionRepository.saveAll(offerPromotionList);
+    }
     public List<Offer> getAllOffers(){
         return offerRepository.findAll();
     }

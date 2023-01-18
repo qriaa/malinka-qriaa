@@ -89,12 +89,20 @@
     height: 30px;
 }
 
-/* LogInButton */
 .mainButton {
+    position: absolute;
+    width: 300px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     box-sizing: border-box;
     background: #AE8DAB;
     border: 1px solid #000000;
     border-radius: 10px;
+    transform: translate(-50%, -50%);
+
+    text-decoration: none;
 }
 
 .mainButton > .buttonText {

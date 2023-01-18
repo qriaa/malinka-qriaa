@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:replace="~{manager_fragments :: header('Edytuj ofertę')}">
+</head>
+<body>
+<div th:replace="~{manager_fragments :: top_bar}"></div>
+
+<div class="windowRectangle">
+  <div id="windowTitle" class="defaultText">
+    Edycja oferty
+  </div>
+
+  <div th:text="'Suma: ' + ${total}" class="defaultText" style="position:absolute; left: 5%; top:3%; font-size: 24px">
+  </div>
+
+  <a th:href="@{~/manager/offer/edit/confirm}" class="iconButton" style="right:8%; top:3%">
+    <img th:src="@{~/images/manager_confirm.svg}" alt="confirm">
+  </a>
+  <a th:href="@{~/manager/offer/edit/cancel} "class="iconButton" style="right:3%; top:3%">
+    <img th:src="@{~/images/manager_cancel.svg}" alt="confirm">
+  </a>
+
+  <div id="productSection" style="position:absolute; top:15%; left: 3%">
+    <div class="defaultText" style="width: 100%; text-align:center">
+      Produkty
+    </div>
+
+    <div class="list">
+      <form th:action="@{~/manager/offer/edit/addProduct}" th:object="${viewModel}" method="POST" class="listInputBox">
+        <input type="hidden" th:field="*{offerId}" th:value="*{offerId}">
+        <select th:field="*{productId}" class="listInputSelector">
+          <option th:each="product : ${allProducts}"
+                  th:value="${product.getGeneratedId()}"
+                  th:text="${product.getName()}">
+          </option>
+        </select>
+
+        <button type="submit" class="smallIconButton">
+          <img th:src="@{~/images/manager_add.svg}" alt="add" style="height:15px; width:15px">
+        </button>
+      </form>
+      <form th:action="@{~/manager/offer/edit/removeProduct}" method="POST" th:each="product: ${addedProducts}" class="listElement">
+        <input type="hidden" id="productId" name="productId" th:value="${product.getGeneratedId()}">
+        <div class="defaultText" th:text="${product.getName()}" style="width:100%">
+        </div>
+
+        <button type="submit" class="smallIconButton">
+          <img th:src="@{~/images/manager_minus.svg}" alt="remove" style="height:15px; width:15px">
+        </button>
+      </form>
+
+    </div>
+  </div>
+  <div id="promotionSection"style="position:absolute; top:15%; right: 3%">
+
+    <div class="defaultText" style="position: relative; width: 100%; text-align:center">
+      Promocje
+    </div>
+
+    <div class="list">
+      <form th:action="@{~/manager/offer/edit/addPromotion}" th:object="${viewModel}" method="POST" class="listInputBox">
+        <input type="hidden" th:field="*{offerId}" th:value="*{offerId}">
+        <select th:field="*{promotionId}" class="listInputSelector">
+          <option th:each="promotion : ${candidatePromotions}"
+                  th:value="${promotion.getId()}"
+                  th:text="${promotion.getName()}">
+          </option>
+        </select>
+
+        <button type="submit" class="smallIconButton">
+          <img th:src="@{~/images/manager_add.svg}" alt="add" style="height:15px; width:15px">
+        </button>
+      </form>
+      <form th:action="@{~/manager/offer/edit/removePromotion}" method="POST" th:each="promotion : ${addedPromotions}" class="listElement">
+        <input type="hidden" id="promotionId" name="promotionId" th:value="${promotion.id}">
+        <div class="defaultText" th:text="${promotion.getName()}" style="width:100%">
+        </div>
+
+        <button type="submit" class="smallIconButton">
+          <img th:src="@{~/images/manager_minus.svg}" alt="remove" style="height:15px; width:15px">
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

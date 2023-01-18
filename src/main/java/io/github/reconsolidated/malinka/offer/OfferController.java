@@ -103,6 +103,7 @@ public class OfferController {
         return offerPage(model);
     }
 
+    // Creation
     @GetMapping("/manager/offer/add/confirm")
     public String addOfferConfirm(Model model) {
         offerService.addOffer(tempOffer.offer, tempOffer.products, tempOffer.promotions);
@@ -193,10 +194,98 @@ public class OfferController {
         return "manager_offer_add";
     }
 
+    // edit
     @GetMapping("/manager/offer/edit")
     public String editOfferPage(
-            @RequestParam(name="offer") Offer offer,
+            @RequestParam(name="offerId") Long offerId,
             Model model){
+        OfferAddEditViewModel viewModel = new OfferAddEditViewModel();
+        tempOffer = new TempOffer();
+        Offer newOffer = new Offer();
+        newOffer.setId(offerId);
+        tempOffer.setOffer(newOffer);
+        tempOffer.setProducts(offerService.getProductsByOffer(newOffer));
+        tempOffer.setPromotions(offerService.getPromotionsByOffer(newOffer));
+        viewModel.setOfferId(tempOffer.getOffer().getId());
+        List<Product> allProducts = productsService.getAll();
+        List<Promotion> candidatePromotions = tempOffer.findCandidatePromotions();
+        model.addAttribute("viewModel", viewModel);
+        model.addAttribute("addedProducts", tempOffer.getProducts());
+        model.addAttribute("addedPromotions", tempOffer.getPromotions());
+        model.addAttribute("allProducts", allProducts);
+        model.addAttribute("candidatePromotions", candidatePromotions);
+        model.addAttribute("total", tempOffer.getTotalAsStr());
+
+        return "manager_offer_edit";
+    }
+    @GetMapping("/manager/offer/edit/confirm")
+    public String editOfferConfirm(Model model) {
+        offerService.updateOffer(tempOffer.offer, tempOffer.products, tempOffer.promotions);
+        tempOffer = new TempOffer();
+        return "redirect:/manager/offer";
+    }
+    @GetMapping("/manager/offer/edit/cancel")
+    public String editOfferCancelAdd(Model model) {
+        tempOffer = new TempOffer();
+        return "redirect:/manager/offer";
+    }
+
+    @PostMapping("/manager/offer/edit/addProduct")
+    public String editAddOfferProduct(Model model, OfferAddEditViewModel viewModel) {
+        tempOffer.getProducts().add(productsService.getById(viewModel.getProductId()));
+        List<Product> allProducts = productsService.getAll();
+        List<Promotion> candidatePromotions = tempOffer.findCandidatePromotions();
+        model.addAttribute("viewModel", viewModel);
+        model.addAttribute("addedProducts", tempOffer.getProducts());
+        model.addAttribute("addedPromotions", tempOffer.getPromotions());
+        model.addAttribute("allProducts", allProducts);
+        model.addAttribute("candidatePromotions", candidatePromotions);
+        model.addAttribute("total", tempOffer.getTotalAsStr());
+        return "manager_offer_edit";
+    }
+
+    @PostMapping("/manager/offer/edit/removeProduct")
+    public String editRemoveOfferProduct(Model model ,OfferAddEditViewModel viewModel) {
+        tempOffer.removeProductById(viewModel.getProductId());
+        List<Product> allProducts = productsService.getAll();
+        List<Promotion> candidatePromotions = tempOffer.findCandidatePromotions();
+        model.addAttribute("viewModel", viewModel);
+        model.addAttribute("addedProducts", tempOffer.getProducts());
+        model.addAttribute("addedPromotions", tempOffer.getPromotions());
+        model.addAttribute("allProducts", allProducts);
+        model.addAttribute("candidatePromotions", candidatePromotions);
+        model.addAttribute("total", tempOffer.getTotalAsStr());
+        return "manager_offer_edit";
+    }
+
+    @PostMapping("/manager/offer/edit/addPromotion")
+    public String editAddOfferPromotion(Model model, OfferAddEditViewModel viewModel) {
+        Long promoId = viewModel.getPromotionId();
+        if (promoId != null) {
+            tempOffer.getPromotions().add(promotionService.getById(promoId));
+        }
+        List<Product> allProducts = productsService.getAll();
+        List<Promotion> candidatePromotions = tempOffer.findCandidatePromotions();
+        model.addAttribute("viewModel", viewModel);
+        model.addAttribute("addedProducts", tempOffer.getProducts());
+        model.addAttribute("addedPromotions", tempOffer.getPromotions());
+        model.addAttribute("allProducts", allProducts);
+        model.addAttribute("candidatePromotions", candidatePromotions);
+        model.addAttribute("total", tempOffer.getTotalAsStr());
+        return "manager_offer_edit";
+    }
+
+    @PostMapping("/manager/offer/edit/removePromotion")
+    public String editRemoveOfferPromotion(Model model ,OfferAddEditViewModel viewModel) {
+        tempOffer.removePromotionById(viewModel.getPromotionId());
+        List<Product> allProducts = productsService.getAll();
+        List<Promotion> candidatePromotions = tempOffer.findCandidatePromotions();
+        model.addAttribute("viewModel", viewModel);
+        model.addAttribute("addedProducts", tempOffer.getProducts());
+        model.addAttribute("addedPromotions", tempOffer.getPromotions());
+        model.addAttribute("allProducts", allProducts);
+        model.addAttribute("candidatePromotions", candidatePromotions);
+        model.addAttribute("total", tempOffer.getTotalAsStr());
         return "manager_offer_edit";
     }
 }
