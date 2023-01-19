@@ -30,10 +30,21 @@ public class OfferService {
         this.offerPromotionRepository = offerPromotionRepository;
     }
 
+    /**
+     * Creates new offer with an assigned id
+     * @return Offer with autoassigned id
+     */
     public Offer getNewOffer(){
         Offer newOffer = new Offer();
         return this.offerRepository.save(newOffer); //i really need that generated value - i'm sorry
     }
+
+    /**
+     * adds Offer to the database
+     * @param newOffer offer object to add
+     * @param products list of products to be connected with the offer
+     * @param promotions list of promotions to be connected with the offer
+     */
     public void addOffer(Offer newOffer, List<Product> products, List<Promotion> promotions) {
 
         List<OfferProduct> offerProductList = new ArrayList<>();
@@ -56,6 +67,12 @@ public class OfferService {
         offerPromotionRepository.saveAll(offerPromotionList);
     }
 
+    /**
+     * updates an existing offer
+     * @param offer offer to be updated
+     * @param products new list of products
+     * @param promotions new list of promotions
+     */
     public void updateOffer(Offer offer, List<Product> products, List<Promotion> promotions) {
         List<OfferProduct> offerProductsToDelete = getOfferProducts(offer);
         List<OfferPromotion> offerPromotionsToDelete = getOfferPromotions(offer);
@@ -82,24 +99,51 @@ public class OfferService {
         offerProductRepository.saveAll(offerProductList);
         offerPromotionRepository.saveAll(offerPromotionList);
     }
+
+    /**
+     * Gets all offers
+     * @return list of offers
+     */
     public List<Offer> getAllOffers(){
         return offerRepository.findAll();
     }
+
+    /**
+     * gets an offer from repository by id
+     * @param id id to be looked for
+     * @return found offer
+     */
     public Offer getOfferById(Long id) {
         return offerRepository.findById(id).orElse(null);
     }
+
+    /**
+     * Gets OfferProducts connected to the offer
+     * @param offer host offer
+     * @return list of OfferProducts that are connected to that offer
+     */
     public List<OfferProduct> getOfferProducts(Offer offer) {
         List<OfferProduct> offerProducts = offerProductRepository.findAll();
         offerProducts = offerProducts.stream().filter(op -> op.getOfferId().equals(offer.getId())).toList();
         return offerProducts;
     }
-    
+
+    /**
+     * Gets OfferPromotions connected to the offer
+     * @param offer host offer
+     * @return list of OfferPromotions that are connected to that offer
+     */
     public List<OfferPromotion> getOfferPromotions(Offer offer) {
         List<OfferPromotion> offerPromotions = offerPromotionRepository.findAll();
         offerPromotions = offerPromotions.stream().filter(op -> op.getOfferId().equals(offer.getId())).toList();
         return offerPromotions;
     }
 
+    /**
+     * Gets a list of Products connected to that offer
+     * @param offer host offer
+     * @return List of products connected to that offer
+     */
     public List<Product> getProductsByOffer(Offer offer) {
         List<OfferProduct> offerProducts = getOfferProducts(offer);
         List<Product> products = new ArrayList<>();
@@ -108,7 +152,11 @@ public class OfferService {
         }
         return products;
     }
-
+    /**
+     * Gets a list of Promotions connected to that offer
+     * @param offer host offer
+     * @return List of promotions connected to that offer
+     */
     public List<Promotion> getPromotionsByOffer(Offer offer) {
         List<OfferPromotion> offerPromotions = getOfferPromotions(offer);
         List<Promotion> promotions = new ArrayList<>();
@@ -118,6 +166,10 @@ public class OfferService {
         return promotions;
     }
 
+    /**
+     * Removes offer from the repository
+     * @param offer offer to be removed
+     */
     public void removeOffer(Offer offer) {
         List<OfferProduct> offerProductsToDelete = getOfferProducts(offer);
         List<OfferPromotion> offerPromotionsToDelete = getOfferPromotions(offer);
@@ -127,6 +179,13 @@ public class OfferService {
         offerRepository.delete(offer);
     }
 
+    /**
+     * Gets a total of an offer
+     * A total is the sum of prices of products (in case there is a promotion in the offer, the promotion is applied
+     * to its product)
+     * @param offer the offer for which to calculate sum
+     * @return The total
+     */
     public double getTotal(Offer offer) {
         List<Product> products = getProductsByOffer(offer);
         List<Promotion> promotions = getPromotionsByOffer(offer);
@@ -144,7 +203,14 @@ public class OfferService {
 
         return sum;
     }
-
+    /**
+     * Gets a total of an offer
+     * A total is the sum of prices of products (in case there is a promotion in the offer, the promotion is applied
+     * to its product)
+     * @param products the products for which to calculate sum
+     * @param promotions the promotions for the products
+     * @return The total
+     */
     public double getTotal(List<Product> products, List<Promotion> promotions) {
         double sum = 0;
 
