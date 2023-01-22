@@ -130,10 +130,22 @@ public class OfferServiceTest {
     }
     @Test
     @DisplayName("Total calculation test")
-    void getTotal() {
+    void getTotalTest() {
         OfferService offerService = new OfferService(productsService, promotionService, offerRepository, offerProductRepository, offerPromotionRepository);
 
         double actualTotal = offerService.getTotal(mockOffer);
         assertEquals(1.99*0.9f + 1.99*0.8f + 3.99, actualTotal);
+    }
+
+    @Test
+    void getTotalForEmptyOfferTest() {
+        OfferService offerService = new OfferService(productsService, promotionService, offerRepository, offerProductRepository, offerPromotionRepository);
+
+        Offer emptyOffer = new Offer();
+        emptyOffer.setId(10000L);
+
+        double actualTotal = offerService.getTotal(emptyOffer);
+
+        assertEquals(0, actualTotal);
     }
 }
