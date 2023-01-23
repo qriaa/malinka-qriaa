@@ -17,9 +17,7 @@ public class PromotionService {
                 new Promotion(1L, "Mleko 10%", 0.9f, false, 0, true),
                 new Promotion(6L, "Kefir 20%", 0.8f, false, 0, true),
                 new Promotion(4L, "Masło 40%", 0.6f, false, 0, true),
-                new Promotion(12L, "Makaron 15%", 0.85f, false, 0, true),
-                new Promotion(13L, "Kurczak 30%", 0.7f, false, 0, true),
-                new Promotion(2L, "Ser 5%", 0.95f, false, 0, true)
+                new Promotion(3L, "Ser 5%", 0.95f, false, 0, true)
         ));
         promotionRepository.saveAll(initData);
     }

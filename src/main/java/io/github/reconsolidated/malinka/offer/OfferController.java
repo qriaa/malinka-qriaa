@@ -17,7 +17,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@AllArgsConstructor
 public class OfferController {
     @Getter
     @Setter
@@ -65,6 +64,26 @@ public class OfferController {
     private ProductsService productsService;
 
     private PromotionService promotionService;
+
+    public OfferController(OfferService offerService, ProductsService productsService, PromotionService promotionService) {
+        this.offerService = offerService;
+        this.productsService = productsService;
+        this.promotionService = promotionService;
+
+        // Test data
+        Offer testOffer = offerService.getNewOffer();
+        List<Product> productsToTest = new ArrayList<>();
+        List<Promotion> promotionsToTest = new ArrayList<>();
+
+        productsToTest.add(productsService.getById(1L));
+        promotionsToTest.add(promotionService.getByProductId(1L).get(0));
+
+        productsToTest.add(productsService.getById(2L));
+
+        productsToTest.add(productsService.getById(4L));
+        promotionsToTest.add(promotionService.getByProductId(4L).get(0));
+        offerService.addOffer(testOffer, productsToTest, promotionsToTest);
+    }
 
     @GetMapping("/manager/offer")
     public String offerPage(Model model){
