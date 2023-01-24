@@ -1,0 +1,17 @@
+Instrukcja - odpalic server w intellij, po czym odpalic skrypt do testowania
+upewnij sie przy odpalaniu skryptu czy twoim pwd jest test
+
+sudo apt install python3-pip
+
+# pip3 install pyodbc nope!!!
+# sudo apt install unixodbc nope!!!
+
+sudo apt install default-jdk ???
+pip install jaydebeapi
+pip install selenium
+
+# adres bazy internalnie w springu:
+# jdbc:h2:~/PO-db
+
+# adres bazy dla zewnatrz:
+# jdbc:h2:tcp://localhost:9092/~/PO-db
