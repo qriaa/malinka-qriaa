@@ -1,0 +1,5741 @@
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka
+--------------------------------------------------
+
+Stats:
+    Total Classes: 2
+    Concrete Classes: 2
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 9
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.MalinkaApplication
+    io.github.reconsolidated.malinka.MalinkaApplicationTests
+
+Depends Upon:
+    java.lang
+    java.sql
+    org.h2.tools
+    org.junit.jupiter.api
+    org.springframework.boot
+    org.springframework.boot.autoconfigure
+    org.springframework.boot.test.context
+    org.springframework.context.annotation
+    org.springframework.data.jpa.repository.config
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.basket
+--------------------------------------------------
+
+Stats:
+    Total Classes: 5
+    Concrete Classes: 4
+    Abstract Classes: 1
+
+    Ca: 3
+    Ce: 12
+
+    A: 0.2
+    I: 0.8
+    D: 0
+
+Abstract Classes:
+    io.github.reconsolidated.malinka.basket.BasketProductRepository
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.basket.BasketController
+    io.github.reconsolidated.malinka.basket.BasketLoyaltyProduct
+    io.github.reconsolidated.malinka.basket.BasketProduct
+    io.github.reconsolidated.malinka.basket.BasketService
+
+Depends Upon:
+    io.github.reconsolidated.malinka.loyaltyProduct
+    io.github.reconsolidated.malinka.mainPage
+    io.github.reconsolidated.malinka.user
+    jakarta.persistence
+    java.lang
+    java.lang.invoke
+    java.util
+    org.springframework.data.jpa.repository
+    org.springframework.stereotype
+    org.springframework.ui
+    org.springframework.web.bind.annotation
+    org.springframework.web.servlet.mvc.support
+
+Used By:
+    io.github.reconsolidated.malinka.mainPage
+    io.github.reconsolidated.malinka.orders
+    io.github.reconsolidated.malinka.reclamation
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.delivery
+--------------------------------------------------
+
+Stats:
+    Total Classes: 5
+    Concrete Classes: 4
+    Abstract Classes: 1
+
+    Ca: 1
+    Ce: 2
+
+    A: 0.2
+    I: 0.67
+    D: 0.13
+
+Abstract Classes:
+    io.github.reconsolidated.malinka.delivery.Delivery
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.delivery.DeliveryMethod
+    io.github.reconsolidated.malinka.delivery.ParcelDelivery
+    io.github.reconsolidated.malinka.delivery.SelfPickupDelivery
+    io.github.reconsolidated.malinka.delivery.StandardDelivery
+
+Depends Upon:
+    jakarta.persistence
+    java.lang
+
+Used By:
+    io.github.reconsolidated.malinka.orders
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.loyaltyProduct
+--------------------------------------------------
+
+Stats:
+    Total Classes: 3
+    Concrete Classes: 2
+    Abstract Classes: 1
+
+    Ca: 2
+    Ce: 7
+
+    A: 0.33
+    I: 0.78
+    D: 0.11
+
+Abstract Classes:
+    io.github.reconsolidated.malinka.loyaltyProduct.LoyaltyProductsRepository
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.loyaltyProduct.LoyaltyProduct
+    io.github.reconsolidated.malinka.loyaltyProduct.LoyaltyProductsService
+
+Depends Upon:
+    io.github.reconsolidated.malinka.utils
+    jakarta.persistence
+    java.lang
+    java.util
+    java.util.stream
+    org.springframework.data.jpa.repository
+    org.springframework.stereotype
+
+Used By:
+    io.github.reconsolidated.malinka.basket
+    io.github.reconsolidated.malinka.mainPage
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.mainPage
+--------------------------------------------------
+
+Stats:
+    Total Classes: 5
+    Concrete Classes: 4
+    Abstract Classes: 1
+
+    Ca: 3
+    Ce: 14
+
+    A: 0.2
+    I: 0.82
+    D: 0.02
+
+Abstract Classes:
+    io.github.reconsolidated.malinka.mainPage.ProductsDbRepo
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.mainPage.MainPageController
+    io.github.reconsolidated.malinka.mainPage.Product
+    io.github.reconsolidated.malinka.mainPage.ProductsRepository
+    io.github.reconsolidated.malinka.mainPage.ProductsService
+
+Depends Upon:
+    io.github.reconsolidated.malinka.basket
+    io.github.reconsolidated.malinka.loyaltyProduct
+    io.github.reconsolidated.malinka.orders
+    io.github.reconsolidated.malinka.user
+    io.github.reconsolidated.malinka.utils
+    jakarta.persistence
+    java.lang
+    java.lang.invoke
+    java.util
+    java.util.stream
+    org.springframework.data.jpa.repository
+    org.springframework.stereotype
+    org.springframework.ui
+    org.springframework.web.bind.annotation
+
+Used By:
+    io.github.reconsolidated.malinka.basket
+    io.github.reconsolidated.malinka.offer
+    io.github.reconsolidated.malinka.orders
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.offer
+--------------------------------------------------
+
+Stats:
+    Total Classes: 13
+    Concrete Classes: 10
+    Abstract Classes: 3
+
+    Ca: 0
+    Ce: 16
+
+    A: 0.23
+    I: 1
+    D: 0.23
+
+Abstract Classes:
+    io.github.reconsolidated.malinka.offer.OfferProductRepository
+    io.github.reconsolidated.malinka.offer.OfferPromotionRepository
+    io.github.reconsolidated.malinka.offer.OfferRepository
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.offer.ManagerController
+    io.github.reconsolidated.malinka.offer.Offer
+    io.github.reconsolidated.malinka.offer.OfferAddEditViewModel
+    io.github.reconsolidated.malinka.offer.OfferController
+    io.github.reconsolidated.malinka.offer.OfferController$TempOffer
+    io.github.reconsolidated.malinka.offer.OfferProduct
+    io.github.reconsolidated.malinka.offer.OfferPromotion
+    io.github.reconsolidated.malinka.offer.OfferService
+    io.github.reconsolidated.malinka.offer.OfferServiceTest
+    io.github.reconsolidated.malinka.offer.TableOfferViewModel
+
+Depends Upon:
+    io.github.reconsolidated.malinka.mainPage
+    io.github.reconsolidated.malinka.promotion
+    jakarta.persistence
+    java.lang
+    java.lang.invoke
+    java.util
+    java.util.stream
+    org.junit.jupiter.api
+    org.junit.jupiter.api.extension
+    org.mockito
+    org.mockito.junit.jupiter
+    org.mockito.stubbing
+    org.springframework.data.jpa.repository
+    org.springframework.stereotype
+    org.springframework.ui
+    org.springframework.web.bind.annotation
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.orders
+--------------------------------------------------
+
+Stats:
+    Total Classes: 4
+    Concrete Classes: 3
+    Abstract Classes: 1
+
+    Ca: 2
+    Ce: 14
+
+    A: 0.25
+    I: 0.88
+    D: 0.12
+
+Abstract Classes:
+    io.github.reconsolidated.malinka.orders.OrderRepository
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.orders.Order
+    io.github.reconsolidated.malinka.orders.OrderController
+    io.github.reconsolidated.malinka.orders.OrderService
+
+Depends Upon:
+    io.github.reconsolidated.malinka.basket
+    io.github.reconsolidated.malinka.delivery
+    io.github.reconsolidated.malinka.mainPage
+    io.github.reconsolidated.malinka.user
+    jakarta.persistence
+    java.lang
+    java.lang.invoke
+    java.time
+    java.util
+    org.springframework.data.jpa.repository
+    org.springframework.stereotype
+    org.springframework.ui
+    org.springframework.web.bind.annotation
+    org.springframework.web.servlet.mvc.support
+
+Used By:
+    io.github.reconsolidated.malinka.mainPage
+    io.github.reconsolidated.malinka.reclamation
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.promotion
+--------------------------------------------------
+
+Stats:
+    Total Classes: 3
+    Concrete Classes: 2
+    Abstract Classes: 1
+
+    Ca: 1
+    Ce: 5
+
+    A: 0.33
+    I: 0.83
+    D: 0.17
+
+Abstract Classes:
+    io.github.reconsolidated.malinka.promotion.PromotionRepository
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.promotion.Promotion
+    io.github.reconsolidated.malinka.promotion.PromotionService
+
+Depends Upon:
+    jakarta.persistence
+    java.lang
+    java.util
+    org.springframework.data.jpa.repository
+    org.springframework.stereotype
+
+Used By:
+    io.github.reconsolidated.malinka.offer
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.reclamation
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 9
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.reclamation.ReclamationController
+
+Depends Upon:
+    io.github.reconsolidated.malinka.basket
+    io.github.reconsolidated.malinka.orders
+    java.lang
+    java.lang.invoke
+    java.util
+    java.util.stream
+    org.springframework.stereotype
+    org.springframework.ui
+    org.springframework.web.bind.annotation
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.user
+--------------------------------------------------
+
+Stats:
+    Total Classes: 3
+    Concrete Classes: 3
+    Abstract Classes: 0
+
+    Ca: 3
+    Ce: 4
+
+    A: 0
+    I: 0.57
+    D: 0.43
+
+Abstract Classes:
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.user.User
+    io.github.reconsolidated.malinka.user.UserRepository
+    io.github.reconsolidated.malinka.user.UserService
+
+Depends Upon:
+    jakarta.persistence
+    java.lang
+    java.util
+    org.springframework.stereotype
+
+Used By:
+    io.github.reconsolidated.malinka.basket
+    io.github.reconsolidated.malinka.mainPage
+    io.github.reconsolidated.malinka.orders
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.utils
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 2
+    Ce: 1
+
+    A: 0
+    I: 0.33
+    D: 0.67
+
+Abstract Classes:
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.utils.Constants
+
+Depends Upon:
+    java.lang
+
+Used By:
+    io.github.reconsolidated.malinka.loyaltyProduct
+    io.github.reconsolidated.malinka.mainPage
+
+--------------------------------------------------
+- Package: jakarta.persistence
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: jakarta.servlet
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: jakarta.servlet.http
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.awt
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.awt.event
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.io
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.lang
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.lang.instrument
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.lang.invoke
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.lang.management
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.lang.ref
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.lang.reflect
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.math
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.net
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.nio
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.nio.channels
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.nio.charset
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.nio.file
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.nio.file.attribute
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.security
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.security.cert
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.security.spec
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.sql
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.text
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.time
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.time.format
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.time.temporal
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.time.zone
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.util
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.util.concurrent
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.util.concurrent.atomic
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.util.concurrent.locks
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.util.function
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.util.logging
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.util.regex
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.util.stream
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: java.util.zip
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.crypto
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.crypto.spec
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.management
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.naming
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.naming.directory
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.naming.spi
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.net
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.net.ssl
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.script
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.security.auth.callback
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.security.auth.login
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.servlet
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.servlet.http
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.sql
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.tools
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.transaction.xa
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.xml
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.xml.parsers
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.xml.stream
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.xml.transform
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.xml.transform.dom
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.xml.transform.sax
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.xml.transform.stax
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: javax.xml.transform.stream
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: jdk.net
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.apache.lucene.analysis
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.apache.lucene.analysis.standard
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.apache.lucene.document
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.apache.lucene.index
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.apache.lucene.queryparser.flexible.standard
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.apache.lucene.search
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.apache.lucene.store
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.apache.maven.wrapper
+--------------------------------------------------
+
+Stats:
+    Total Classes: 13
+    Concrete Classes: 12
+    Abstract Classes: 1
+
+    Ca: 0
+    Ce: 10
+
+    A: 0.08
+    I: 1
+    D: 0.08
+
+Abstract Classes:
+    org.apache.maven.wrapper.Downloader
+
+Concrete Classes:
+    org.apache.maven.wrapper.BootstrapMainStarter
+    org.apache.maven.wrapper.DefaultDownloader
+    org.apache.maven.wrapper.DefaultDownloader$1
+    org.apache.maven.wrapper.DefaultDownloader$SystemPropertiesProxyAuthenticator
+    org.apache.maven.wrapper.Installer
+    org.apache.maven.wrapper.Logger
+    org.apache.maven.wrapper.MavenWrapperMain
+    org.apache.maven.wrapper.PathAssembler
+    org.apache.maven.wrapper.PathAssembler$LocalDistribution
+    org.apache.maven.wrapper.SystemPropertiesHandler
+    org.apache.maven.wrapper.WrapperConfiguration
+    org.apache.maven.wrapper.WrapperExecutor
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.reflect
+    java.math
+    java.net
+    java.security
+    java.util
+    java.util.regex
+    java.util.zip
+    org.apache.maven.wrapper.cli
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: org.apache.maven.wrapper.cli
+--------------------------------------------------
+
+Stats:
+    Total Classes: 24
+    Concrete Classes: 18
+    Abstract Classes: 6
+
+    Ca: 1
+    Ce: 3
+
+    A: 0.25
+    I: 0.75
+    D: 0
+
+Abstract Classes:
+    org.apache.maven.wrapper.cli.AbstractCommandLineConverter
+    org.apache.maven.wrapper.cli.AbstractPropertiesCommandLineConverter
+    org.apache.maven.wrapper.cli.CommandLineConverter
+    org.apache.maven.wrapper.cli.CommandLineParser$OptionAwareParserState
+    org.apache.maven.wrapper.cli.CommandLineParser$OptionParserState
+    org.apache.maven.wrapper.cli.CommandLineParser$ParserState
+
+Concrete Classes:
+    org.apache.maven.wrapper.cli.CommandLineArgumentException
+    org.apache.maven.wrapper.cli.CommandLineOption
+    org.apache.maven.wrapper.cli.CommandLineParser
+    org.apache.maven.wrapper.cli.CommandLineParser$1
+    org.apache.maven.wrapper.cli.CommandLineParser$AfterFirstSubCommand
+    org.apache.maven.wrapper.cli.CommandLineParser$AfterOptions
+    org.apache.maven.wrapper.cli.CommandLineParser$BeforeFirstSubCommand
+    org.apache.maven.wrapper.cli.CommandLineParser$CaseInsensitiveStringComparator
+    org.apache.maven.wrapper.cli.CommandLineParser$KnownOptionParserState
+    org.apache.maven.wrapper.cli.CommandLineParser$MissingOptionArgState
+    org.apache.maven.wrapper.cli.CommandLineParser$OptionComparator
+    org.apache.maven.wrapper.cli.CommandLineParser$OptionString
+    org.apache.maven.wrapper.cli.CommandLineParser$OptionStringComparator
+    org.apache.maven.wrapper.cli.CommandLineParser$UnknownOptionParserState
+    org.apache.maven.wrapper.cli.ParsedCommandLine
+    org.apache.maven.wrapper.cli.ParsedCommandLineOption
+    org.apache.maven.wrapper.cli.ProjectPropertiesCommandLineConverter
+    org.apache.maven.wrapper.cli.SystemPropertiesCommandLineConverter
+
+Depends Upon:
+    java.io
+    java.lang
+    java.util
+
+Used By:
+    org.apache.maven.wrapper
+
+--------------------------------------------------
+- Package: org.h2
+--------------------------------------------------
+
+Stats:
+    Total Classes: 2
+    Concrete Classes: 1
+    Abstract Classes: 1
+
+    Ca: 4
+    Ce: 8
+
+    A: 0.5
+    I: 0.67
+    D: 0.17
+
+Abstract Classes:
+    org.h2.JdbcDriverBackwardsCompat
+
+Concrete Classes:
+    org.h2.Driver
+
+Depends Upon:
+    java.lang
+    java.sql
+    java.util
+    java.util.logging
+    org.h2.api
+    org.h2.engine
+    org.h2.jdbc
+    org.h2.message
+
+Used By:
+    org.h2.schema
+    org.h2.server.web
+    org.h2.store
+    org.h2.util
+
+--------------------------------------------------
+- Package: org.h2.api
+--------------------------------------------------
+
+Stats:
+    Total Classes: 13
+    Concrete Classes: 5
+    Abstract Classes: 8
+
+    Ca: 39
+    Ce: 9
+
+    A: 0.62
+    I: 0.19
+    D: 0.2
+
+Abstract Classes:
+    org.h2.api.Aggregate
+    org.h2.api.AggregateFunction
+    org.h2.api.CredentialsValidator
+    org.h2.api.DatabaseEventListener
+    org.h2.api.JavaObjectSerializer
+    org.h2.api.TableEngine
+    org.h2.api.Trigger
+    org.h2.api.UserToRolesMapper
+
+Concrete Classes:
+    org.h2.api.ErrorCode
+    org.h2.api.H2Type
+    org.h2.api.Interval
+    org.h2.api.IntervalQualifier
+    org.h2.api.IntervalQualifier$1
+
+Depends Upon:
+    java.lang
+    java.sql
+    java.util
+    org.h2.command.ddl
+    org.h2.message
+    org.h2.security.auth
+    org.h2.table
+    org.h2.util
+    org.h2.value
+
+Used By:
+    org.h2
+    org.h2.command
+    org.h2.command.ddl
+    org.h2.command.dml
+    org.h2.command.query
+    org.h2.compress
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.aggregate
+    org.h2.expression.analysis
+    org.h2.expression.condition
+    org.h2.expression.function
+    org.h2.expression.function.table
+    org.h2.fulltext
+    org.h2.index
+    org.h2.jdbc
+    org.h2.jdbc.meta
+    org.h2.jdbcx
+    org.h2.message
+    org.h2.mode
+    org.h2.mvstore.db
+    org.h2.result
+    org.h2.schema
+    org.h2.security
+    org.h2.security.auth
+    org.h2.security.auth.impl
+    org.h2.server
+    org.h2.server.pg
+    org.h2.server.web
+    org.h2.store
+    org.h2.store.fs.disk
+    org.h2.store.fs.mem
+    org.h2.store.fs.niomem
+    org.h2.table
+    org.h2.tools
+    org.h2.util
+    org.h2.util.geometry
+    org.h2.value
+
+--------------------------------------------------
+- Package: org.h2.bnf
+--------------------------------------------------
+
+Stats:
+    Total Classes: 11
+    Concrete Classes: 9
+    Abstract Classes: 2
+
+    Ca: 2
+    Ce: 9
+
+    A: 0.18
+    I: 0.82
+    D: 0
+
+Abstract Classes:
+    org.h2.bnf.BnfVisitor
+    org.h2.bnf.Rule
+
+Concrete Classes:
+    org.h2.bnf.Bnf
+    org.h2.bnf.RuleElement
+    org.h2.bnf.RuleExtension
+    org.h2.bnf.RuleFixed
+    org.h2.bnf.RuleHead
+    org.h2.bnf.RuleList
+    org.h2.bnf.RuleOptional
+    org.h2.bnf.RuleRepeat
+    org.h2.bnf.Sentence
+
+Depends Upon:
+    java.io
+    java.lang
+    java.nio.charset
+    java.sql
+    java.util
+    org.h2.bnf.context
+    org.h2.command.dml
+    org.h2.tools
+    org.h2.util
+
+Used By:
+    org.h2.bnf.context
+    org.h2.server.web
+
+--------------------------------------------------
+- Package: org.h2.bnf.context
+--------------------------------------------------
+
+Stats:
+    Total Classes: 6
+    Concrete Classes: 6
+    Abstract Classes: 0
+
+    Ca: 2
+    Ce: 8
+
+    A: 0
+    I: 0.8
+    D: 0.2
+
+Abstract Classes:
+
+Concrete Classes:
+    org.h2.bnf.context.DbColumn
+    org.h2.bnf.context.DbContents
+    org.h2.bnf.context.DbContextRule
+    org.h2.bnf.context.DbProcedure
+    org.h2.bnf.context.DbSchema
+    org.h2.bnf.context.DbTableOrView
+
+Depends Upon:
+    java.lang
+    java.sql
+    java.util
+    org.h2.bnf
+    org.h2.engine
+    org.h2.jdbc
+    org.h2.message
+    org.h2.util
+
+Used By:
+    org.h2.bnf
+    org.h2.server.web
+
+--------------------------------------------------
+- Package: org.h2.command
+--------------------------------------------------
+
+Stats:
+    Total Classes: 23
+    Concrete Classes: 18
+    Abstract Classes: 5
+
+    Ca: 18
+    Ce: 30
+
+    A: 0.22
+    I: 0.62
+    D: 0.16
+
+Abstract Classes:
+    org.h2.command.Command
+    org.h2.command.CommandInterface
+    org.h2.command.Prepared
+    org.h2.command.Token
+    org.h2.command.Token$LiteralToken
+
+Concrete Classes:
+    org.h2.command.CommandContainer
+    org.h2.command.CommandContainer$GeneratedKeysCollector
+    org.h2.command.CommandList
+    org.h2.command.CommandRemote
+    org.h2.command.Parser
+    org.h2.command.Parser$1
+    org.h2.command.Parser$NullConstraintType
+    org.h2.command.Token$BigintToken
+    org.h2.command.Token$BinaryStringToken
+    org.h2.command.Token$CharacterStringToken
+    org.h2.command.Token$EndOfInputToken
+    org.h2.command.Token$IdentifierToken
+    org.h2.command.Token$IntegerToken
+    org.h2.command.Token$KeywordOrIdentifierToken
+    org.h2.command.Token$KeywordToken
+    org.h2.command.Token$ParameterToken
+    org.h2.command.Token$ValueToken
+    org.h2.command.Tokenizer
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.invoke
+    java.math
+    java.nio.charset
+    java.sql
+    java.text
+    java.util
+    org.h2.api
+    org.h2.command.ddl
+    org.h2.command.dml
+    org.h2.command.query
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.aggregate
+    org.h2.expression.analysis
+    org.h2.expression.condition
+    org.h2.expression.function
+    org.h2.expression.function.table
+    org.h2.index
+    org.h2.message
+    org.h2.mode
+    org.h2.result
+    org.h2.schema
+    org.h2.table
+    org.h2.util
+    org.h2.util.geometry
+    org.h2.util.json
+    org.h2.value
+
+Used By:
+    org.h2.command.ddl
+    org.h2.command.dml
+    org.h2.command.query
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.function
+    org.h2.fulltext
+    org.h2.index
+    org.h2.jdbc
+    org.h2.jdbc.meta
+    org.h2.jmx
+    org.h2.mode
+    org.h2.server
+    org.h2.server.pg
+    org.h2.server.web
+    org.h2.store
+    org.h2.table
+
+--------------------------------------------------
+- Package: org.h2.command.ddl
+--------------------------------------------------
+
+Stats:
+    Total Classes: 62
+    Concrete Classes: 56
+    Abstract Classes: 6
+
+    Ca: 8
+    Ce: 20
+
+    A: 0.1
+    I: 0.71
+    D: 0.19
+
+Abstract Classes:
+    org.h2.command.ddl.AlterDomain
+    org.h2.command.ddl.AlterTable
+    org.h2.command.ddl.CommandWithColumns
+    org.h2.command.ddl.DefineCommand
+    org.h2.command.ddl.SchemaCommand
+    org.h2.command.ddl.SchemaOwnerCommand
+
+Concrete Classes:
+    org.h2.command.ddl.AlterDomainAddConstraint
+    org.h2.command.ddl.AlterDomainDropConstraint
+    org.h2.command.ddl.AlterDomainExpressions
+    org.h2.command.ddl.AlterDomainRename
+    org.h2.command.ddl.AlterDomainRenameConstraint
+    org.h2.command.ddl.AlterIndexRename
+    org.h2.command.ddl.AlterSchemaRename
+    org.h2.command.ddl.AlterSequence
+    org.h2.command.ddl.AlterTableAddConstraint
+    org.h2.command.ddl.AlterTableAddConstraint$1
+    org.h2.command.ddl.AlterTableAlterColumn
+    org.h2.command.ddl.AlterTableDropConstraint
+    org.h2.command.ddl.AlterTableRename
+    org.h2.command.ddl.AlterTableRenameColumn
+    org.h2.command.ddl.AlterTableRenameConstraint
+    org.h2.command.ddl.AlterUser
+    org.h2.command.ddl.AlterView
+    org.h2.command.ddl.Analyze
+    org.h2.command.ddl.Analyze$SelectivityData
+    org.h2.command.ddl.CreateAggregate
+    org.h2.command.ddl.CreateConstant
+    org.h2.command.ddl.CreateDomain
+    org.h2.command.ddl.CreateFunctionAlias
+    org.h2.command.ddl.CreateIndex
+    org.h2.command.ddl.CreateLinkedTable
+    org.h2.command.ddl.CreateRole
+    org.h2.command.ddl.CreateSchema
+    org.h2.command.ddl.CreateSequence
+    org.h2.command.ddl.CreateSynonym
+    org.h2.command.ddl.CreateSynonymData
+    org.h2.command.ddl.CreateTable
+    org.h2.command.ddl.CreateTableData
+    org.h2.command.ddl.CreateTrigger
+    org.h2.command.ddl.CreateUser
+    org.h2.command.ddl.CreateView
+    org.h2.command.ddl.DeallocateProcedure
+    org.h2.command.ddl.DropAggregate
+    org.h2.command.ddl.DropConstant
+    org.h2.command.ddl.DropDatabase
+    org.h2.command.ddl.DropDomain
+    org.h2.command.ddl.DropFunctionAlias
+    org.h2.command.ddl.DropIndex
+    org.h2.command.ddl.DropRole
+    org.h2.command.ddl.DropSchema
+    org.h2.command.ddl.DropSequence
+    org.h2.command.ddl.DropSynonym
+    org.h2.command.ddl.DropTable
+    org.h2.command.ddl.DropTable$SchemaAndTable
+    org.h2.command.ddl.DropTrigger
+    org.h2.command.ddl.DropUser
+    org.h2.command.ddl.DropView
+    org.h2.command.ddl.GrantRevoke
+    org.h2.command.ddl.PrepareProcedure
+    org.h2.command.ddl.SequenceOptions
+    org.h2.command.ddl.SetComment
+    org.h2.command.ddl.TruncateTable
+
+Depends Upon:
+    java.lang
+    java.lang.invoke
+    java.util
+    java.util.concurrent
+    java.util.function
+    org.h2.api
+    org.h2.command
+    org.h2.command.dml
+    org.h2.command.query
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression
+    org.h2.index
+    org.h2.message
+    org.h2.result
+    org.h2.schema
+    org.h2.security
+    org.h2.table
+    org.h2.util
+    org.h2.value
+
+Used By:
+    org.h2.api
+    org.h2.command
+    org.h2.command.dml
+    org.h2.constraint
+    org.h2.engine
+    org.h2.mvstore.db
+    org.h2.schema
+    org.h2.table
+
+--------------------------------------------------
+- Package: org.h2.command.dml
+--------------------------------------------------
+
+Stats:
+    Total Classes: 34
+    Concrete Classes: 29
+    Abstract Classes: 5
+
+    Ca: 8
+    Ce: 33
+
+    A: 0.15
+    I: 0.8
+    D: 0.05
+
+Abstract Classes:
+    org.h2.command.dml.CommandWithValues
+    org.h2.command.dml.DataChangeStatement
+    org.h2.command.dml.FilteredDataChangeStatement
+    org.h2.command.dml.MergeUsing$When
+    org.h2.command.dml.ScriptBase
+
+Concrete Classes:
+    org.h2.command.dml.AlterTableSet
+    org.h2.command.dml.BackupCommand
+    org.h2.command.dml.Call
+    org.h2.command.dml.Delete
+    org.h2.command.dml.ExecuteImmediate
+    org.h2.command.dml.ExecuteProcedure
+    org.h2.command.dml.Explain
+    org.h2.command.dml.Help
+    org.h2.command.dml.Insert
+    org.h2.command.dml.Merge
+    org.h2.command.dml.MergeUsing
+    org.h2.command.dml.MergeUsing$WhenMatchedThenDelete
+    org.h2.command.dml.MergeUsing$WhenMatchedThenUpdate
+    org.h2.command.dml.MergeUsing$WhenNotMatched
+    org.h2.command.dml.NoOperation
+    org.h2.command.dml.RunScriptCommand
+    org.h2.command.dml.ScriptCommand
+    org.h2.command.dml.ScriptCommand$1
+    org.h2.command.dml.ScriptCommand$2
+    org.h2.command.dml.Set
+    org.h2.command.dml.SetClauseList
+    org.h2.command.dml.SetClauseList$RowExpression
+    org.h2.command.dml.SetClauseList$SetMultiple
+    org.h2.command.dml.SetClauseList$SetSimple
+    org.h2.command.dml.SetClauseList$UpdateAction
+    org.h2.command.dml.SetSessionCharacteristics
+    org.h2.command.dml.SetTypes
+    org.h2.command.dml.TransactionCommand
+    org.h2.command.dml.Update
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.invoke
+    java.lang.reflect
+    java.nio.charset
+    java.sql
+    java.text
+    java.util
+    java.util.zip
+    org.h2.api
+    org.h2.command
+    org.h2.command.ddl
+    org.h2.command.query
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.condition
+    org.h2.expression.function.table
+    org.h2.index
+    org.h2.message
+    org.h2.mode
+    org.h2.mvstore
+    org.h2.mvstore.db
+    org.h2.result
+    org.h2.schema
+    org.h2.security
+    org.h2.security.auth
+    org.h2.store
+    org.h2.store.fs
+    org.h2.table
+    org.h2.tools
+    org.h2.util
+    org.h2.value
+
+Used By:
+    org.h2.bnf
+    org.h2.command
+    org.h2.command.ddl
+    org.h2.engine
+    org.h2.jdbc.meta
+    org.h2.mode
+    org.h2.table
+    org.h2.tools
+
+--------------------------------------------------
+- Package: org.h2.command.query
+--------------------------------------------------
+
+Stats:
+    Total Classes: 19
+    Concrete Classes: 16
+    Abstract Classes: 3
+
+    Ca: 13
+    Ce: 18
+
+    A: 0.16
+    I: 0.58
+    D: 0.26
+
+Abstract Classes:
+    org.h2.command.query.Query
+    org.h2.command.query.Select$LazyResultSelect
+    org.h2.command.query.SelectGroups
+
+Concrete Classes:
+    org.h2.command.query.AllColumnsForPlan
+    org.h2.command.query.Optimizer
+    org.h2.command.query.Query$OffsetFetch
+    org.h2.command.query.QueryOrderBy
+    org.h2.command.query.Select
+    org.h2.command.query.Select$LazyResultGroupSorted
+    org.h2.command.query.Select$LazyResultQueryFlat
+    org.h2.command.query.SelectGroups$Grouped
+    org.h2.command.query.SelectGroups$Plain
+    org.h2.command.query.SelectListColumnResolver
+    org.h2.command.query.SelectUnion
+    org.h2.command.query.SelectUnion$1
+    org.h2.command.query.SelectUnion$LazyResultUnion
+    org.h2.command.query.SelectUnion$UnionType
+    org.h2.command.query.TableValueConstructor
+    org.h2.command.query.TableValueConstructor$TableValueColumnResolver
+
+Depends Upon:
+    java.lang
+    java.lang.invoke
+    java.util
+    org.h2.api
+    org.h2.command
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.analysis
+    org.h2.expression.condition
+    org.h2.expression.function
+    org.h2.index
+    org.h2.message
+    org.h2.mode
+    org.h2.result
+    org.h2.schema
+    org.h2.table
+    org.h2.util
+    org.h2.value
+
+Used By:
+    org.h2.command
+    org.h2.command.ddl
+    org.h2.command.dml
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.aggregate
+    org.h2.expression.analysis
+    org.h2.expression.condition
+    org.h2.index
+    org.h2.mvstore.db
+    org.h2.result
+    org.h2.table
+
+--------------------------------------------------
+- Package: org.h2.compress
+--------------------------------------------------
+
+Stats:
+    Total Classes: 6
+    Concrete Classes: 5
+    Abstract Classes: 1
+
+    Ca: 4
+    Ce: 9
+
+    A: 0.17
+    I: 0.69
+    D: 0.14
+
+Abstract Classes:
+    org.h2.compress.Compressor
+
+Concrete Classes:
+    org.h2.compress.CompressDeflate
+    org.h2.compress.CompressLZF
+    org.h2.compress.CompressNo
+    org.h2.compress.LZFInputStream
+    org.h2.compress.LZFOutputStream
+
+Depends Upon:
+    java.io
+    java.lang
+    java.nio
+    java.util
+    java.util.zip
+    org.h2.api
+    org.h2.engine
+    org.h2.mvstore
+    org.h2.util
+
+Used By:
+    org.h2.mvstore
+    org.h2.store.fs.mem
+    org.h2.store.fs.niomem
+    org.h2.tools
+
+--------------------------------------------------
+- Package: org.h2.constraint
+--------------------------------------------------
+
+Stats:
+    Total Classes: 9
+    Concrete Classes: 8
+    Abstract Classes: 1
+
+    Ca: 10
+    Ce: 16
+
+    A: 0.11
+    I: 0.62
+    D: 0.27
+
+Abstract Classes:
+    org.h2.constraint.Constraint
+
+Concrete Classes:
+    org.h2.constraint.Constraint$Type
+    org.h2.constraint.ConstraintActionType
+    org.h2.constraint.ConstraintCheck
+    org.h2.constraint.ConstraintDomain
+    org.h2.constraint.ConstraintDomain$CheckExistingData
+    org.h2.constraint.ConstraintReferential
+    org.h2.constraint.ConstraintUnique
+    org.h2.constraint.DomainColumnResolver
+
+Depends Upon:
+    java.lang
+    java.lang.invoke
+    java.util
+    org.h2.api
+    org.h2.command
+    org.h2.command.ddl
+    org.h2.command.query
+    org.h2.engine
+    org.h2.expression
+    org.h2.index
+    org.h2.message
+    org.h2.result
+    org.h2.schema
+    org.h2.table
+    org.h2.util
+    org.h2.value
+
+Used By:
+    org.h2.command
+    org.h2.command.ddl
+    org.h2.command.dml
+    org.h2.engine
+    org.h2.expression
+    org.h2.jdbc.meta
+    org.h2.mode
+    org.h2.mvstore.db
+    org.h2.schema
+    org.h2.table
+
+--------------------------------------------------
+- Package: org.h2.engine
+--------------------------------------------------
+
+Stats:
+    Total Classes: 42
+    Concrete Classes: 38
+    Abstract Classes: 4
+
+    Ca: 43
+    Ce: 40
+
+    A: 0.1
+    I: 0.48
+    D: 0.42
+
+Abstract Classes:
+    org.h2.engine.CastDataProvider
+    org.h2.engine.DbObject
+    org.h2.engine.RightOwner
+    org.h2.engine.Session
+
+Concrete Classes:
+    org.h2.engine.Comment
+    org.h2.engine.ConnectionInfo
+    org.h2.engine.Constants
+    org.h2.engine.Database
+    org.h2.engine.DbSettings
+    org.h2.engine.DelayedDatabaseCloser
+    org.h2.engine.Engine
+    org.h2.engine.Engine$DatabaseHolder
+    org.h2.engine.GeneratedKeysMode
+    org.h2.engine.IsolationLevel
+    org.h2.engine.MetaRecord
+    org.h2.engine.Mode
+    org.h2.engine.Mode$CharPadding
+    org.h2.engine.Mode$ExpressionNames
+    org.h2.engine.Mode$ModeEnum
+    org.h2.engine.Mode$UniqueIndexNullsHandling
+    org.h2.engine.Mode$ViewExpressionNames
+    org.h2.engine.OnExitDatabaseCloser
+    org.h2.engine.Procedure
+    org.h2.engine.QueryStatisticsData
+    org.h2.engine.QueryStatisticsData$QueryEntry
+    org.h2.engine.Right
+    org.h2.engine.Role
+    org.h2.engine.Session$DynamicSettings
+    org.h2.engine.Session$StaticSettings
+    org.h2.engine.SessionLocal
+    org.h2.engine.SessionLocal$1
+    org.h2.engine.SessionLocal$RowNumberAndValue
+    org.h2.engine.SessionLocal$Savepoint
+    org.h2.engine.SessionLocal$SequenceAndPrepared
+    org.h2.engine.SessionLocal$State
+    org.h2.engine.SessionLocal$TimeoutValue
+    org.h2.engine.SessionRemote
+    org.h2.engine.Setting
+    org.h2.engine.SettingsBase
+    org.h2.engine.SysProperties
+    org.h2.engine.User
+    org.h2.engine.UserBuilder
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.invoke
+    java.lang.ref
+    java.lang.reflect
+    java.net
+    java.sql
+    java.time
+    java.util
+    java.util.concurrent
+    java.util.concurrent.atomic
+    java.util.regex
+    org.h2.api
+    org.h2.command
+    org.h2.command.ddl
+    org.h2.command.dml
+    org.h2.command.query
+    org.h2.constraint
+    org.h2.expression
+    org.h2.index
+    org.h2.jdbc
+    org.h2.jdbc.meta
+    org.h2.message
+    org.h2.mode
+    org.h2.mvstore
+    org.h2.mvstore.db
+    org.h2.mvstore.tx
+    org.h2.result
+    org.h2.schema
+    org.h2.security
+    org.h2.security.auth
+    org.h2.store
+    org.h2.store.fs
+    org.h2.store.fs.encrypt
+    org.h2.store.fs.rec
+    org.h2.table
+    org.h2.tools
+    org.h2.util
+    org.h2.value
+    org.h2.value.lob
+
+Used By:
+    org.h2
+    org.h2.bnf.context
+    org.h2.command
+    org.h2.command.ddl
+    org.h2.command.dml
+    org.h2.command.query
+    org.h2.compress
+    org.h2.constraint
+    org.h2.expression
+    org.h2.expression.aggregate
+    org.h2.expression.analysis
+    org.h2.expression.condition
+    org.h2.expression.function
+    org.h2.expression.function.table
+    org.h2.fulltext
+    org.h2.index
+    org.h2.jdbc
+    org.h2.jdbc.meta
+    org.h2.jdbcx
+    org.h2.jmx
+    org.h2.message
+    org.h2.mode
+    org.h2.mvstore
+    org.h2.mvstore.db
+    org.h2.mvstore.tx
+    org.h2.mvstore.type
+    org.h2.result
+    org.h2.schema
+    org.h2.security
+    org.h2.security.auth
+    org.h2.server
+    org.h2.server.pg
+    org.h2.server.web
+    org.h2.store
+    org.h2.store.fs
+    org.h2.store.fs.disk
+    org.h2.store.fs.niomapped
+    org.h2.store.fs.split
+    org.h2.table
+    org.h2.tools
+    org.h2.util
+    org.h2.value
+    org.h2.value.lob
+
+--------------------------------------------------
+- Package: org.h2.expression
+--------------------------------------------------
+
+Stats:
+    Total Classes: 42
+    Concrete Classes: 33
+    Abstract Classes: 9
+
+    Ca: 23
+    Ce: 21
+
+    A: 0.21
+    I: 0.48
+    D: 0.31
+
+Abstract Classes:
+    org.h2.expression.Expression
+    org.h2.expression.ExpressionWithFlags
+    org.h2.expression.ExpressionWithVariableParameters
+    org.h2.expression.Operation0
+    org.h2.expression.Operation1
+    org.h2.expression.Operation1_2
+    org.h2.expression.Operation2
+    org.h2.expression.OperationN
+    org.h2.expression.ParameterInterface
+
+Concrete Classes:
+    org.h2.expression.Alias
+    org.h2.expression.ArrayConstructorByQuery
+    org.h2.expression.ArrayElementReference
+    org.h2.expression.BinaryOperation
+    org.h2.expression.BinaryOperation$1
+    org.h2.expression.BinaryOperation$OpType
+    org.h2.expression.CompatibilityDatePlusTimeOperation
+    org.h2.expression.ConcatenationOperation
+    org.h2.expression.DomainValueExpression
+    org.h2.expression.Expression$1
+    org.h2.expression.ExpressionColumn
+    org.h2.expression.ExpressionList
+    org.h2.expression.ExpressionVisitor
+    org.h2.expression.FieldReference
+    org.h2.expression.Format
+    org.h2.expression.Format$FormatEnum
+    org.h2.expression.IntervalOperation
+    org.h2.expression.IntervalOperation$1
+    org.h2.expression.IntervalOperation$IntervalOpType
+    org.h2.expression.Parameter
+    org.h2.expression.ParameterRemote
+    org.h2.expression.Rownum
+    org.h2.expression.SearchedCase
+    org.h2.expression.SequenceValue
+    org.h2.expression.SimpleCase
+    org.h2.expression.SimpleCase$SimpleWhen
+    org.h2.expression.Subquery
+    org.h2.expression.TimeZoneOperation
+    org.h2.expression.TypedValueExpression
+    org.h2.expression.UnaryOperation
+    org.h2.expression.ValueExpression
+    org.h2.expression.Variable
+    org.h2.expression.Wildcard
+
+Depends Upon:
+    java.io
+    java.lang
+    java.math
+    java.sql
+    java.util
+    org.h2.api
+    org.h2.command
+    org.h2.command.query
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression.condition
+    org.h2.expression.function
+    org.h2.index
+    org.h2.message
+    org.h2.mode
+    org.h2.mvstore.db
+    org.h2.result
+    org.h2.schema
+    org.h2.table
+    org.h2.util
+    org.h2.value
+
+Used By:
+    org.h2.command
+    org.h2.command.ddl
+    org.h2.command.dml
+    org.h2.command.query
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression.aggregate
+    org.h2.expression.analysis
+    org.h2.expression.condition
+    org.h2.expression.function
+    org.h2.expression.function.table
+    org.h2.fulltext
+    org.h2.index
+    org.h2.jdbc
+    org.h2.jdbc.meta
+    org.h2.message
+    org.h2.mode
+    org.h2.mvstore.db
+    org.h2.result
+    org.h2.schema
+    org.h2.server
+    org.h2.server.pg
+    org.h2.table
+
+--------------------------------------------------
+- Package: org.h2.expression.aggregate
+--------------------------------------------------
+
+Stats:
+    Total Classes: 24
+    Concrete Classes: 21
+    Abstract Classes: 3
+
+    Ca: 3
+    Ce: 24
+
+    A: 0.12
+    I: 0.89
+    D: 0.01
+
+Abstract Classes:
+    org.h2.expression.aggregate.AbstractAggregate
+    org.h2.expression.aggregate.AggregateData
+    org.h2.expression.aggregate.AggregateDataBinarySet
+
+Concrete Classes:
+    org.h2.expression.aggregate.Aggregate
+    org.h2.expression.aggregate.Aggregate$1
+    org.h2.expression.aggregate.AggregateDataAvg
+    org.h2.expression.aggregate.AggregateDataCollecting
+    org.h2.expression.aggregate.AggregateDataCollecting$NullCollectionMode
+    org.h2.expression.aggregate.AggregateDataCorr
+    org.h2.expression.aggregate.AggregateDataCorr$1
+    org.h2.expression.aggregate.AggregateDataCount
+    org.h2.expression.aggregate.AggregateDataCovar
+    org.h2.expression.aggregate.AggregateDataCovar$1
+    org.h2.expression.aggregate.AggregateDataDefault
+    org.h2.expression.aggregate.AggregateDataDefault$1
+    org.h2.expression.aggregate.AggregateDataDistinctWithCounts
+    org.h2.expression.aggregate.AggregateDataEnvelope
+    org.h2.expression.aggregate.AggregateDataStdVar
+    org.h2.expression.aggregate.AggregateDataStdVar$1
+    org.h2.expression.aggregate.AggregateType
+    org.h2.expression.aggregate.JavaAggregate
+    org.h2.expression.aggregate.ListaggArguments
+    org.h2.expression.aggregate.LongDataCounter
+    org.h2.expression.aggregate.Percentile
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.invoke
+    java.math
+    java.sql
+    java.util
+    org.h2.api
+    org.h2.command.query
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.analysis
+    org.h2.expression.function
+    org.h2.index
+    org.h2.jdbc
+    org.h2.message
+    org.h2.mode
+    org.h2.mvstore.db
+    org.h2.result
+    org.h2.schema
+    org.h2.table
+    org.h2.util
+    org.h2.util.geometry
+    org.h2.util.json
+    org.h2.value
+
+Used By:
+    org.h2.command
+    org.h2.expression.condition
+    org.h2.expression.function
+
+--------------------------------------------------
+- Package: org.h2.expression.analysis
+--------------------------------------------------
+
+Stats:
+    Total Classes: 21
+    Concrete Classes: 19
+    Abstract Classes: 2
+
+    Ca: 3
+    Ce: 11
+
+    A: 0.1
+    I: 0.79
+    D: 0.12
+
+Abstract Classes:
+    org.h2.expression.analysis.DataAnalysisOperation
+    org.h2.expression.analysis.WindowFrame$Itr
+
+Concrete Classes:
+    org.h2.expression.analysis.DataAnalysisOperation$1
+    org.h2.expression.analysis.PartitionData
+    org.h2.expression.analysis.Window
+    org.h2.expression.analysis.WindowFrame
+    org.h2.expression.analysis.WindowFrame$1
+    org.h2.expression.analysis.WindowFrame$BiItr
+    org.h2.expression.analysis.WindowFrame$BiReverseItr
+    org.h2.expression.analysis.WindowFrame$PlainItr
+    org.h2.expression.analysis.WindowFrame$PlainReverseItr
+    org.h2.expression.analysis.WindowFrame$TriItr
+    org.h2.expression.analysis.WindowFrame$TriReverseItr
+    org.h2.expression.analysis.WindowFrameBound
+    org.h2.expression.analysis.WindowFrameBoundType
+    org.h2.expression.analysis.WindowFrameExclusion
+    org.h2.expression.analysis.WindowFrameUnits
+    org.h2.expression.analysis.WindowFunction
+    org.h2.expression.analysis.WindowFunction$1
+    org.h2.expression.analysis.WindowFunctionType
+    org.h2.expression.analysis.WindowFunctionType$1
+
+Depends Upon:
+    java.lang
+    java.util
+    org.h2.api
+    org.h2.command.query
+    org.h2.engine
+    org.h2.expression
+    org.h2.message
+    org.h2.result
+    org.h2.table
+    org.h2.util
+    org.h2.value
+
+Used By:
+    org.h2.command
+    org.h2.command.query
+    org.h2.expression.aggregate
+
+--------------------------------------------------
+- Package: org.h2.expression.condition
+--------------------------------------------------
+
+Stats:
+    Total Classes: 26
+    Concrete Classes: 23
+    Abstract Classes: 3
+
+    Ca: 8
+    Ce: 16
+
+    A: 0.12
+    I: 0.67
+    D: 0.22
+
+Abstract Classes:
+    org.h2.expression.condition.Condition
+    org.h2.expression.condition.PredicateWithSubquery
+    org.h2.expression.condition.SimplePredicate
+
+Concrete Classes:
+    org.h2.expression.condition.BetweenPredicate
+    org.h2.expression.condition.BooleanTest
+    org.h2.expression.condition.CompareLike
+    org.h2.expression.condition.CompareLike$1
+    org.h2.expression.condition.CompareLike$LikeType
+    org.h2.expression.condition.Comparison
+    org.h2.expression.condition.ConditionAndOr
+    org.h2.expression.condition.ConditionAndOrN
+    org.h2.expression.condition.ConditionAndOrN$1
+    org.h2.expression.condition.ConditionIn
+    org.h2.expression.condition.ConditionInConstantSet
+    org.h2.expression.condition.ConditionInParameter
+    org.h2.expression.condition.ConditionInParameter$ParameterList
+    org.h2.expression.condition.ConditionInQuery
+    org.h2.expression.condition.ConditionLocalAndGlobal
+    org.h2.expression.condition.ConditionNot
+    org.h2.expression.condition.ExistsPredicate
+    org.h2.expression.condition.IsJsonPredicate
+    org.h2.expression.condition.IsJsonPredicate$1
+    org.h2.expression.condition.NullPredicate
+    org.h2.expression.condition.TypePredicate
+    org.h2.expression.condition.UniquePredicate
+    org.h2.expression.condition.UniquePredicate$Target
+
+Depends Upon:
+    java.lang
+    java.util
+    java.util.regex
+    org.h2.api
+    org.h2.command.query
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.aggregate
+    org.h2.expression.function
+    org.h2.index
+    org.h2.message
+    org.h2.result
+    org.h2.table
+    org.h2.util
+    org.h2.util.json
+    org.h2.value
+
+Used By:
+    org.h2.command
+    org.h2.command.dml
+    org.h2.command.query
+    org.h2.expression
+    org.h2.fulltext
+    org.h2.index
+    org.h2.jdbc.meta
+    org.h2.table
+
+--------------------------------------------------
+- Package: org.h2.expression.function
+--------------------------------------------------
+
+Stats:
+    Total Classes: 56
+    Concrete Classes: 50
+    Abstract Classes: 6
+
+    Ca: 7
+    Ce: 31
+
+    A: 0.11
+    I: 0.82
+    D: 0.08
+
+Abstract Classes:
+    org.h2.expression.function.Function0_1
+    org.h2.expression.function.Function1
+    org.h2.expression.function.Function1_2
+    org.h2.expression.function.Function2
+    org.h2.expression.function.FunctionN
+    org.h2.expression.function.NamedExpression
+
+Concrete Classes:
+    org.h2.expression.function.ArrayFunction
+    org.h2.expression.function.BitFunction
+    org.h2.expression.function.BitFunction$1
+    org.h2.expression.function.BuiltinFunctions
+    org.h2.expression.function.CSVWriteFunction
+    org.h2.expression.function.CardinalityExpression
+    org.h2.expression.function.CastSpecification
+    org.h2.expression.function.CoalesceFunction
+    org.h2.expression.function.CompatibilitySequenceValueFunction
+    org.h2.expression.function.CompressFunction
+    org.h2.expression.function.ConcatFunction
+    org.h2.expression.function.CryptFunction
+    org.h2.expression.function.CurrentDateTimeValueFunction
+    org.h2.expression.function.CurrentGeneralValueSpecification
+    org.h2.expression.function.DBObjectFunction
+    org.h2.expression.function.DataTypeSQLFunction
+    org.h2.expression.function.DateTimeFormatFunction
+    org.h2.expression.function.DateTimeFormatFunction$1
+    org.h2.expression.function.DateTimeFormatFunction$CacheKey
+    org.h2.expression.function.DateTimeFormatFunction$CacheValue
+    org.h2.expression.function.DateTimeFunction
+    org.h2.expression.function.DayMonthNameFunction
+    org.h2.expression.function.FileFunction
+    org.h2.expression.function.HashFunction
+    org.h2.expression.function.JavaFunction
+    org.h2.expression.function.JsonConstructorFunction
+    org.h2.expression.function.LengthFunction
+    org.h2.expression.function.MathFunction
+    org.h2.expression.function.MathFunction$1
+    org.h2.expression.function.MathFunction1
+    org.h2.expression.function.MathFunction2
+    org.h2.expression.function.NullIfFunction
+    org.h2.expression.function.RandFunction
+    org.h2.expression.function.RegexpFunction
+    org.h2.expression.function.SessionControlFunction
+    org.h2.expression.function.SetFunction
+    org.h2.expression.function.SignalFunction
+    org.h2.expression.function.SoundexFunction
+    org.h2.expression.function.StringFunction
+    org.h2.expression.function.StringFunction1
+    org.h2.expression.function.StringFunction2
+    org.h2.expression.function.SubstringFunction
+    org.h2.expression.function.SysInfoFunction
+    org.h2.expression.function.TableInfoFunction
+    org.h2.expression.function.ToCharFunction
+    org.h2.expression.function.ToCharFunction$1
+    org.h2.expression.function.ToCharFunction$Capitalization
+    org.h2.expression.function.TrimFunction
+    org.h2.expression.function.TruncateValueFunction
+    org.h2.expression.function.XMLFunction
+
+Depends Upon:
+    java.io
+    java.lang
+    java.math
+    java.nio.charset
+    java.nio.file
+    java.security
+    java.sql
+    java.text
+    java.time
+    java.time.format
+    java.time.temporal
+    java.util
+    java.util.regex
+    org.h2.api
+    org.h2.command
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.aggregate
+    org.h2.index
+    org.h2.message
+    org.h2.mode
+    org.h2.mvstore.db
+    org.h2.schema
+    org.h2.security
+    org.h2.store
+    org.h2.store.fs
+    org.h2.table
+    org.h2.tools
+    org.h2.util
+    org.h2.util.json
+    org.h2.value
+
+Used By:
+    org.h2.command
+    org.h2.command.query
+    org.h2.expression
+    org.h2.expression.aggregate
+    org.h2.expression.condition
+    org.h2.expression.function.table
+    org.h2.mode
+
+--------------------------------------------------
+- Package: org.h2.expression.function.table
+--------------------------------------------------
+
+Stats:
+    Total Classes: 5
+    Concrete Classes: 4
+    Abstract Classes: 1
+
+    Ca: 3
+    Ce: 14
+
+    A: 0.2
+    I: 0.82
+    D: 0.02
+
+Abstract Classes:
+    org.h2.expression.function.table.TableFunction
+
+Concrete Classes:
+    org.h2.expression.function.table.ArrayTableFunction
+    org.h2.expression.function.table.CSVReadFunction
+    org.h2.expression.function.table.JavaTableFunction
+    org.h2.expression.function.table.LinkSchemaFunction
+
+Depends Upon:
+    java.lang
+    java.sql
+    java.util
+    org.h2.api
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.function
+    org.h2.message
+    org.h2.result
+    org.h2.schema
+    org.h2.table
+    org.h2.tools
+    org.h2.util
+    org.h2.value
+
+Used By:
+    org.h2.command
+    org.h2.command.dml
+    org.h2.table
+
+--------------------------------------------------
+- Package: org.h2.fulltext
+--------------------------------------------------
+
+Stats:
+    Total Classes: 7
+    Concrete Classes: 7
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 24
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    org.h2.fulltext.FullText
+    org.h2.fulltext.FullText$FullTextTrigger
+    org.h2.fulltext.FullTextLucene
+    org.h2.fulltext.FullTextLucene$FullTextTrigger
+    org.h2.fulltext.FullTextLucene$IndexAccess
+    org.h2.fulltext.FullTextSettings
+    org.h2.fulltext.IndexInfo
+
+Depends Upon:
+    java.io
+    java.lang
+    java.nio.file
+    java.sql
+    java.util
+    java.util.concurrent
+    org.apache.lucene.analysis
+    org.apache.lucene.analysis.standard
+    org.apache.lucene.document
+    org.apache.lucene.index
+    org.apache.lucene.queryparser.flexible.standard
+    org.apache.lucene.search
+    org.apache.lucene.store
+    org.h2.api
+    org.h2.command
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.condition
+    org.h2.jdbc
+    org.h2.message
+    org.h2.store.fs
+    org.h2.tools
+    org.h2.util
+    org.h2.value
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: org.h2.index
+--------------------------------------------------
+
+Stats:
+    Total Classes: 21
+    Concrete Classes: 17
+    Abstract Classes: 4
+
+    Ca: 15
+    Ce: 17
+
+    A: 0.19
+    I: 0.53
+    D: 0.28
+
+Abstract Classes:
+    org.h2.index.Cursor
+    org.h2.index.Index
+    org.h2.index.SpatialIndex
+    org.h2.index.VirtualTableIndex
+
+Concrete Classes:
+    org.h2.index.DualCursor
+    org.h2.index.DualIndex
+    org.h2.index.Index$1
+    org.h2.index.IndexCondition
+    org.h2.index.IndexCursor
+    org.h2.index.IndexType
+    org.h2.index.LinkedCursor
+    org.h2.index.LinkedIndex
+    org.h2.index.MetaCursor
+    org.h2.index.MetaIndex
+    org.h2.index.QueryExpressionCursor
+    org.h2.index.QueryExpressionIndex
+    org.h2.index.RangeCursor
+    org.h2.index.RangeIndex
+    org.h2.index.SingleRowCursor
+    org.h2.index.VirtualConstructedTableIndex
+    org.h2.index.VirtualTableCursor
+
+Depends Upon:
+    java.lang
+    java.sql
+    java.util
+    java.util.concurrent
+    org.h2.api
+    org.h2.command
+    org.h2.command.query
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.condition
+    org.h2.message
+    org.h2.mode
+    org.h2.result
+    org.h2.schema
+    org.h2.table
+    org.h2.util
+    org.h2.value
+
+Used By:
+    org.h2.command
+    org.h2.command.ddl
+    org.h2.command.dml
+    org.h2.command.query
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.aggregate
+    org.h2.expression.condition
+    org.h2.expression.function
+    org.h2.jdbc.meta
+    org.h2.mode
+    org.h2.mvstore.db
+    org.h2.schema
+    org.h2.table
+
+--------------------------------------------------
+- Package: org.h2.jdbc
+--------------------------------------------------
+
+Stats:
+    Total Classes: 34
+    Concrete Classes: 29
+    Abstract Classes: 5
+
+    Ca: 16
+    Ce: 32
+
+    A: 0.15
+    I: 0.67
+    D: 0.19
+
+Abstract Classes:
+    org.h2.jdbc.JdbcConnectionBackwardsCompat
+    org.h2.jdbc.JdbcDatabaseMetaDataBackwardsCompat
+    org.h2.jdbc.JdbcException
+    org.h2.jdbc.JdbcLob
+    org.h2.jdbc.JdbcStatementBackwardsCompat
+
+Concrete Classes:
+    org.h2.jdbc.JdbcArray
+    org.h2.jdbc.JdbcBatchUpdateException
+    org.h2.jdbc.JdbcBlob
+    org.h2.jdbc.JdbcBlob$1
+    org.h2.jdbc.JdbcCallableStatement
+    org.h2.jdbc.JdbcClob
+    org.h2.jdbc.JdbcConnection
+    org.h2.jdbc.JdbcDatabaseMetaData
+    org.h2.jdbc.JdbcLob$1
+    org.h2.jdbc.JdbcLob$LobPipedOutputStream
+    org.h2.jdbc.JdbcLob$State
+    org.h2.jdbc.JdbcParameterMetaData
+    org.h2.jdbc.JdbcPreparedStatement
+    org.h2.jdbc.JdbcResultSet
+    org.h2.jdbc.JdbcResultSetMetaData
+    org.h2.jdbc.JdbcSQLDataException
+    org.h2.jdbc.JdbcSQLException
+    org.h2.jdbc.JdbcSQLFeatureNotSupportedException
+    org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException
+    org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException
+    org.h2.jdbc.JdbcSQLNonTransientConnectionException
+    org.h2.jdbc.JdbcSQLNonTransientException
+    org.h2.jdbc.JdbcSQLSyntaxErrorException
+    org.h2.jdbc.JdbcSQLTimeoutException
+    org.h2.jdbc.JdbcSQLTransactionRollbackException
+    org.h2.jdbc.JdbcSQLTransientException
+    org.h2.jdbc.JdbcSQLXML
+    org.h2.jdbc.JdbcSavepoint
+    org.h2.jdbc.JdbcStatement
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.invoke
+    java.math
+    java.net
+    java.sql
+    java.util
+    java.util.concurrent
+    java.util.regex
+    javax.xml
+    javax.xml.parsers
+    javax.xml.stream
+    javax.xml.transform
+    javax.xml.transform.dom
+    javax.xml.transform.sax
+    javax.xml.transform.stax
+    javax.xml.transform.stream
+    org.h2.api
+    org.h2.command
+    org.h2.engine
+    org.h2.expression
+    org.h2.jdbc.meta
+    org.h2.message
+    org.h2.mode
+    org.h2.mvstore
+    org.h2.result
+    org.h2.store
+    org.h2.util
+    org.h2.value
+    org.w3c.dom
+    org.xml.sax
+    org.xml.sax.helpers
+
+Used By:
+    org.h2
+    org.h2.bnf.context
+    org.h2.engine
+    org.h2.expression.aggregate
+    org.h2.fulltext
+    org.h2.jdbcx
+    org.h2.message
+    org.h2.mvstore
+    org.h2.result
+    org.h2.schema
+    org.h2.server
+    org.h2.server.web
+    org.h2.table
+    org.h2.tools
+    org.h2.util
+    org.h2.value
+
+--------------------------------------------------
+- Package: org.h2.jdbc.meta
+--------------------------------------------------
+
+Stats:
+    Total Classes: 7
+    Concrete Classes: 5
+    Abstract Classes: 2
+
+    Ca: 3
+    Ce: 19
+
+    A: 0.29
+    I: 0.86
+    D: 0.15
+
+Abstract Classes:
+    org.h2.jdbc.meta.DatabaseMeta
+    org.h2.jdbc.meta.DatabaseMetaLocalBase
+
+Concrete Classes:
+    org.h2.jdbc.meta.DatabaseMetaLegacy
+    org.h2.jdbc.meta.DatabaseMetaLocal
+    org.h2.jdbc.meta.DatabaseMetaLocal$1
+    org.h2.jdbc.meta.DatabaseMetaRemote
+    org.h2.jdbc.meta.DatabaseMetaServer
+
+Depends Upon:
+    java.io
+    java.lang
+    java.sql
+    java.util
+    org.h2.api
+    org.h2.command
+    org.h2.command.dml
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.condition
+    org.h2.index
+    org.h2.message
+    org.h2.mode
+    org.h2.result
+    org.h2.schema
+    org.h2.table
+    org.h2.util
+    org.h2.value
+
+Used By:
+    org.h2.engine
+    org.h2.jdbc
+    org.h2.server
+
+--------------------------------------------------
+- Package: org.h2.jdbcx
+--------------------------------------------------
+
+Stats:
+    Total Classes: 8
+    Concrete Classes: 6
+    Abstract Classes: 2
+
+    Ca: 1
+    Ce: 16
+
+    A: 0.25
+    I: 0.94
+    D: 0.19
+
+Abstract Classes:
+    org.h2.jdbcx.JdbcConnectionPoolBackwardsCompat
+    org.h2.jdbcx.JdbcDataSourceBackwardsCompat
+
+Concrete Classes:
+    org.h2.jdbcx.JdbcConnectionPool
+    org.h2.jdbcx.JdbcDataSource
+    org.h2.jdbcx.JdbcDataSourceFactory
+    org.h2.jdbcx.JdbcXAConnection
+    org.h2.jdbcx.JdbcXAConnection$PooledJdbcConnection
+    org.h2.jdbcx.JdbcXid
+
+Depends Upon:
+    java.io
+    java.lang
+    java.sql
+    java.util
+    java.util.concurrent
+    java.util.concurrent.atomic
+    java.util.logging
+    javax.naming
+    javax.naming.spi
+    javax.sql
+    javax.transaction.xa
+    org.h2.api
+    org.h2.engine
+    org.h2.jdbc
+    org.h2.message
+    org.h2.util
+
+Used By:
+    org.h2.util
+
+--------------------------------------------------
+- Package: org.h2.jmx
+--------------------------------------------------
+
+Stats:
+    Total Classes: 3
+    Concrete Classes: 2
+    Abstract Classes: 1
+
+    Ca: 0
+    Ce: 14
+
+    A: 0.33
+    I: 1
+    D: 0.33
+
+Abstract Classes:
+    org.h2.jmx.DatabaseInfoMBean
+
+Concrete Classes:
+    org.h2.jmx.DatabaseInfo
+    org.h2.jmx.DocumentedMBean
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.management
+    java.util
+    javax.management
+    org.h2.command
+    org.h2.engine
+    org.h2.message
+    org.h2.mvstore
+    org.h2.mvstore.db
+    org.h2.schema
+    org.h2.table
+    org.h2.util
+    org.h2.value
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: org.h2.message
+--------------------------------------------------
+
+Stats:
+    Total Classes: 6
+    Concrete Classes: 4
+    Abstract Classes: 2
+
+    Ca: 43
+    Ce: 17
+
+    A: 0.33
+    I: 0.28
+    D: 0.38
+
+Abstract Classes:
+    org.h2.message.TraceObject
+    org.h2.message.TraceWriter
+
+Concrete Classes:
+    org.h2.message.DbException
+    org.h2.message.Trace
+    org.h2.message.TraceSystem
+    org.h2.message.TraceWriterAdapter
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.reflect
+    java.math
+    java.nio.charset
+    java.sql
+    java.text
+    java.util
+    java.util.concurrent.atomic
+    org.h2.api
+    org.h2.engine
+    org.h2.expression
+    org.h2.jdbc
+    org.h2.store.fs
+    org.h2.util
+    org.h2.value
+    org.slf4j
+
+Used By:
+    org.h2
+    org.h2.api
+    org.h2.bnf.context
+    org.h2.command
+    org.h2.command.ddl
+    org.h2.command.dml
+    org.h2.command.query
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.aggregate
+    org.h2.expression.analysis
+    org.h2.expression.condition
+    org.h2.expression.function
+    org.h2.expression.function.table
+    org.h2.fulltext
+    org.h2.index
+    org.h2.jdbc
+    org.h2.jdbc.meta
+    org.h2.jdbcx
+    org.h2.jmx
+    org.h2.mode
+    org.h2.mvstore.db
+    org.h2.result
+    org.h2.schema
+    org.h2.security
+    org.h2.security.auth
+    org.h2.server
+    org.h2.server.pg
+    org.h2.server.web
+    org.h2.store
+    org.h2.store.fs.disk
+    org.h2.store.fs.mem
+    org.h2.store.fs.niomem
+    org.h2.store.fs.split
+    org.h2.store.fs.zip
+    org.h2.table
+    org.h2.tools
+    org.h2.util
+    org.h2.util.geometry
+    org.h2.util.json
+    org.h2.value
+    org.h2.value.lob
+
+--------------------------------------------------
+- Package: org.h2.mode
+--------------------------------------------------
+
+Stats:
+    Total Classes: 26
+    Concrete Classes: 24
+    Abstract Classes: 2
+
+    Ca: 13
+    Ce: 19
+
+    A: 0.08
+    I: 0.59
+    D: 0.33
+
+Abstract Classes:
+    org.h2.mode.ModeFunction
+    org.h2.mode.ToDateTokenizer$ToDateParslet
+
+Concrete Classes:
+    org.h2.mode.CompatibilityDateTimeValueFunction
+    org.h2.mode.DefaultNullOrdering
+    org.h2.mode.FunctionInfo
+    org.h2.mode.FunctionsDB2Derby
+    org.h2.mode.FunctionsLegacy
+    org.h2.mode.FunctionsMSSQLServer
+    org.h2.mode.FunctionsMySQL
+    org.h2.mode.FunctionsOracle
+    org.h2.mode.FunctionsPostgreSQL
+    org.h2.mode.ModeFunction$1
+    org.h2.mode.OnDuplicateKeyValues
+    org.h2.mode.PgCatalogSchema
+    org.h2.mode.PgCatalogTable
+    org.h2.mode.Regclass
+    org.h2.mode.ToDateParser
+    org.h2.mode.ToDateParser$ConfigParam
+    org.h2.mode.ToDateTokenizer
+    org.h2.mode.ToDateTokenizer$1
+    org.h2.mode.ToDateTokenizer$DayParslet
+    org.h2.mode.ToDateTokenizer$FormatTokenEnum
+    org.h2.mode.ToDateTokenizer$InlineParslet
+    org.h2.mode.ToDateTokenizer$MonthParslet
+    org.h2.mode.ToDateTokenizer$TimeParslet
+    org.h2.mode.ToDateTokenizer$YearParslet
+
+Depends Upon:
+    java.lang
+    java.text
+    java.util
+    java.util.regex
+    org.h2.api
+    org.h2.command
+    org.h2.command.dml
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.function
+    org.h2.index
+    org.h2.message
+    org.h2.result
+    org.h2.schema
+    org.h2.server.pg
+    org.h2.table
+    org.h2.util
+    org.h2.value
+
+Used By:
+    org.h2.command
+    org.h2.command.dml
+    org.h2.command.query
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.aggregate
+    org.h2.expression.function
+    org.h2.index
+    org.h2.jdbc
+    org.h2.jdbc.meta
+    org.h2.mvstore.db
+    org.h2.result
+    org.h2.table
+
+--------------------------------------------------
+- Package: org.h2.mvstore
+--------------------------------------------------
+
+Stats:
+    Total Classes: 45
+    Concrete Classes: 41
+    Abstract Classes: 4
+
+    Ca: 17
+    Ce: 22
+
+    A: 0.09
+    I: 0.56
+    D: 0.35
+
+Abstract Classes:
+    org.h2.mvstore.MVMap$BasicBuilder
+    org.h2.mvstore.MVMap$DecisionMaker
+    org.h2.mvstore.MVMap$MapBuilder
+    org.h2.mvstore.Page
+
+Concrete Classes:
+    org.h2.mvstore.Chunk
+    org.h2.mvstore.Chunk$PositionComparator
+    org.h2.mvstore.Cursor
+    org.h2.mvstore.CursorPos
+    org.h2.mvstore.DataUtils
+    org.h2.mvstore.FileStore
+    org.h2.mvstore.FreeSpaceBitSet
+    org.h2.mvstore.MVMap
+    org.h2.mvstore.MVMap$1
+    org.h2.mvstore.MVMap$2
+    org.h2.mvstore.MVMap$2$1
+    org.h2.mvstore.MVMap$3
+    org.h2.mvstore.MVMap$4
+    org.h2.mvstore.MVMap$Builder
+    org.h2.mvstore.MVMap$Decision
+    org.h2.mvstore.MVMap$DecisionMaker$1
+    org.h2.mvstore.MVMap$DecisionMaker$2
+    org.h2.mvstore.MVMap$DecisionMaker$3
+    org.h2.mvstore.MVMap$DecisionMaker$4
+    org.h2.mvstore.MVMap$DecisionMaker$5
+    org.h2.mvstore.MVMap$EqualsDecisionMaker
+    org.h2.mvstore.MVMap$IntValueHolder
+    org.h2.mvstore.MVMap$RewriteDecisionMaker
+    org.h2.mvstore.MVStore
+    org.h2.mvstore.MVStore$BackgroundWriterThread
+    org.h2.mvstore.MVStore$Builder
+    org.h2.mvstore.MVStore$RemovedPageInfo
+    org.h2.mvstore.MVStore$TxCounter
+    org.h2.mvstore.MVStoreException
+    org.h2.mvstore.MVStoreTool
+    org.h2.mvstore.MVStoreTool$1
+    org.h2.mvstore.MVStoreTool$GenericDataType
+    org.h2.mvstore.OffHeapStore
+    org.h2.mvstore.Page$IncompleteNonLeaf
+    org.h2.mvstore.Page$Leaf
+    org.h2.mvstore.Page$NonLeaf
+    org.h2.mvstore.Page$PageReference
+    org.h2.mvstore.RootReference
+    org.h2.mvstore.StreamStore
+    org.h2.mvstore.StreamStore$Stream
+    org.h2.mvstore.WriteBuffer
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.invoke
+    java.nio
+    java.nio.channels
+    java.nio.charset
+    java.sql
+    java.text
+    java.util
+    java.util.concurrent
+    java.util.concurrent.atomic
+    java.util.concurrent.locks
+    java.util.function
+    org.h2.compress
+    org.h2.engine
+    org.h2.jdbc
+    org.h2.mvstore.cache
+    org.h2.mvstore.tx
+    org.h2.mvstore.type
+    org.h2.store.fs
+    org.h2.store.fs.encrypt
+    org.h2.util
+
+Used By:
+    org.h2.command.dml
+    org.h2.compress
+    org.h2.engine
+    org.h2.jdbc
+    org.h2.jmx
+    org.h2.mvstore.cache
+    org.h2.mvstore.db
+    org.h2.mvstore.rtree
+    org.h2.mvstore.tx
+    org.h2.mvstore.type
+    org.h2.security
+    org.h2.store
+    org.h2.store.fs.encrypt
+    org.h2.store.fs.split
+    org.h2.table
+    org.h2.tools
+    org.h2.util
+
+--------------------------------------------------
+- Package: org.h2.mvstore.cache
+--------------------------------------------------
+
+Stats:
+    Total Classes: 6
+    Concrete Classes: 6
+    Abstract Classes: 0
+
+    Ca: 1
+    Ce: 8
+
+    A: 0
+    I: 0.89
+    D: 0.11
+
+Abstract Classes:
+
+Concrete Classes:
+    org.h2.mvstore.cache.CacheLongKeyLIRS
+    org.h2.mvstore.cache.CacheLongKeyLIRS$Config
+    org.h2.mvstore.cache.CacheLongKeyLIRS$Entry
+    org.h2.mvstore.cache.CacheLongKeyLIRS$Segment
+    org.h2.mvstore.cache.FilePathCache
+    org.h2.mvstore.cache.FilePathCache$FileCache
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.ref
+    java.nio
+    java.nio.channels
+    java.util
+    org.h2.mvstore
+    org.h2.store.fs
+
+Used By:
+    org.h2.mvstore
+
+--------------------------------------------------
+- Package: org.h2.mvstore.db
+--------------------------------------------------
+
+Stats:
+    Total Classes: 33
+    Concrete Classes: 31
+    Abstract Classes: 2
+
+    Ca: 11
+    Ce: 33
+
+    A: 0.06
+    I: 0.75
+    D: 0.19
+
+Abstract Classes:
+    org.h2.mvstore.db.MVIndex
+    org.h2.mvstore.db.MVTempResult
+
+Concrete Classes:
+    org.h2.mvstore.db.LobStorageMap
+    org.h2.mvstore.db.LobStorageMap$BlobMeta
+    org.h2.mvstore.db.LobStorageMap$BlobMeta$Type
+    org.h2.mvstore.db.LobStorageMap$BlobReference
+    org.h2.mvstore.db.LobStorageMap$BlobReference$Type
+    org.h2.mvstore.db.LobStorageMap$LobInputStream
+    org.h2.mvstore.db.LobStorageMap$LobRemovalInfo
+    org.h2.mvstore.db.MVDelegateIndex
+    org.h2.mvstore.db.MVInDoubtTransaction
+    org.h2.mvstore.db.MVPlainTempResult
+    org.h2.mvstore.db.MVPrimaryIndex
+    org.h2.mvstore.db.MVPrimaryIndex$MVStoreCursor
+    org.h2.mvstore.db.MVSecondaryIndex
+    org.h2.mvstore.db.MVSecondaryIndex$MVStoreCursor
+    org.h2.mvstore.db.MVSecondaryIndex$Source
+    org.h2.mvstore.db.MVSecondaryIndex$Source$Comparator
+    org.h2.mvstore.db.MVSortedTempResult
+    org.h2.mvstore.db.MVSpatialIndex
+    org.h2.mvstore.db.MVSpatialIndex$FindBoundsCursor
+    org.h2.mvstore.db.MVSpatialIndex$MVStoreCursor
+    org.h2.mvstore.db.MVSpatialIndex$SpatialKeyIterator
+    org.h2.mvstore.db.MVTable
+    org.h2.mvstore.db.MVTable$TraceLockEvent
+    org.h2.mvstore.db.MVTempResult$CloseImpl
+    org.h2.mvstore.db.NullValueDataType
+    org.h2.mvstore.db.RowDataType
+    org.h2.mvstore.db.RowDataType$Factory
+    org.h2.mvstore.db.SpatialKey
+    org.h2.mvstore.db.Store
+    org.h2.mvstore.db.ValueDataType
+    org.h2.mvstore.db.ValueDataType$Factory
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.invoke
+    java.lang.ref
+    java.math
+    java.nio
+    java.nio.channels
+    java.nio.charset
+    java.util
+    java.util.concurrent
+    java.util.concurrent.atomic
+    org.h2.api
+    org.h2.command.ddl
+    org.h2.command.query
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression
+    org.h2.index
+    org.h2.message
+    org.h2.mode
+    org.h2.mvstore
+    org.h2.mvstore.rtree
+    org.h2.mvstore.tx
+    org.h2.mvstore.type
+    org.h2.result
+    org.h2.schema
+    org.h2.store
+    org.h2.store.fs
+    org.h2.table
+    org.h2.util
+    org.h2.util.geometry
+    org.h2.value
+    org.h2.value.lob
+
+Used By:
+    org.h2.command.dml
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.aggregate
+    org.h2.expression.function
+    org.h2.jmx
+    org.h2.result
+    org.h2.schema
+    org.h2.table
+    org.h2.tools
+    org.h2.util
+
+--------------------------------------------------
+- Package: org.h2.mvstore.rtree
+--------------------------------------------------
+
+Stats:
+    Total Classes: 9
+    Concrete Classes: 7
+    Abstract Classes: 2
+
+    Ca: 2
+    Ce: 5
+
+    A: 0.22
+    I: 0.71
+    D: 0.06
+
+Abstract Classes:
+    org.h2.mvstore.rtree.MVRTreeMap$RTreeCursor
+    org.h2.mvstore.rtree.Spatial
+
+Concrete Classes:
+    org.h2.mvstore.rtree.DefaultSpatial
+    org.h2.mvstore.rtree.MVRTreeMap
+    org.h2.mvstore.rtree.MVRTreeMap$1
+    org.h2.mvstore.rtree.MVRTreeMap$Builder
+    org.h2.mvstore.rtree.MVRTreeMap$ContainsRTreeCursor
+    org.h2.mvstore.rtree.MVRTreeMap$IntersectsRTreeCursor
+    org.h2.mvstore.rtree.SpatialDataType
+
+Depends Upon:
+    java.lang
+    java.nio
+    java.util
+    org.h2.mvstore
+    org.h2.mvstore.type
+
+Used By:
+    org.h2.mvstore.db
+    org.h2.mvstore.tx
+
+--------------------------------------------------
+- Package: org.h2.mvstore.tx
+--------------------------------------------------
+
+Stats:
+    Total Classes: 29
+    Concrete Classes: 27
+    Abstract Classes: 2
+
+    Ca: 4
+    Ce: 12
+
+    A: 0.07
+    I: 0.75
+    D: 0.18
+
+Abstract Classes:
+    org.h2.mvstore.tx.TransactionMap$TMIterator
+    org.h2.mvstore.tx.TransactionStore$RollbackListener
+
+Concrete Classes:
+    org.h2.mvstore.tx.CommitDecisionMaker
+    org.h2.mvstore.tx.Record
+    org.h2.mvstore.tx.Record$Type
+    org.h2.mvstore.tx.RollbackDecisionMaker
+    org.h2.mvstore.tx.Snapshot
+    org.h2.mvstore.tx.Transaction
+    org.h2.mvstore.tx.TransactionMap
+    org.h2.mvstore.tx.TransactionMap$1
+    org.h2.mvstore.tx.TransactionMap$2
+    org.h2.mvstore.tx.TransactionMap$CommittedIterator
+    org.h2.mvstore.tx.TransactionMap$RepeatableIterator
+    org.h2.mvstore.tx.TransactionMap$UncommittedIterator
+    org.h2.mvstore.tx.TransactionMap$ValidationIterator
+    org.h2.mvstore.tx.TransactionStore
+    org.h2.mvstore.tx.TransactionStore$1
+    org.h2.mvstore.tx.TransactionStore$Change
+    org.h2.mvstore.tx.TransactionStore$TxMapBuilder
+    org.h2.mvstore.tx.TransactionStore$TxMapBuilder$TMVMap
+    org.h2.mvstore.tx.TxDecisionMaker
+    org.h2.mvstore.tx.TxDecisionMaker$LockDecisionMaker
+    org.h2.mvstore.tx.TxDecisionMaker$PutIfAbsentDecisionMaker
+    org.h2.mvstore.tx.TxDecisionMaker$RepeatableReadLockDecisionMaker
+    org.h2.mvstore.tx.VersionedBitSet
+    org.h2.mvstore.tx.VersionedValueCommitted
+    org.h2.mvstore.tx.VersionedValueType
+    org.h2.mvstore.tx.VersionedValueType$Factory
+    org.h2.mvstore.tx.VersionedValueUncommitted
+
+Depends Upon:
+    java.lang
+    java.lang.invoke
+    java.nio
+    java.util
+    java.util.concurrent.atomic
+    java.util.function
+    org.h2.engine
+    org.h2.mvstore
+    org.h2.mvstore.rtree
+    org.h2.mvstore.type
+    org.h2.util
+    org.h2.value
+
+Used By:
+    org.h2.engine
+    org.h2.mvstore
+    org.h2.mvstore.db
+    org.h2.tools
+
+--------------------------------------------------
+- Package: org.h2.mvstore.type
+--------------------------------------------------
+
+Stats:
+    Total Classes: 27
+    Concrete Classes: 22
+    Abstract Classes: 5
+
+    Ca: 6
+    Ce: 9
+
+    A: 0.19
+    I: 0.6
+    D: 0.21
+
+Abstract Classes:
+    org.h2.mvstore.type.BasicDataType
+    org.h2.mvstore.type.DataType
+    org.h2.mvstore.type.ObjectDataType$AutoDetectDataType
+    org.h2.mvstore.type.StatefulDataType
+    org.h2.mvstore.type.StatefulDataType$Factory
+
+Concrete Classes:
+    org.h2.mvstore.type.ByteArrayDataType
+    org.h2.mvstore.type.LongDataType
+    org.h2.mvstore.type.MetaType
+    org.h2.mvstore.type.ObjectDataType
+    org.h2.mvstore.type.ObjectDataType$BigDecimalType
+    org.h2.mvstore.type.ObjectDataType$BigIntegerType
+    org.h2.mvstore.type.ObjectDataType$BooleanType
+    org.h2.mvstore.type.ObjectDataType$ByteType
+    org.h2.mvstore.type.ObjectDataType$CharacterType
+    org.h2.mvstore.type.ObjectDataType$DateType
+    org.h2.mvstore.type.ObjectDataType$DoubleType
+    org.h2.mvstore.type.ObjectDataType$FloatType
+    org.h2.mvstore.type.ObjectDataType$Holder
+    org.h2.mvstore.type.ObjectDataType$IntegerType
+    org.h2.mvstore.type.ObjectDataType$LongType
+    org.h2.mvstore.type.ObjectDataType$NullType
+    org.h2.mvstore.type.ObjectDataType$ObjectArrayType
+    org.h2.mvstore.type.ObjectDataType$SerializedObjectType
+    org.h2.mvstore.type.ObjectDataType$ShortType
+    org.h2.mvstore.type.ObjectDataType$StringType
+    org.h2.mvstore.type.ObjectDataType$UUIDType
+    org.h2.mvstore.type.StringDataType
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.reflect
+    java.math
+    java.nio
+    java.util
+    org.h2.engine
+    org.h2.mvstore
+    org.h2.util
+
+Used By:
+    org.h2.mvstore
+    org.h2.mvstore.db
+    org.h2.mvstore.rtree
+    org.h2.mvstore.tx
+    org.h2.tools
+    org.h2.util
+
+--------------------------------------------------
+- Package: org.h2.result
+--------------------------------------------------
+
+Stats:
+    Total Classes: 24
+    Concrete Classes: 16
+    Abstract Classes: 8
+
+    Ca: 22
+    Ce: 17
+
+    A: 0.33
+    I: 0.44
+    D: 0.23
+
+Abstract Classes:
+    org.h2.result.FetchedResult
+    org.h2.result.LazyResult
+    org.h2.result.ResultExternal
+    org.h2.result.ResultInterface
+    org.h2.result.ResultTarget
+    org.h2.result.Row
+    org.h2.result.RowFactory
+    org.h2.result.SearchRow
+
+Concrete Classes:
+    org.h2.result.DefaultRow
+    org.h2.result.LocalResult
+    org.h2.result.MergedResult
+    org.h2.result.ResultColumn
+    org.h2.result.ResultRemote
+    org.h2.result.ResultWithGeneratedKeys
+    org.h2.result.ResultWithGeneratedKeys$WithKeys
+    org.h2.result.ResultWithPaddedStrings
+    org.h2.result.RowFactory$DefaultRowFactory
+    org.h2.result.RowFactory$Holder
+    org.h2.result.SimpleResult
+    org.h2.result.SimpleResult$Column
+    org.h2.result.SimpleRowValue
+    org.h2.result.SortOrder
+    org.h2.result.Sparse
+    org.h2.result.UpdatableRow
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.invoke
+    java.sql
+    java.util
+    org.h2.api
+    org.h2.command.query
+    org.h2.engine
+    org.h2.expression
+    org.h2.jdbc
+    org.h2.message
+    org.h2.mode
+    org.h2.mvstore.db
+    org.h2.store
+    org.h2.table
+    org.h2.util
+    org.h2.value
+
+Used By:
+    org.h2.command
+    org.h2.command.ddl
+    org.h2.command.dml
+    org.h2.command.query
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.aggregate
+    org.h2.expression.analysis
+    org.h2.expression.condition
+    org.h2.expression.function.table
+    org.h2.index
+    org.h2.jdbc
+    org.h2.jdbc.meta
+    org.h2.mode
+    org.h2.mvstore.db
+    org.h2.schema
+    org.h2.server
+    org.h2.server.pg
+    org.h2.table
+    org.h2.tools
+    org.h2.value
+
+--------------------------------------------------
+- Package: org.h2.schema
+--------------------------------------------------
+
+Stats:
+    Total Classes: 14
+    Concrete Classes: 11
+    Abstract Classes: 3
+
+    Ca: 17
+    Ce: 21
+
+    A: 0.21
+    I: 0.55
+    D: 0.23
+
+Abstract Classes:
+    org.h2.schema.MetaSchema
+    org.h2.schema.SchemaObject
+    org.h2.schema.UserDefinedFunction
+
+Concrete Classes:
+    org.h2.schema.Constant
+    org.h2.schema.Domain
+    org.h2.schema.FunctionAlias
+    org.h2.schema.FunctionAlias$JavaMethod
+    org.h2.schema.InformationSchema
+    org.h2.schema.Schema
+    org.h2.schema.Sequence
+    org.h2.schema.Sequence$Cycle
+    org.h2.schema.TriggerObject
+    org.h2.schema.UserAggregate
+    org.h2.schema.UserAggregate$AggregateWrapper
+
+Depends Upon:
+    java.lang
+    java.lang.reflect
+    java.sql
+    java.util
+    java.util.concurrent
+    javax.script
+    org.h2
+    org.h2.api
+    org.h2.command.ddl
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression
+    org.h2.index
+    org.h2.jdbc
+    org.h2.message
+    org.h2.mvstore.db
+    org.h2.result
+    org.h2.table
+    org.h2.tools
+    org.h2.util
+    org.h2.value
+
+Used By:
+    org.h2.command
+    org.h2.command.ddl
+    org.h2.command.dml
+    org.h2.command.query
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.aggregate
+    org.h2.expression.function
+    org.h2.expression.function.table
+    org.h2.index
+    org.h2.jdbc.meta
+    org.h2.jmx
+    org.h2.mode
+    org.h2.mvstore.db
+    org.h2.server.pg
+    org.h2.table
+
+--------------------------------------------------
+- Package: org.h2.security
+--------------------------------------------------
+
+Stats:
+    Total Classes: 8
+    Concrete Classes: 7
+    Abstract Classes: 1
+
+    Ca: 10
+    Ce: 18
+
+    A: 0.12
+    I: 0.64
+    D: 0.23
+
+Abstract Classes:
+    org.h2.security.BlockCipher
+
+Concrete Classes:
+    org.h2.security.AES
+    org.h2.security.CipherFactory
+    org.h2.security.Fog
+    org.h2.security.SHA256
+    org.h2.security.SHA3
+    org.h2.security.SecureFileStore
+    org.h2.security.XTEA
+
+Depends Upon:
+    java.io
+    java.lang
+    java.net
+    java.security
+    java.security.cert
+    java.security.spec
+    java.util
+    javax.crypto
+    javax.crypto.spec
+    javax.net
+    javax.net.ssl
+    org.h2.api
+    org.h2.engine
+    org.h2.message
+    org.h2.mvstore
+    org.h2.store
+    org.h2.store.fs
+    org.h2.util
+
+Used By:
+    org.h2.command.ddl
+    org.h2.command.dml
+    org.h2.engine
+    org.h2.expression.function
+    org.h2.security.auth.impl
+    org.h2.server.web
+    org.h2.store
+    org.h2.store.fs.encrypt
+    org.h2.util
+    org.h2.value
+
+--------------------------------------------------
+- Package: org.h2.security.auth
+--------------------------------------------------
+
+Stats:
+    Total Classes: 14
+    Concrete Classes: 11
+    Abstract Classes: 3
+
+    Ca: 4
+    Ce: 14
+
+    A: 0.21
+    I: 0.78
+    D: 0.01
+
+Abstract Classes:
+    org.h2.security.auth.Authenticator
+    org.h2.security.auth.Configurable
+    org.h2.security.auth.HasConfigProperties
+
+Concrete Classes:
+    org.h2.security.auth.AuthConfigException
+    org.h2.security.auth.AuthenticationException
+    org.h2.security.auth.AuthenticationInfo
+    org.h2.security.auth.AuthenticatorFactory
+    org.h2.security.auth.ConfigProperties
+    org.h2.security.auth.DefaultAuthenticator
+    org.h2.security.auth.H2AuthConfig
+    org.h2.security.auth.H2AuthConfigXml
+    org.h2.security.auth.PropertyConfig
+    org.h2.security.auth.RealmConfig
+    org.h2.security.auth.UserToRolesMapperConfig
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.reflect
+    java.net
+    java.util
+    javax.xml
+    javax.xml.parsers
+    org.h2.api
+    org.h2.engine
+    org.h2.message
+    org.h2.security.auth.impl
+    org.h2.util
+    org.xml.sax
+    org.xml.sax.helpers
+
+Used By:
+    org.h2.api
+    org.h2.command.dml
+    org.h2.engine
+    org.h2.security.auth.impl
+
+--------------------------------------------------
+- Package: org.h2.security.auth.impl
+--------------------------------------------------
+
+Stats:
+    Total Classes: 6
+    Concrete Classes: 6
+    Abstract Classes: 0
+
+    Ca: 1
+    Ce: 13
+
+    A: 0
+    I: 0.93
+    D: 0.07
+
+Abstract Classes:
+
+Concrete Classes:
+    org.h2.security.auth.impl.AssignRealmNameRole
+    org.h2.security.auth.impl.JaasCredentialsValidator
+    org.h2.security.auth.impl.JaasCredentialsValidator$AuthenticationInfoCallbackHandler
+    org.h2.security.auth.impl.LdapCredentialsValidator
+    org.h2.security.auth.impl.StaticRolesMapper
+    org.h2.security.auth.impl.StaticUserCredentialsValidator
+
+Depends Upon:
+    java.io
+    java.lang
+    java.nio.charset
+    java.util
+    java.util.regex
+    javax.naming
+    javax.naming.directory
+    javax.security.auth.callback
+    javax.security.auth.login
+    org.h2.api
+    org.h2.security
+    org.h2.security.auth
+    org.h2.util
+
+Used By:
+    org.h2.security.auth
+
+--------------------------------------------------
+- Package: org.h2.server
+--------------------------------------------------
+
+Stats:
+    Total Classes: 5
+    Concrete Classes: 3
+    Abstract Classes: 2
+
+    Ca: 3
+    Ce: 17
+
+    A: 0.4
+    I: 0.85
+    D: 0.25
+
+Abstract Classes:
+    org.h2.server.Service
+    org.h2.server.ShutdownHandler
+
+Concrete Classes:
+    org.h2.server.TcpServer
+    org.h2.server.TcpServerThread
+    org.h2.server.TcpServerThread$CachedInputStream
+
+Depends Upon:
+    java.io
+    java.lang
+    java.net
+    java.sql
+    java.util
+    java.util.concurrent
+    org.h2.api
+    org.h2.command
+    org.h2.engine
+    org.h2.expression
+    org.h2.jdbc
+    org.h2.jdbc.meta
+    org.h2.message
+    org.h2.result
+    org.h2.store
+    org.h2.util
+    org.h2.value
+
+Used By:
+    org.h2.server.pg
+    org.h2.server.web
+    org.h2.tools
+
+--------------------------------------------------
+- Package: org.h2.server.pg
+--------------------------------------------------
+
+Stats:
+    Total Classes: 4
+    Concrete Classes: 4
+    Abstract Classes: 0
+
+    Ca: 2
+    Ce: 20
+
+    A: 0
+    I: 0.91
+    D: 0.09
+
+Abstract Classes:
+
+Concrete Classes:
+    org.h2.server.pg.PgServer
+    org.h2.server.pg.PgServerThread
+    org.h2.server.pg.PgServerThread$Portal
+    org.h2.server.pg.PgServerThread$Prepared
+
+Depends Upon:
+    java.io
+    java.lang
+    java.math
+    java.net
+    java.nio.charset
+    java.sql
+    java.util
+    java.util.concurrent.atomic
+    java.util.regex
+    org.h2.api
+    org.h2.command
+    org.h2.engine
+    org.h2.expression
+    org.h2.message
+    org.h2.result
+    org.h2.schema
+    org.h2.server
+    org.h2.table
+    org.h2.util
+    org.h2.value
+
+Used By:
+    org.h2.mode
+    org.h2.tools
+
+--------------------------------------------------
+- Package: org.h2.server.web
+--------------------------------------------------
+
+Stats:
+    Total Classes: 13
+    Concrete Classes: 13
+    Abstract Classes: 0
+
+    Ca: 1
+    Ce: 30
+
+    A: 0
+    I: 0.97
+    D: 0.03
+
+Abstract Classes:
+
+Concrete Classes:
+    org.h2.server.web.ConnectionInfo
+    org.h2.server.web.DbStarter
+    org.h2.server.web.JakartaDbStarter
+    org.h2.server.web.JakartaWebServlet
+    org.h2.server.web.PageParser
+    org.h2.server.web.WebApp
+    org.h2.server.web.WebApp$1
+    org.h2.server.web.WebApp$IndexInfo
+    org.h2.server.web.WebServer
+    org.h2.server.web.WebServer$TranslateThread
+    org.h2.server.web.WebServlet
+    org.h2.server.web.WebSession
+    org.h2.server.web.WebThread
+
+Depends Upon:
+    jakarta.servlet
+    jakarta.servlet.http
+    java.io
+    java.lang
+    java.lang.invoke
+    java.math
+    java.net
+    java.nio.charset
+    java.nio.file
+    java.sql
+    java.text
+    java.time
+    java.time.format
+    java.util
+    javax.servlet
+    javax.servlet.http
+    org.h2
+    org.h2.api
+    org.h2.bnf
+    org.h2.bnf.context
+    org.h2.command
+    org.h2.engine
+    org.h2.jdbc
+    org.h2.message
+    org.h2.security
+    org.h2.server
+    org.h2.store.fs
+    org.h2.tools
+    org.h2.util
+    org.h2.value
+
+Used By:
+    org.h2.tools
+
+--------------------------------------------------
+- Package: org.h2.store
+--------------------------------------------------
+
+Stats:
+    Total Classes: 19
+    Concrete Classes: 16
+    Abstract Classes: 3
+
+    Ca: 13
+    Ce: 22
+
+    A: 0.16
+    I: 0.63
+    D: 0.21
+
+Abstract Classes:
+    org.h2.store.DataHandler
+    org.h2.store.InDoubtTransaction
+    org.h2.store.LobStorageInterface
+
+Concrete Classes:
+    org.h2.store.CountingReaderInputStream
+    org.h2.store.Data
+    org.h2.store.DataReader
+    org.h2.store.DataReader$FastEOFException
+    org.h2.store.FileLister
+    org.h2.store.FileLock
+    org.h2.store.FileLock$1
+    org.h2.store.FileLockMethod
+    org.h2.store.FileStore
+    org.h2.store.FileStoreInputStream
+    org.h2.store.FileStoreOutputStream
+    org.h2.store.LobStorageFrontend
+    org.h2.store.LobStorageRemoteInputStream
+    org.h2.store.RangeInputStream
+    org.h2.store.RangeReader
+    org.h2.store.RecoverTester
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.ref
+    java.net
+    java.nio
+    java.nio.channels
+    java.nio.charset
+    java.nio.file
+    java.sql
+    java.util
+    org.h2
+    org.h2.api
+    org.h2.command
+    org.h2.engine
+    org.h2.message
+    org.h2.mvstore
+    org.h2.security
+    org.h2.store.fs
+    org.h2.store.fs.rec
+    org.h2.tools
+    org.h2.util
+    org.h2.value
+
+Used By:
+    org.h2.command.dml
+    org.h2.engine
+    org.h2.expression.function
+    org.h2.jdbc
+    org.h2.mvstore.db
+    org.h2.result
+    org.h2.security
+    org.h2.server
+    org.h2.table
+    org.h2.tools
+    org.h2.util
+    org.h2.value
+    org.h2.value.lob
+
+--------------------------------------------------
+- Package: org.h2.store.fs
+--------------------------------------------------
+
+Stats:
+    Total Classes: 8
+    Concrete Classes: 3
+    Abstract Classes: 5
+
+    Ca: 25
+    Ce: 13
+
+    A: 0.62
+    I: 0.34
+    D: 0.03
+
+Abstract Classes:
+    org.h2.store.fs.FileBase
+    org.h2.store.fs.FileBaseDefault
+    org.h2.store.fs.FilePath
+    org.h2.store.fs.FilePathWrapper
+    org.h2.store.fs.Recorder
+
+Concrete Classes:
+    org.h2.store.fs.FakeFileChannel
+    org.h2.store.fs.FileChannelInputStream
+    org.h2.store.fs.FileUtils
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.reflect
+    java.nio
+    java.nio.channels
+    java.nio.charset
+    java.nio.file
+    java.nio.file.attribute
+    java.util
+    java.util.concurrent
+    org.h2.engine
+    org.h2.store.fs.disk
+    org.h2.util
+
+Used By:
+    org.h2.command.dml
+    org.h2.engine
+    org.h2.expression.function
+    org.h2.fulltext
+    org.h2.message
+    org.h2.mvstore
+    org.h2.mvstore.cache
+    org.h2.mvstore.db
+    org.h2.security
+    org.h2.server.web
+    org.h2.store
+    org.h2.store.fs.async
+    org.h2.store.fs.disk
+    org.h2.store.fs.encrypt
+    org.h2.store.fs.mem
+    org.h2.store.fs.niomapped
+    org.h2.store.fs.niomem
+    org.h2.store.fs.rec
+    org.h2.store.fs.retry
+    org.h2.store.fs.split
+    org.h2.store.fs.zip
+    org.h2.tools
+    org.h2.util
+    org.h2.value
+    org.h2.value.lob
+
+--------------------------------------------------
+- Package: org.h2.store.fs.async
+--------------------------------------------------
+
+Stats:
+    Total Classes: 2
+    Concrete Classes: 2
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 7
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    org.h2.store.fs.async.FileAsync
+    org.h2.store.fs.async.FilePathAsync
+
+Depends Upon:
+    java.io
+    java.lang
+    java.nio
+    java.nio.channels
+    java.nio.file
+    java.util.concurrent
+    org.h2.store.fs
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: org.h2.store.fs.disk
+--------------------------------------------------
+
+Stats:
+    Total Classes: 2
+    Concrete Classes: 2
+    Abstract Classes: 0
+
+    Ca: 2
+    Ce: 14
+
+    A: 0
+    I: 0.88
+    D: 0.12
+
+Abstract Classes:
+
+Concrete Classes:
+    org.h2.store.fs.disk.FilePathDisk
+    org.h2.store.fs.disk.FilePathDisk$1
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.invoke
+    java.net
+    java.nio.channels
+    java.nio.file
+    java.nio.file.attribute
+    java.util
+    java.util.stream
+    org.h2.api
+    org.h2.engine
+    org.h2.message
+    org.h2.store.fs
+    org.h2.util
+
+Used By:
+    org.h2.store.fs
+    org.h2.store.fs.zip
+
+--------------------------------------------------
+- Package: org.h2.store.fs.encrypt
+--------------------------------------------------
+
+Stats:
+    Total Classes: 3
+    Concrete Classes: 3
+    Abstract Classes: 0
+
+    Ca: 3
+    Ce: 10
+
+    A: 0
+    I: 0.77
+    D: 0.23
+
+Abstract Classes:
+
+Concrete Classes:
+    org.h2.store.fs.encrypt.FileEncrypt
+    org.h2.store.fs.encrypt.FilePathEncrypt
+    org.h2.store.fs.encrypt.XTS
+
+Depends Upon:
+    java.io
+    java.lang
+    java.nio
+    java.nio.channels
+    java.nio.charset
+    java.util
+    org.h2.mvstore
+    org.h2.security
+    org.h2.store.fs
+    org.h2.util
+
+Used By:
+    org.h2.engine
+    org.h2.mvstore
+    org.h2.tools
+
+--------------------------------------------------
+- Package: org.h2.store.fs.mem
+--------------------------------------------------
+
+Stats:
+    Total Classes: 7
+    Concrete Classes: 7
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 11
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    org.h2.store.fs.mem.FileMem
+    org.h2.store.fs.mem.FileMem$1
+    org.h2.store.fs.mem.FileMemData
+    org.h2.store.fs.mem.FileMemData$Cache
+    org.h2.store.fs.mem.FileMemData$CompressItem
+    org.h2.store.fs.mem.FilePathMem
+    org.h2.store.fs.mem.FilePathMemLZF
+
+Depends Upon:
+    java.io
+    java.lang
+    java.nio
+    java.nio.channels
+    java.util
+    java.util.concurrent.atomic
+    org.h2.api
+    org.h2.compress
+    org.h2.message
+    org.h2.store.fs
+    org.h2.util
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: org.h2.store.fs.niomapped
+--------------------------------------------------
+
+Stats:
+    Total Classes: 2
+    Concrete Classes: 2
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 9
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    org.h2.store.fs.niomapped.FileNioMapped
+    org.h2.store.fs.niomapped.FilePathNioMapped
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.ref
+    java.nio
+    java.nio.channels
+    java.nio.file
+    org.h2.engine
+    org.h2.store.fs
+    org.h2.util
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: org.h2.store.fs.niomem
+--------------------------------------------------
+
+Stats:
+    Total Classes: 7
+    Concrete Classes: 7
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 13
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    org.h2.store.fs.niomem.FileNioMem
+    org.h2.store.fs.niomem.FileNioMem$1
+    org.h2.store.fs.niomem.FileNioMemData
+    org.h2.store.fs.niomem.FileNioMemData$CompressItem
+    org.h2.store.fs.niomem.FileNioMemData$CompressLaterCache
+    org.h2.store.fs.niomem.FilePathNioMem
+    org.h2.store.fs.niomem.FilePathNioMemLZF
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.invoke
+    java.nio
+    java.nio.channels
+    java.util
+    java.util.concurrent.atomic
+    java.util.concurrent.locks
+    org.h2.api
+    org.h2.compress
+    org.h2.message
+    org.h2.store.fs
+    org.h2.util
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: org.h2.store.fs.rec
+--------------------------------------------------
+
+Stats:
+    Total Classes: 2
+    Concrete Classes: 2
+    Abstract Classes: 0
+
+    Ca: 2
+    Ce: 6
+
+    A: 0
+    I: 0.75
+    D: 0.25
+
+Abstract Classes:
+
+Concrete Classes:
+    org.h2.store.fs.rec.FilePathRec
+    org.h2.store.fs.rec.FileRec
+
+Depends Upon:
+    java.io
+    java.lang
+    java.nio
+    java.nio.channels
+    java.util
+    org.h2.store.fs
+
+Used By:
+    org.h2.engine
+    org.h2.store
+
+--------------------------------------------------
+- Package: org.h2.store.fs.retry
+--------------------------------------------------
+
+Stats:
+    Total Classes: 3
+    Concrete Classes: 3
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 5
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    org.h2.store.fs.retry.FilePathRetryOnInterrupt
+    org.h2.store.fs.retry.FileRetryOnInterrupt
+    org.h2.store.fs.retry.FileRetryOnInterrupt$FileLockRetry
+
+Depends Upon:
+    java.io
+    java.lang
+    java.nio
+    java.nio.channels
+    org.h2.store.fs
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: org.h2.store.fs.split
+--------------------------------------------------
+
+Stats:
+    Total Classes: 2
+    Concrete Classes: 2
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 9
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    org.h2.store.fs.split.FilePathSplit
+    org.h2.store.fs.split.FileSplit
+
+Depends Upon:
+    java.io
+    java.lang
+    java.nio
+    java.nio.channels
+    java.util
+    org.h2.engine
+    org.h2.message
+    org.h2.mvstore
+    org.h2.store.fs
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: org.h2.store.fs.zip
+--------------------------------------------------
+
+Stats:
+    Total Classes: 3
+    Concrete Classes: 3
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 10
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    org.h2.store.fs.zip.FilePathZip
+    org.h2.store.fs.zip.FileZip
+    org.h2.store.fs.zip.FileZip$1
+
+Depends Upon:
+    java.io
+    java.lang
+    java.nio
+    java.nio.channels
+    java.util
+    java.util.zip
+    org.h2.message
+    org.h2.store.fs
+    org.h2.store.fs.disk
+    org.h2.util
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: org.h2.table
+--------------------------------------------------
+
+Stats:
+    Total Classes: 35
+    Concrete Classes: 26
+    Abstract Classes: 9
+
+    Ca: 21
+    Ce: 31
+
+    A: 0.26
+    I: 0.6
+    D: 0.15
+
+Abstract Classes:
+    org.h2.table.ColumnResolver
+    org.h2.table.ColumnTemplate
+    org.h2.table.MetaTable
+    org.h2.table.QueryExpressionTable
+    org.h2.table.Table
+    org.h2.table.TableBase
+    org.h2.table.TableFilter$TableFilterVisitor
+    org.h2.table.VirtualConstructedTable
+    org.h2.table.VirtualTable
+
+Concrete Classes:
+    org.h2.table.Column
+    org.h2.table.DataChangeDeltaTable
+    org.h2.table.DataChangeDeltaTable$ResultOption
+    org.h2.table.DerivedTable
+    org.h2.table.DualTable
+    org.h2.table.FunctionTable
+    org.h2.table.GeneratedColumnResolver
+    org.h2.table.IndexColumn
+    org.h2.table.IndexHints
+    org.h2.table.InformationSchemaTable
+    org.h2.table.InformationSchemaTable$1
+    org.h2.table.InformationSchemaTable$DataTypeInformation
+    org.h2.table.InformationSchemaTableLegacy
+    org.h2.table.InformationSchemaTableLegacy$1
+    org.h2.table.Plan
+    org.h2.table.PlanItem
+    org.h2.table.QueryExpressionTable$CacheKey
+    org.h2.table.RangeTable
+    org.h2.table.TableFilter
+    org.h2.table.TableFilter$MapColumnsVisitor
+    org.h2.table.TableLink
+    org.h2.table.TableLinkConnection
+    org.h2.table.TableSynonym
+    org.h2.table.TableType
+    org.h2.table.TableValueConstructorTable
+    org.h2.table.TableView
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.invoke
+    java.nio.channels
+    java.nio.charset
+    java.sql
+    java.util
+    java.util.concurrent
+    org.h2.api
+    org.h2.command
+    org.h2.command.ddl
+    org.h2.command.dml
+    org.h2.command.query
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.condition
+    org.h2.expression.function.table
+    org.h2.index
+    org.h2.jdbc
+    org.h2.message
+    org.h2.mode
+    org.h2.mvstore
+    org.h2.mvstore.db
+    org.h2.result
+    org.h2.schema
+    org.h2.store
+    org.h2.tools
+    org.h2.util
+    org.h2.util.geometry
+    org.h2.value
+
+Used By:
+    org.h2.api
+    org.h2.command
+    org.h2.command.ddl
+    org.h2.command.dml
+    org.h2.command.query
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.aggregate
+    org.h2.expression.analysis
+    org.h2.expression.condition
+    org.h2.expression.function
+    org.h2.expression.function.table
+    org.h2.index
+    org.h2.jdbc.meta
+    org.h2.jmx
+    org.h2.mode
+    org.h2.mvstore.db
+    org.h2.result
+    org.h2.schema
+    org.h2.server.pg
+
+--------------------------------------------------
+- Package: org.h2.tools
+--------------------------------------------------
+
+Stats:
+    Total Classes: 24
+    Concrete Classes: 22
+    Abstract Classes: 2
+
+    Ca: 12
+    Ce: 36
+
+    A: 0.08
+    I: 0.75
+    D: 0.17
+
+Abstract Classes:
+    org.h2.tools.SimpleRowSource
+    org.h2.tools.TriggerAdapter
+
+Concrete Classes:
+    org.h2.tools.Backup
+    org.h2.tools.ChangeFileEncryption
+    org.h2.tools.CompressTool
+    org.h2.tools.Console
+    org.h2.tools.ConvertTraceFile
+    org.h2.tools.ConvertTraceFile$Stat
+    org.h2.tools.CreateCluster
+    org.h2.tools.Csv
+    org.h2.tools.DeleteDbFiles
+    org.h2.tools.GUIConsole
+    org.h2.tools.MultiDimension
+    org.h2.tools.Recover
+    org.h2.tools.Recover$1
+    org.h2.tools.Restore
+    org.h2.tools.RunScript
+    org.h2.tools.Script
+    org.h2.tools.Server
+    org.h2.tools.Shell
+    org.h2.tools.SimpleResultSet
+    org.h2.tools.SimpleResultSet$SimpleArray
+    org.h2.tools.Upgrade
+    org.h2.tools.Upgrade$1
+
+Depends Upon:
+    java.awt
+    java.awt.event
+    java.io
+    java.lang
+    java.lang.invoke
+    java.lang.reflect
+    java.math
+    java.net
+    java.nio.channels
+    java.nio.charset
+    java.nio.file
+    java.security
+    java.sql
+    java.util
+    java.util.concurrent
+    java.util.zip
+    org.h2.api
+    org.h2.command.dml
+    org.h2.compress
+    org.h2.engine
+    org.h2.jdbc
+    org.h2.message
+    org.h2.mvstore
+    org.h2.mvstore.db
+    org.h2.mvstore.tx
+    org.h2.mvstore.type
+    org.h2.result
+    org.h2.server
+    org.h2.server.pg
+    org.h2.server.web
+    org.h2.store
+    org.h2.store.fs
+    org.h2.store.fs.encrypt
+    org.h2.util
+    org.h2.value
+    org.h2.value.lob
+
+Used By:
+    io.github.reconsolidated.malinka
+    org.h2.bnf
+    org.h2.command.dml
+    org.h2.engine
+    org.h2.expression.function
+    org.h2.expression.function.table
+    org.h2.fulltext
+    org.h2.schema
+    org.h2.server.web
+    org.h2.store
+    org.h2.table
+    org.h2.util
+
+--------------------------------------------------
+- Package: org.h2.util
+--------------------------------------------------
+
+Stats:
+    Total Classes: 63
+    Concrete Classes: 55
+    Abstract Classes: 8
+
+    Ca: 49
+    Ce: 43
+
+    A: 0.13
+    I: 0.47
+    D: 0.41
+
+Abstract Classes:
+    org.h2.util.Cache
+    org.h2.util.CacheObject
+    org.h2.util.CacheWriter
+    org.h2.util.HasSQL
+    org.h2.util.Task
+    org.h2.util.TimeZoneProvider
+    org.h2.util.Tool
+    org.h2.util.Utils$ClassFactory
+
+Concrete Classes:
+    org.h2.util.AbbaDetector
+    org.h2.util.AbbaDetector$1
+    org.h2.util.AbbaLockingDetector
+    org.h2.util.AbbaLockingDetector$1
+    org.h2.util.Bits
+    org.h2.util.ByteStack
+    org.h2.util.CacheHead
+    org.h2.util.CacheLRU
+    org.h2.util.CacheSecondLevel
+    org.h2.util.CacheTQ
+    org.h2.util.CloseWatcher
+    org.h2.util.DateTimeUtils
+    org.h2.util.DbDriverActivator
+    org.h2.util.DebuggingThreadLocal
+    org.h2.util.IOUtils
+    org.h2.util.IntArray
+    org.h2.util.IntervalUtils
+    org.h2.util.IntervalUtils$1
+    org.h2.util.JSR310Utils
+    org.h2.util.JdbcUtils
+    org.h2.util.JdbcUtils$1
+    org.h2.util.LegacyDateTimeUtils
+    org.h2.util.MathUtils
+    org.h2.util.MemoryEstimator
+    org.h2.util.MemoryUnmapper
+    org.h2.util.NetUtils
+    org.h2.util.NetworkConnectionInfo
+    org.h2.util.OsgiDataSourceFactory
+    org.h2.util.ParserUtil
+    org.h2.util.Permutations
+    org.h2.util.Profiler
+    org.h2.util.Profiler$1
+    org.h2.util.ScriptReader
+    org.h2.util.SimpleColumnInfo
+    org.h2.util.SmallLRUCache
+    org.h2.util.SmallMap
+    org.h2.util.SoftValuesHashMap
+    org.h2.util.SoftValuesHashMap$SoftValue
+    org.h2.util.SortedProperties
+    org.h2.util.SourceCompiler
+    org.h2.util.SourceCompiler$1
+    org.h2.util.SourceCompiler$2
+    org.h2.util.SourceCompiler$ClassFileManager
+    org.h2.util.SourceCompiler$ClassFileManager$1
+    org.h2.util.SourceCompiler$GroovyCompiler
+    org.h2.util.SourceCompiler$JavaClassObject
+    org.h2.util.SourceCompiler$StringJavaFileObject
+    org.h2.util.StringUtils
+    org.h2.util.TempFileDeleter
+    org.h2.util.ThreadDeadlockDetector
+    org.h2.util.ThreadDeadlockDetector$1
+    org.h2.util.TimeZoneProvider$Simple
+    org.h2.util.TimeZoneProvider$WithTimeZone
+    org.h2.util.Utils
+    org.h2.util.Utils10
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.instrument
+    java.lang.invoke
+    java.lang.management
+    java.lang.ref
+    java.lang.reflect
+    java.math
+    java.net
+    java.nio
+    java.nio.charset
+    java.nio.file
+    java.nio.file.attribute
+    java.security
+    java.sql
+    java.time
+    java.time.format
+    java.time.zone
+    java.util
+    java.util.concurrent
+    java.util.concurrent.atomic
+    java.util.zip
+    javax.naming
+    javax.script
+    javax.sql
+    javax.tools
+    jdk.net
+    org.h2
+    org.h2.api
+    org.h2.engine
+    org.h2.jdbc
+    org.h2.jdbcx
+    org.h2.message
+    org.h2.mvstore
+    org.h2.mvstore.db
+    org.h2.mvstore.type
+    org.h2.security
+    org.h2.store
+    org.h2.store.fs
+    org.h2.tools
+    org.h2.value
+    org.osgi.framework
+    org.osgi.service.jdbc
+
+Used By:
+    org.h2.api
+    org.h2.bnf
+    org.h2.bnf.context
+    org.h2.command
+    org.h2.command.ddl
+    org.h2.command.dml
+    org.h2.command.query
+    org.h2.compress
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.aggregate
+    org.h2.expression.analysis
+    org.h2.expression.condition
+    org.h2.expression.function
+    org.h2.expression.function.table
+    org.h2.fulltext
+    org.h2.index
+    org.h2.jdbc
+    org.h2.jdbc.meta
+    org.h2.jdbcx
+    org.h2.jmx
+    org.h2.message
+    org.h2.mode
+    org.h2.mvstore
+    org.h2.mvstore.db
+    org.h2.mvstore.tx
+    org.h2.mvstore.type
+    org.h2.result
+    org.h2.schema
+    org.h2.security
+    org.h2.security.auth
+    org.h2.security.auth.impl
+    org.h2.server
+    org.h2.server.pg
+    org.h2.server.web
+    org.h2.store
+    org.h2.store.fs
+    org.h2.store.fs.disk
+    org.h2.store.fs.encrypt
+    org.h2.store.fs.mem
+    org.h2.store.fs.niomapped
+    org.h2.store.fs.niomem
+    org.h2.store.fs.zip
+    org.h2.table
+    org.h2.tools
+    org.h2.util.geometry
+    org.h2.util.json
+    org.h2.value
+
+--------------------------------------------------
+- Package: org.h2.util.geometry
+--------------------------------------------------
+
+Stats:
+    Total Classes: 14
+    Concrete Classes: 13
+    Abstract Classes: 1
+
+    Ca: 5
+    Ce: 10
+
+    A: 0.07
+    I: 0.67
+    D: 0.26
+
+Abstract Classes:
+    org.h2.util.geometry.GeometryUtils$Target
+
+Concrete Classes:
+    org.h2.util.geometry.EWKBUtils
+    org.h2.util.geometry.EWKBUtils$EWKBSource
+    org.h2.util.geometry.EWKBUtils$EWKBTarget
+    org.h2.util.geometry.EWKTUtils
+    org.h2.util.geometry.EWKTUtils$EWKTSource
+    org.h2.util.geometry.EWKTUtils$EWKTTarget
+    org.h2.util.geometry.GeoJsonUtils
+    org.h2.util.geometry.GeoJsonUtils$GeoJsonTarget
+    org.h2.util.geometry.GeometryUtils
+    org.h2.util.geometry.GeometryUtils$DimensionSystemTarget
+    org.h2.util.geometry.GeometryUtils$EnvelopeTarget
+    org.h2.util.geometry.JTSUtils
+    org.h2.util.geometry.JTSUtils$GeometryTarget
+
+Depends Upon:
+    java.io
+    java.lang
+    java.math
+    java.util
+    org.h2.api
+    org.h2.message
+    org.h2.util
+    org.h2.util.json
+    org.locationtech.jts.geom
+    org.locationtech.jts.geom.impl
+
+Used By:
+    org.h2.command
+    org.h2.expression.aggregate
+    org.h2.mvstore.db
+    org.h2.table
+    org.h2.value
+
+--------------------------------------------------
+- Package: org.h2.util.json
+--------------------------------------------------
+
+Stats:
+    Total Classes: 19
+    Concrete Classes: 15
+    Abstract Classes: 4
+
+    Ca: 6
+    Ce: 8
+
+    A: 0.21
+    I: 0.57
+    D: 0.22
+
+Abstract Classes:
+    org.h2.util.json.JSONTarget
+    org.h2.util.json.JSONTextSource
+    org.h2.util.json.JSONValidationTarget
+    org.h2.util.json.JSONValue
+
+Concrete Classes:
+    org.h2.util.json.JSONArray
+    org.h2.util.json.JSONBoolean
+    org.h2.util.json.JSONByteArrayTarget
+    org.h2.util.json.JSONBytesSource
+    org.h2.util.json.JSONItemType
+    org.h2.util.json.JSONNull
+    org.h2.util.json.JSONNumber
+    org.h2.util.json.JSONObject
+    org.h2.util.json.JSONString
+    org.h2.util.json.JSONStringSource
+    org.h2.util.json.JSONStringTarget
+    org.h2.util.json.JSONValidationTargetWithUniqueKeys
+    org.h2.util.json.JSONValidationTargetWithoutUniqueKeys
+    org.h2.util.json.JSONValueTarget
+    org.h2.util.json.JsonConstructorUtils
+
+Depends Upon:
+    java.io
+    java.lang
+    java.math
+    java.nio.charset
+    java.util
+    org.h2.message
+    org.h2.util
+    org.h2.value
+
+Used By:
+    org.h2.command
+    org.h2.expression.aggregate
+    org.h2.expression.condition
+    org.h2.expression.function
+    org.h2.util.geometry
+    org.h2.value
+
+--------------------------------------------------
+- Package: org.h2.value
+--------------------------------------------------
+
+Stats:
+    Total Classes: 56
+    Concrete Classes: 48
+    Abstract Classes: 8
+
+    Ca: 33
+    Ce: 26
+
+    A: 0.14
+    I: 0.44
+    D: 0.42
+
+Abstract Classes:
+    org.h2.value.ExtTypeInfo
+    org.h2.value.Typed
+    org.h2.value.Value
+    org.h2.value.ValueBigDecimalBase
+    org.h2.value.ValueBytesBase
+    org.h2.value.ValueCollectionBase
+    org.h2.value.ValueLob
+    org.h2.value.ValueStringBase
+
+Concrete Classes:
+    org.h2.value.CaseInsensitiveConcurrentMap
+    org.h2.value.CaseInsensitiveMap
+    org.h2.value.CharsetCollator
+    org.h2.value.CharsetCollator$CharsetCollationKey
+    org.h2.value.CompareMode
+    org.h2.value.CompareModeDefault
+    org.h2.value.CompareModeIcu4J
+    org.h2.value.DataType
+    org.h2.value.ExtTypeInfoEnum
+    org.h2.value.ExtTypeInfoGeometry
+    org.h2.value.ExtTypeInfoNumeric
+    org.h2.value.ExtTypeInfoRow
+    org.h2.value.Transfer
+    org.h2.value.TypeInfo
+    org.h2.value.ValueArray
+    org.h2.value.ValueBigint
+    org.h2.value.ValueBinary
+    org.h2.value.ValueBlob
+    org.h2.value.ValueBoolean
+    org.h2.value.ValueChar
+    org.h2.value.ValueClob
+    org.h2.value.ValueDate
+    org.h2.value.ValueDecfloat
+    org.h2.value.ValueDouble
+    org.h2.value.ValueEnum
+    org.h2.value.ValueEnumBase
+    org.h2.value.ValueGeometry
+    org.h2.value.ValueInteger
+    org.h2.value.ValueInterval
+    org.h2.value.ValueJavaObject
+    org.h2.value.ValueJson
+    org.h2.value.ValueNull
+    org.h2.value.ValueNumeric
+    org.h2.value.ValueReal
+    org.h2.value.ValueRow
+    org.h2.value.ValueSmallint
+    org.h2.value.ValueTime
+    org.h2.value.ValueTimeTimeZone
+    org.h2.value.ValueTimestamp
+    org.h2.value.ValueTimestampTimeZone
+    org.h2.value.ValueTinyint
+    org.h2.value.ValueToObjectConverter
+    org.h2.value.ValueToObjectConverter2
+    org.h2.value.ValueUuid
+    org.h2.value.ValueVarbinary
+    org.h2.value.ValueVarchar
+    org.h2.value.ValueVarcharIgnoreCase
+    org.h2.value.VersionedValue
+
+Depends Upon:
+    java.io
+    java.lang
+    java.lang.invoke
+    java.lang.ref
+    java.lang.reflect
+    java.math
+    java.net
+    java.nio.charset
+    java.sql
+    java.text
+    java.time
+    java.util
+    java.util.concurrent
+    org.h2.api
+    org.h2.engine
+    org.h2.jdbc
+    org.h2.message
+    org.h2.result
+    org.h2.security
+    org.h2.store
+    org.h2.store.fs
+    org.h2.util
+    org.h2.util.geometry
+    org.h2.util.json
+    org.h2.value.lob
+    org.locationtech.jts.geom
+
+Used By:
+    org.h2.api
+    org.h2.command
+    org.h2.command.ddl
+    org.h2.command.dml
+    org.h2.command.query
+    org.h2.constraint
+    org.h2.engine
+    org.h2.expression
+    org.h2.expression.aggregate
+    org.h2.expression.analysis
+    org.h2.expression.condition
+    org.h2.expression.function
+    org.h2.expression.function.table
+    org.h2.fulltext
+    org.h2.index
+    org.h2.jdbc
+    org.h2.jdbc.meta
+    org.h2.jmx
+    org.h2.message
+    org.h2.mode
+    org.h2.mvstore.db
+    org.h2.mvstore.tx
+    org.h2.result
+    org.h2.schema
+    org.h2.server
+    org.h2.server.pg
+    org.h2.server.web
+    org.h2.store
+    org.h2.table
+    org.h2.tools
+    org.h2.util
+    org.h2.util.json
+    org.h2.value.lob
+
+--------------------------------------------------
+- Package: org.h2.value.lob
+--------------------------------------------------
+
+Stats:
+    Total Classes: 5
+    Concrete Classes: 4
+    Abstract Classes: 1
+
+    Ca: 4
+    Ce: 7
+
+    A: 0.2
+    I: 0.64
+    D: 0.16
+
+Abstract Classes:
+    org.h2.value.lob.LobData
+
+Concrete Classes:
+    org.h2.value.lob.LobDataDatabase
+    org.h2.value.lob.LobDataFetchOnDemand
+    org.h2.value.lob.LobDataFile
+    org.h2.value.lob.LobDataInMemory
+
+Depends Upon:
+    java.io
+    java.lang
+    org.h2.engine
+    org.h2.message
+    org.h2.store
+    org.h2.store.fs
+    org.h2.value
+
+Used By:
+    org.h2.engine
+    org.h2.mvstore.db
+    org.h2.tools
+    org.h2.value
+
+--------------------------------------------------
+- Package: org.junit.jupiter.api
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.junit.jupiter.api.extension
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.locationtech.jts.geom
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.locationtech.jts.geom.impl
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.mockito
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.mockito.junit.jupiter
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.mockito.stubbing
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.osgi.framework
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.osgi.service.jdbc
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.slf4j
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.springframework.boot
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.springframework.boot.autoconfigure
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.springframework.boot.test.context
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.springframework.context.annotation
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.springframework.data.jpa.repository
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.springframework.data.jpa.repository.config
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.springframework.stereotype
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.springframework.ui
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.springframework.web.bind.annotation
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.springframework.web.servlet.mvc.support
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.w3c.dom
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.xml.sax
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+--------------------------------------------------
+- Package: org.xml.sax.helpers
+--------------------------------------------------
+No stats available: package referenced, but not analyzed.
+
+
+--------------------------------------------------
+- Package Dependency Cycles:
+--------------------------------------------------
+
+io.github.reconsolidated.malinka
+    |
+    |   org.h2.tools
+    |   org.h2.command.dml
+    |   org.h2.schema
+    |-> org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |-> org.h2.value
+
+io.github.reconsolidated.malinka.basket
+    |
+    |   io.github.reconsolidated.malinka.mainPage
+    |-> io.github.reconsolidated.malinka.basket
+
+io.github.reconsolidated.malinka.mainPage
+    |
+    |   io.github.reconsolidated.malinka.basket
+    |-> io.github.reconsolidated.malinka.mainPage
+
+io.github.reconsolidated.malinka.offer
+    |
+    |-> io.github.reconsolidated.malinka.mainPage
+    |   io.github.reconsolidated.malinka.basket
+    |-> io.github.reconsolidated.malinka.mainPage
+
+io.github.reconsolidated.malinka.orders
+    |
+    |-> io.github.reconsolidated.malinka.basket
+    |   io.github.reconsolidated.malinka.mainPage
+    |-> io.github.reconsolidated.malinka.basket
+
+io.github.reconsolidated.malinka.reclamation
+    |
+    |-> io.github.reconsolidated.malinka.basket
+    |   io.github.reconsolidated.malinka.mainPage
+    |-> io.github.reconsolidated.malinka.basket
+
+org.h2
+    |
+    |-> org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |   org.h2.util
+    |-> org.h2.message
+
+org.h2.api
+    |
+    |   org.h2.security.auth
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.bnf
+    |
+    |   org.h2.command.dml
+    |   org.h2.schema
+    |-> org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |-> org.h2.value
+
+org.h2.bnf.context
+    |
+    |-> org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |-> org.h2.jdbc
+
+org.h2.command
+    |
+    |-> org.h2.result
+    |   org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |-> org.h2.result
+
+org.h2.command.ddl
+    |
+    |   org.h2.schema
+    |-> org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |-> org.h2.value
+
+org.h2.command.dml
+    |
+    |   org.h2.schema
+    |-> org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |-> org.h2.value
+
+org.h2.command.query
+    |
+    |   org.h2.table
+    |-> org.h2.result
+    |   org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |-> org.h2.result
+
+org.h2.compress
+    |
+    |   org.h2.mvstore
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.constraint
+    |
+    |   org.h2.schema
+    |-> org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |-> org.h2.value
+
+org.h2.engine
+    |
+    |-> org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |-> org.h2.value
+
+org.h2.expression
+    |
+    |-> org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |-> org.h2.value
+
+org.h2.expression.aggregate
+    |
+    |-> org.h2.result
+    |   org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |-> org.h2.result
+
+org.h2.expression.analysis
+    |
+    |-> org.h2.result
+    |   org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |-> org.h2.result
+
+org.h2.expression.condition
+    |
+    |-> org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |-> org.h2.value
+
+org.h2.expression.function
+    |
+    |   org.h2.mvstore.db
+    |   org.h2.mvstore
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.expression.function.table
+    |
+    |-> org.h2.result
+    |   org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |-> org.h2.result
+
+org.h2.fulltext
+    |
+    |   org.h2.api
+    |   org.h2.security.auth
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.index
+    |
+    |-> org.h2.result
+    |   org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |-> org.h2.result
+
+org.h2.jdbc
+    |
+    |   org.h2.result
+    |   org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |-> org.h2.jdbc
+
+org.h2.jdbc.meta
+    |
+    |-> org.h2.result
+    |   org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |-> org.h2.result
+
+org.h2.jdbcx
+    |
+    |-> org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |   org.h2.util
+    |-> org.h2.message
+
+org.h2.jmx
+    |
+    |   org.h2.mvstore.db
+    |   org.h2.mvstore
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.message
+    |
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |   org.h2.util
+    |-> org.h2.message
+
+org.h2.mode
+    |
+    |-> org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |-> org.h2.value
+
+org.h2.mvstore
+    |
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.mvstore.cache
+    |
+    |   org.h2.mvstore
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.mvstore.db
+    |
+    |   org.h2.mvstore
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.mvstore.rtree
+    |
+    |   org.h2.mvstore
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.mvstore.tx
+    |
+    |   org.h2.mvstore
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.mvstore.type
+    |
+    |   org.h2.mvstore
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.result
+    |
+    |   org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |-> org.h2.result
+
+org.h2.schema
+    |
+    |-> org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |-> org.h2.value
+
+org.h2.security
+    |
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.security.auth
+    |
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.security.auth.impl
+    |
+    |   org.h2.api
+    |   org.h2.security.auth
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.server
+    |
+    |-> org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |   org.h2.util
+    |-> org.h2.message
+
+org.h2.server.pg
+    |
+    |-> org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |-> org.h2.value
+
+org.h2.server.web
+    |
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.store
+    |
+    |   org.h2.engine
+    |-> org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |-> org.h2.value
+
+org.h2.store.fs
+    |
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.store.fs.async
+    |
+    |   org.h2.store.fs
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.store.fs.disk
+    |
+    |-> org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |   org.h2.util
+    |-> org.h2.message
+
+org.h2.store.fs.encrypt
+    |
+    |   org.h2.mvstore
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.store.fs.mem
+    |
+    |   org.h2.store.fs
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.store.fs.niomapped
+    |
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.store.fs.niomem
+    |
+    |   org.h2.store.fs
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.store.fs.rec
+    |
+    |   org.h2.store.fs
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.store.fs.retry
+    |
+    |   org.h2.store.fs
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.store.fs.split
+    |
+    |-> org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |   org.h2.util
+    |-> org.h2.message
+
+org.h2.store.fs.zip
+    |
+    |-> org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |   org.h2.util
+    |-> org.h2.message
+
+org.h2.table
+    |
+    |-> org.h2.result
+    |   org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |-> org.h2.result
+
+org.h2.tools
+    |
+    |   org.h2.command.dml
+    |   org.h2.schema
+    |-> org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |-> org.h2.value
+
+org.h2.util
+    |
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.util.geometry
+    |
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.util.json
+    |
+    |-> org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |   org.h2.value
+    |-> org.h2.util
+
+org.h2.value
+    |
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |-> org.h2.value
+
+org.h2.value.lob
+    |
+    |-> org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |-> org.h2.value
+
+
+--------------------------------------------------
+- Summary:
+--------------------------------------------------
+
+Name, Class Count, Abstract Class Count, Ca, Ce, A, I, D, V:
+
+io.github.reconsolidated.malinka,2,0,0,9,0,1,0,1
+io.github.reconsolidated.malinka.basket,5,1,3,12,0.2,0.8,0,1
+io.github.reconsolidated.malinka.delivery,5,1,1,2,0.2,0.67,0.13,1
+io.github.reconsolidated.malinka.loyaltyProduct,3,1,2,7,0.33,0.78,0.11,1
+io.github.reconsolidated.malinka.mainPage,5,1,3,14,0.2,0.82,0.02,1
+io.github.reconsolidated.malinka.offer,13,3,0,16,0.23,1,0.23,1
+io.github.reconsolidated.malinka.orders,4,1,2,14,0.25,0.88,0.12,1
+io.github.reconsolidated.malinka.promotion,3,1,1,5,0.33,0.83,0.17,1
+io.github.reconsolidated.malinka.reclamation,1,0,0,9,0,1,0,1
+io.github.reconsolidated.malinka.user,3,0,3,4,0,0.57,0.43,1
+io.github.reconsolidated.malinka.utils,1,0,2,1,0,0.33,0.67,1
+jakarta.persistence,0,0,8,0,0,0,1,1
+jakarta.servlet,0,0,1,0,0,0,1,1
+jakarta.servlet.http,0,0,1,0,0,0,1,1
+java.awt,0,0,1,0,0,0,1,1
+java.awt.event,0,0,1,0,0,0,1,1
+java.io,0,0,46,0,0,0,1,1
+java.lang,0,0,71,0,0,0,1,1
+java.lang.instrument,0,0,1,0,0,0,1,1
+java.lang.invoke,0,0,24,0,0,0,1,1
+java.lang.management,0,0,2,0,0,0,1,1
+java.lang.ref,0,0,7,0,0,0,1,1
+java.lang.reflect,0,0,11,0,0,0,1,1
+java.math,0,0,16,0,0,0,1,1
+java.net,0,0,13,0,0,0,1,1
+java.nio,0,0,19,0,0,0,1,1
+java.nio.channels,0,0,17,0,0,0,1,1
+java.nio.charset,0,0,18,0,0,0,1,1
+java.nio.file,0,0,10,0,0,0,1,1
+java.nio.file.attribute,0,0,3,0,0,0,1,1
+java.security,0,0,5,0,0,0,1,1
+java.security.cert,0,0,1,0,0,0,1,1
+java.security.spec,0,0,1,0,0,0,1,1
+java.sql,0,0,29,0,0,0,1,1
+java.text,0,0,8,0,0,0,1,1
+java.time,0,0,6,0,0,0,1,1
+java.time.format,0,0,3,0,0,0,1,1
+java.time.temporal,0,0,1,0,0,0,1,1
+java.time.zone,0,0,1,0,0,0,1,1
+java.util,0,0,64,0,0,0,1,1
+java.util.concurrent,0,0,16,0,0,0,1,1
+java.util.concurrent.atomic,0,0,10,0,0,0,1,1
+java.util.concurrent.locks,0,0,2,0,0,0,1,1
+java.util.function,0,0,3,0,0,0,1,1
+java.util.logging,0,0,2,0,0,0,1,1
+java.util.regex,0,0,8,0,0,0,1,1
+java.util.stream,0,0,5,0,0,0,1,1
+java.util.zip,0,0,6,0,0,0,1,1
+javax.crypto,0,0,1,0,0,0,1,1
+javax.crypto.spec,0,0,1,0,0,0,1,1
+javax.management,0,0,1,0,0,0,1,1
+javax.naming,0,0,3,0,0,0,1,1
+javax.naming.directory,0,0,1,0,0,0,1,1
+javax.naming.spi,0,0,1,0,0,0,1,1
+javax.net,0,0,1,0,0,0,1,1
+javax.net.ssl,0,0,1,0,0,0,1,1
+javax.script,0,0,2,0,0,0,1,1
+javax.security.auth.callback,0,0,1,0,0,0,1,1
+javax.security.auth.login,0,0,1,0,0,0,1,1
+javax.servlet,0,0,1,0,0,0,1,1
+javax.servlet.http,0,0,1,0,0,0,1,1
+javax.sql,0,0,2,0,0,0,1,1
+javax.tools,0,0,1,0,0,0,1,1
+javax.transaction.xa,0,0,1,0,0,0,1,1
+javax.xml,0,0,2,0,0,0,1,1
+javax.xml.parsers,0,0,2,0,0,0,1,1
+javax.xml.stream,0,0,1,0,0,0,1,1
+javax.xml.transform,0,0,1,0,0,0,1,1
+javax.xml.transform.dom,0,0,1,0,0,0,1,1
+javax.xml.transform.sax,0,0,1,0,0,0,1,1
+javax.xml.transform.stax,0,0,1,0,0,0,1,1
+javax.xml.transform.stream,0,0,1,0,0,0,1,1
+jdk.net,0,0,1,0,0,0,1,1
+org.apache.lucene.analysis,0,0,1,0,0,0,1,1
+org.apache.lucene.analysis.standard,0,0,1,0,0,0,1,1
+org.apache.lucene.document,0,0,1,0,0,0,1,1
+org.apache.lucene.index,0,0,1,0,0,0,1,1
+org.apache.lucene.queryparser.flexible.standard,0,0,1,0,0,0,1,1
+org.apache.lucene.search,0,0,1,0,0,0,1,1
+org.apache.lucene.store,0,0,1,0,0,0,1,1
+org.apache.maven.wrapper,13,1,0,10,0.08,1,0.08,1
+org.apache.maven.wrapper.cli,24,6,1,3,0.25,0.75,0,1
+org.h2,2,1,4,8,0.5,0.67,0.17,1
+org.h2.api,13,8,39,9,0.62,0.19,0.2,1
+org.h2.bnf,11,2,2,9,0.18,0.82,0,1
+org.h2.bnf.context,6,0,2,8,0,0.8,0.2,1
+org.h2.command,23,5,18,30,0.22,0.62,0.16,1
+org.h2.command.ddl,62,6,8,20,0.1,0.71,0.19,1
+org.h2.command.dml,34,5,8,33,0.15,0.8,0.05,1
+org.h2.command.query,19,3,13,18,0.16,0.58,0.26,1
+org.h2.compress,6,1,4,9,0.17,0.69,0.14,1
+org.h2.constraint,9,1,10,16,0.11,0.62,0.27,1
+org.h2.engine,42,4,43,40,0.1,0.48,0.42,1
+org.h2.expression,42,9,23,21,0.21,0.48,0.31,1
+org.h2.expression.aggregate,24,3,3,24,0.12,0.89,0.01,1
+org.h2.expression.analysis,21,2,3,11,0.1,0.79,0.12,1
+org.h2.expression.condition,26,3,8,16,0.12,0.67,0.22,1
+org.h2.expression.function,56,6,7,31,0.11,0.82,0.08,1
+org.h2.expression.function.table,5,1,3,14,0.2,0.82,0.02,1
+org.h2.fulltext,7,0,0,24,0,1,0,1
+org.h2.index,21,4,15,17,0.19,0.53,0.28,1
+org.h2.jdbc,34,5,16,32,0.15,0.67,0.19,1
+org.h2.jdbc.meta,7,2,3,19,0.29,0.86,0.15,1
+org.h2.jdbcx,8,2,1,16,0.25,0.94,0.19,1
+org.h2.jmx,3,1,0,14,0.33,1,0.33,1
+org.h2.message,6,2,43,17,0.33,0.28,0.38,1
+org.h2.mode,26,2,13,19,0.08,0.59,0.33,1
+org.h2.mvstore,45,4,17,22,0.09,0.56,0.35,1
+org.h2.mvstore.cache,6,0,1,8,0,0.89,0.11,1
+org.h2.mvstore.db,33,2,11,33,0.06,0.75,0.19,1
+org.h2.mvstore.rtree,9,2,2,5,0.22,0.71,0.06,1
+org.h2.mvstore.tx,29,2,4,12,0.07,0.75,0.18,1
+org.h2.mvstore.type,27,5,6,9,0.19,0.6,0.21,1
+org.h2.result,24,8,22,17,0.33,0.44,0.23,1
+org.h2.schema,14,3,17,21,0.21,0.55,0.23,1
+org.h2.security,8,1,10,18,0.12,0.64,0.23,1
+org.h2.security.auth,14,3,4,14,0.21,0.78,0.01,1
+org.h2.security.auth.impl,6,0,1,13,0,0.93,0.07,1
+org.h2.server,5,2,3,17,0.4,0.85,0.25,1
+org.h2.server.pg,4,0,2,20,0,0.91,0.09,1
+org.h2.server.web,13,0,1,30,0,0.97,0.03,1
+org.h2.store,19,3,13,22,0.16,0.63,0.21,1
+org.h2.store.fs,8,5,25,13,0.62,0.34,0.03,1
+org.h2.store.fs.async,2,0,0,7,0,1,0,1
+org.h2.store.fs.disk,2,0,2,14,0,0.88,0.12,1
+org.h2.store.fs.encrypt,3,0,3,10,0,0.77,0.23,1
+org.h2.store.fs.mem,7,0,0,11,0,1,0,1
+org.h2.store.fs.niomapped,2,0,0,9,0,1,0,1
+org.h2.store.fs.niomem,7,0,0,13,0,1,0,1
+org.h2.store.fs.rec,2,0,2,6,0,0.75,0.25,1
+org.h2.store.fs.retry,3,0,0,5,0,1,0,1
+org.h2.store.fs.split,2,0,0,9,0,1,0,1
+org.h2.store.fs.zip,3,0,0,10,0,1,0,1
+org.h2.table,35,9,21,31,0.26,0.6,0.15,1
+org.h2.tools,24,2,12,36,0.08,0.75,0.17,1
+org.h2.util,63,8,49,43,0.13,0.47,0.41,1
+org.h2.util.geometry,14,1,5,10,0.07,0.67,0.26,1
+org.h2.util.json,19,4,6,8,0.21,0.57,0.22,1
+org.h2.value,56,8,33,26,0.14,0.44,0.42,1
+org.h2.value.lob,5,1,4,7,0.2,0.64,0.16,1
+org.junit.jupiter.api,0,0,2,0,0,0,1,1
+org.junit.jupiter.api.extension,0,0,1,0,0,0,1,1
+org.locationtech.jts.geom,0,0,2,0,0,0,1,1
+org.locationtech.jts.geom.impl,0,0,1,0,0,0,1,1
+org.mockito,0,0,1,0,0,0,1,1
+org.mockito.junit.jupiter,0,0,1,0,0,0,1,1
+org.mockito.stubbing,0,0,1,0,0,0,1,1
+org.osgi.framework,0,0,1,0,0,0,1,1
+org.osgi.service.jdbc,0,0,1,0,0,0,1,1
+org.slf4j,0,0,1,0,0,0,1,1
+org.springframework.boot,0,0,1,0,0,0,1,1
+org.springframework.boot.autoconfigure,0,0,1,0,0,0,1,1
+org.springframework.boot.test.context,0,0,1,0,0,0,1,1
+org.springframework.context.annotation,0,0,1,0,0,0,1,1
+org.springframework.data.jpa.repository,0,0,6,0,0,0,1,1
+org.springframework.data.jpa.repository.config,0,0,1,0,0,0,1,1
+org.springframework.stereotype,0,0,8,0,0,0,1,1
+org.springframework.ui,0,0,5,0,0,0,1,1
+org.springframework.web.bind.annotation,0,0,5,0,0,0,1,1
+org.springframework.web.servlet.mvc.support,0,0,2,0,0,0,1,1
+org.w3c.dom,0,0,1,0,0,0,1,1
+org.xml.sax,0,0,2,0,0,0,1,1
+org.xml.sax.helpers,0,0,2,0,0,0,1,1

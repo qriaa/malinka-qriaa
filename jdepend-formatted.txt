@@ -1,0 +1,484 @@
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka
+--------------------------------------------------
+
+Stats:
+    Total Classes: 2
+    Concrete Classes: 2
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 9
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.MalinkaApplication
+    io.github.reconsolidated.malinka.MalinkaApplicationTests
+
+Depends Upon:
+    java.lang
+    java.sql
+    org.h2.tools
+    org.junit.jupiter.api
+    org.springframework.boot
+    org.springframework.boot.autoconfigure
+    org.springframework.boot.test.context
+    org.springframework.context.annotation
+    org.springframework.data.jpa.repository.config
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.basket
+--------------------------------------------------
+
+Stats:
+    Total Classes: 5
+    Concrete Classes: 4
+    Abstract Classes: 1
+
+    Ca: 3
+    Ce: 12
+
+    A: 0.2
+    I: 0.8
+    D: 0
+
+Abstract Classes:
+    io.github.reconsolidated.malinka.basket.BasketProductRepository
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.basket.BasketController
+    io.github.reconsolidated.malinka.basket.BasketLoyaltyProduct
+    io.github.reconsolidated.malinka.basket.BasketProduct
+    io.github.reconsolidated.malinka.basket.BasketService
+
+Depends Upon:
+    io.github.reconsolidated.malinka.loyaltyProduct
+    io.github.reconsolidated.malinka.mainPage
+    io.github.reconsolidated.malinka.user
+    jakarta.persistence
+    java.lang
+    java.lang.invoke
+    java.util
+    org.springframework.data.jpa.repository
+    org.springframework.stereotype
+    org.springframework.ui
+    org.springframework.web.bind.annotation
+    org.springframework.web.servlet.mvc.support
+
+Used By:
+    io.github.reconsolidated.malinka.mainPage
+    io.github.reconsolidated.malinka.orders
+    io.github.reconsolidated.malinka.reclamation
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.delivery
+--------------------------------------------------
+
+Stats:
+    Total Classes: 5
+    Concrete Classes: 4
+    Abstract Classes: 1
+
+    Ca: 1
+    Ce: 2
+
+    A: 0.2
+    I: 0.67
+    D: 0.13
+
+Abstract Classes:
+    io.github.reconsolidated.malinka.delivery.Delivery
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.delivery.DeliveryMethod
+    io.github.reconsolidated.malinka.delivery.ParcelDelivery
+    io.github.reconsolidated.malinka.delivery.SelfPickupDelivery
+    io.github.reconsolidated.malinka.delivery.StandardDelivery
+
+Depends Upon:
+    jakarta.persistence
+    java.lang
+
+Used By:
+    io.github.reconsolidated.malinka.orders
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.loyaltyProduct
+--------------------------------------------------
+
+Stats:
+    Total Classes: 3
+    Concrete Classes: 2
+    Abstract Classes: 1
+
+    Ca: 2
+    Ce: 7
+
+    A: 0.33
+    I: 0.78
+    D: 0.11
+
+Abstract Classes:
+    io.github.reconsolidated.malinka.loyaltyProduct.LoyaltyProductsRepository
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.loyaltyProduct.LoyaltyProduct
+    io.github.reconsolidated.malinka.loyaltyProduct.LoyaltyProductsService
+
+Depends Upon:
+    io.github.reconsolidated.malinka.utils
+    jakarta.persistence
+    java.lang
+    java.util
+    java.util.stream
+    org.springframework.data.jpa.repository
+    org.springframework.stereotype
+
+Used By:
+    io.github.reconsolidated.malinka.basket
+    io.github.reconsolidated.malinka.mainPage
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.mainPage
+--------------------------------------------------
+
+Stats:
+    Total Classes: 5
+    Concrete Classes: 4
+    Abstract Classes: 1
+
+    Ca: 3
+    Ce: 14
+
+    A: 0.2
+    I: 0.82
+    D: 0.02
+
+Abstract Classes:
+    io.github.reconsolidated.malinka.mainPage.ProductsDbRepo
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.mainPage.MainPageController
+    io.github.reconsolidated.malinka.mainPage.Product
+    io.github.reconsolidated.malinka.mainPage.ProductsRepository
+    io.github.reconsolidated.malinka.mainPage.ProductsService
+
+Depends Upon:
+    io.github.reconsolidated.malinka.basket
+    io.github.reconsolidated.malinka.loyaltyProduct
+    io.github.reconsolidated.malinka.orders
+    io.github.reconsolidated.malinka.user
+    io.github.reconsolidated.malinka.utils
+    jakarta.persistence
+    java.lang
+    java.lang.invoke
+    java.util
+    java.util.stream
+    org.springframework.data.jpa.repository
+    org.springframework.stereotype
+    org.springframework.ui
+    org.springframework.web.bind.annotation
+
+Used By:
+    io.github.reconsolidated.malinka.basket
+    io.github.reconsolidated.malinka.offer
+    io.github.reconsolidated.malinka.orders
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.offer
+--------------------------------------------------
+
+Stats:
+    Total Classes: 13
+    Concrete Classes: 10
+    Abstract Classes: 3
+
+    Ca: 0
+    Ce: 16
+
+    A: 0.23
+    I: 1
+    D: 0.23
+
+Abstract Classes:
+    io.github.reconsolidated.malinka.offer.OfferProductRepository
+    io.github.reconsolidated.malinka.offer.OfferPromotionRepository
+    io.github.reconsolidated.malinka.offer.OfferRepository
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.offer.ManagerController
+    io.github.reconsolidated.malinka.offer.Offer
+    io.github.reconsolidated.malinka.offer.OfferAddEditViewModel
+    io.github.reconsolidated.malinka.offer.OfferController
+    io.github.reconsolidated.malinka.offer.OfferController$TempOffer
+    io.github.reconsolidated.malinka.offer.OfferProduct
+    io.github.reconsolidated.malinka.offer.OfferPromotion
+    io.github.reconsolidated.malinka.offer.OfferService
+    io.github.reconsolidated.malinka.offer.OfferServiceTest
+    io.github.reconsolidated.malinka.offer.TableOfferViewModel
+
+Depends Upon:
+    io.github.reconsolidated.malinka.mainPage
+    io.github.reconsolidated.malinka.promotion
+    jakarta.persistence
+    java.lang
+    java.lang.invoke
+    java.util
+    java.util.stream
+    org.junit.jupiter.api
+    org.junit.jupiter.api.extension
+    org.mockito
+    org.mockito.junit.jupiter
+    org.mockito.stubbing
+    org.springframework.data.jpa.repository
+    org.springframework.stereotype
+    org.springframework.ui
+    org.springframework.web.bind.annotation
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.orders
+--------------------------------------------------
+
+Stats:
+    Total Classes: 4
+    Concrete Classes: 3
+    Abstract Classes: 1
+
+    Ca: 2
+    Ce: 14
+
+    A: 0.25
+    I: 0.88
+    D: 0.12
+
+Abstract Classes:
+    io.github.reconsolidated.malinka.orders.OrderRepository
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.orders.Order
+    io.github.reconsolidated.malinka.orders.OrderController
+    io.github.reconsolidated.malinka.orders.OrderService
+
+Depends Upon:
+    io.github.reconsolidated.malinka.basket
+    io.github.reconsolidated.malinka.delivery
+    io.github.reconsolidated.malinka.mainPage
+    io.github.reconsolidated.malinka.user
+    jakarta.persistence
+    java.lang
+    java.lang.invoke
+    java.time
+    java.util
+    org.springframework.data.jpa.repository
+    org.springframework.stereotype
+    org.springframework.ui
+    org.springframework.web.bind.annotation
+    org.springframework.web.servlet.mvc.support
+
+Used By:
+    io.github.reconsolidated.malinka.mainPage
+    io.github.reconsolidated.malinka.reclamation
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.promotion
+--------------------------------------------------
+
+Stats:
+    Total Classes: 3
+    Concrete Classes: 2
+    Abstract Classes: 1
+
+    Ca: 1
+    Ce: 5
+
+    A: 0.33
+    I: 0.83
+    D: 0.17
+
+Abstract Classes:
+    io.github.reconsolidated.malinka.promotion.PromotionRepository
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.promotion.Promotion
+    io.github.reconsolidated.malinka.promotion.PromotionService
+
+Depends Upon:
+    jakarta.persistence
+    java.lang
+    java.util
+    org.springframework.data.jpa.repository
+    org.springframework.stereotype
+
+Used By:
+    io.github.reconsolidated.malinka.offer
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.reclamation
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 0
+    Ce: 9
+
+    A: 0
+    I: 1
+    D: 0
+
+Abstract Classes:
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.reclamation.ReclamationController
+
+Depends Upon:
+    io.github.reconsolidated.malinka.basket
+    io.github.reconsolidated.malinka.orders
+    java.lang
+    java.lang.invoke
+    java.util
+    java.util.stream
+    org.springframework.stereotype
+    org.springframework.ui
+    org.springframework.web.bind.annotation
+
+Used By:
+    Not used by any packages.
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.user
+--------------------------------------------------
+
+Stats:
+    Total Classes: 3
+    Concrete Classes: 3
+    Abstract Classes: 0
+
+    Ca: 3
+    Ce: 4
+
+    A: 0
+    I: 0.57
+    D: 0.43
+
+Abstract Classes:
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.user.User
+    io.github.reconsolidated.malinka.user.UserRepository
+    io.github.reconsolidated.malinka.user.UserService
+
+Depends Upon:
+    jakarta.persistence
+    java.lang
+    java.util
+    org.springframework.stereotype
+
+Used By:
+    io.github.reconsolidated.malinka.basket
+    io.github.reconsolidated.malinka.mainPage
+    io.github.reconsolidated.malinka.orders
+
+--------------------------------------------------
+- Package: io.github.reconsolidated.malinka.utils
+--------------------------------------------------
+
+Stats:
+    Total Classes: 1
+    Concrete Classes: 1
+    Abstract Classes: 0
+
+    Ca: 2
+    Ce: 1
+
+    A: 0
+    I: 0.33
+    D: 0.67
+
+Abstract Classes:
+
+Concrete Classes:
+    io.github.reconsolidated.malinka.utils.Constants
+
+Depends Upon:
+    java.lang
+
+Used By:
+    io.github.reconsolidated.malinka.loyaltyProduct
+    io.github.reconsolidated.malinka.mainPage
+
+--------------------------------------------------
+- Package Dependency Cycles:
+--------------------------------------------------
+
+io.github.reconsolidated.malinka
+    |
+    |   org.h2.tools
+    |   org.h2.command.dml
+    |   org.h2.schema
+    |-> org.h2.value
+    |   org.h2.util
+    |   org.h2.message
+    |   org.h2.jdbc
+    |   org.h2.result
+    |-> org.h2.value
+
+io.github.reconsolidated.malinka.basket
+    |
+    |   io.github.reconsolidated.malinka.mainPage
+    |-> io.github.reconsolidated.malinka.basket
+
+io.github.reconsolidated.malinka.mainPage
+    |
+    |   io.github.reconsolidated.malinka.basket
+    |-> io.github.reconsolidated.malinka.mainPage
+
+io.github.reconsolidated.malinka.offer
+    |
+    |-> io.github.reconsolidated.malinka.mainPage
+    |   io.github.reconsolidated.malinka.basket
+    |-> io.github.reconsolidated.malinka.mainPage
+
+io.github.reconsolidated.malinka.orders
+    |
+    |-> io.github.reconsolidated.malinka.basket
+    |   io.github.reconsolidated.malinka.mainPage
+    |-> io.github.reconsolidated.malinka.basket
+
+io.github.reconsolidated.malinka.reclamation
+    |
+    |-> io.github.reconsolidated.malinka.basket
+    |   io.github.reconsolidated.malinka.mainPage
+    |-> io.github.reconsolidated.malinka.basket
+
+--------------------------------------------------
+- Summary:
+--------------------------------------------------
+
+Name, Class Count, Abstract Class Count, Ca, Ce, A, I, D, V:
+
+io.github.reconsolidated.malinka,2,0,0,9,0,1,0,1
+io.github.reconsolidated.malinka.basket,5,1,3,12,0.2,0.8,0,1
+io.github.reconsolidated.malinka.delivery,5,1,1,2,0.2,0.67,0.13,1
+io.github.reconsolidated.malinka.loyaltyProduct,3,1,2,7,0.33,0.78,0.11,1
+io.github.reconsolidated.malinka.mainPage,5,1,3,14,0.2,0.82,0.02,1
+io.github.reconsolidated.malinka.offer,13,3,0,16,0.23,1,0.23,1
+io.github.reconsolidated.malinka.orders,4,1,2,14,0.25,0.88,0.12,1
+io.github.reconsolidated.malinka.promotion,3,1,1,5,0.33,0.83,0.17,1
+io.github.reconsolidated.malinka.reclamation,1,0,0,9,0,1,0,1
+io.github.reconsolidated.malinka.user,3,0,3,4,0,0.57,0.43,1
+io.github.reconsolidated.malinka.utils,1,0,2,1,0,0.33,0.67,1
